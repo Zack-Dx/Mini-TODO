@@ -1,18 +1,27 @@
 //Add note
 
 let add = document.querySelector("#add");
+let noInput = document.querySelector("#noInputText");
+let noteInput = document.getElementById("note");
+
+noteInput.addEventListener("click", function () {
+  noInput.classList.remove("show");
+});
 
 add.addEventListener("click", () => {
   let noteobj = [];
   let addtxt = document.getElementById("note");
   let notes = localStorage.getItem("notes");
   if (notes == null) {
-    noteobj = [];
+    noteobj = []
   } else {
     noteobj = JSON.parse(localStorage.getItem("notes"));
+
   }
   if (addtxt.value != "") {
     noteobj.push(addtxt.value);
+  } else {
+    noInput.classList.add("show");
   }
 
   localStorage.setItem("notes", JSON.stringify(noteobj));
