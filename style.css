@@ -12,17 +12,23 @@ body {
   height: 100%;
   width: 100%;
 }
-#add{
-  width: 100px;
-}
+
 #navbar {
+  position: sticky;
+  top: 0;
+  margin-top: 0;
   display: flex;
   justify-content: space-between;
-  text-align: center;
-  padding: 20px;
-  background-color: rgb(138, 127, 255);
-  color: whitesmoke;
-  align-self: start;
+  align-items:flex-start;
+  padding: 1rem 1.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  border-right: 1px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(5px);
+  z-index: 15;
 }
 #toggleDarkModeBtn {
   margin-left: 30px;
@@ -37,7 +43,9 @@ body {
   cursor: pointer;
   font-weight: bold;
 }
-
+#add{
+  width: 100px;
+}
 #logo {
   letter-spacing: 2px;
 }
