@@ -1,0 +1,88 @@
+/*Fonts*/
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+#navbar {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  padding: 20px;
+  background-color: rgb(138, 127, 255);
+  color: whitesmoke;
+}
+
+#logo {
+  letter-spacing: 2px;
+}
+
+#container {
+  padding: 50px;
+}
+#notebox {
+  border-radius: 6px;
+  padding: 10px;
+  text-align: center;
+}
+#notebox input {
+  width: 50%;
+  padding: 10px;
+  border: 5px solid lavender;
+  border-radius: 15px;
+  outline: none;
+  text-align: center;
+  margin: 10px;
+}
+
+#add,
+#delete {
+  margin: 10px 5px;
+  padding: 5px 10px;
+  border-radius: 25px;
+  outline: none;
+  cursor: pointer;
+  border: none;
+}
+
+#add:hover,
+#delete:hover {
+  background: rgb(31, 20, 181);
+  color: white;
+  transition: 0.5s;
+}
+.buttons {
+  text-align: center;
+}
+
+#box {
+display: inline-block;
+background: lavender;
+height: auto;
+width: auto;
+text-align: center;
+margin: 5px;
+
+border-radius: 15px;
+  
+}
+#box p,h5{
+margin: 10px;
+
+
+}
+
+#mainbox{
+  padding: 45px;
+  display: block;
+  
+}
