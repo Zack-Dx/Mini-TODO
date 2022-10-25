@@ -7,6 +7,22 @@ let noteInput = document.getElementById("note");
 noteInput.addEventListener("click", function () {
   noInput.classList.remove("show");
 });
+(function () {
+  isDarkMode = !(localStorage.getItem("isDarkMode") === "true");
+  toggleDarkMode();
+})();
+function toggleDarkMode() {
+  isDarkMode = !isDarkMode;
+  localStorage.setItem("isDarkMode", isDarkMode);
+
+  if (isDarkMode) {
+    document.body.className = "dark-mode";
+    document.getElementById("toggleDarkModeBtn").innerText = "Light mode";
+  } else {
+    document.body.className = "light-mode";
+    document.getElementById("toggleDarkModeBtn").innerText = "Dark mode";
+  }
+}
 
 add.addEventListener("click", () => {
   let noteobj = [];
@@ -43,6 +59,7 @@ function showNotes() {
     <h5>NOTE :${index + 1}</h5>
     <p>${element.toUpperCase()}</p>
     <button id=delete onclick=deleted(${index})>Delete note</button>
+    <button id=edit onclick=edit(${index})>edit</button>
         </div>`;
   });
   let box = document.getElementById("mainbox");
@@ -58,6 +75,19 @@ function deleted(index) {
     noteobj = JSON.parse(localStorage.getItem("notes"));
   }
   noteobj.splice(index, 1);
+  localStorage.setItem("notes", JSON.stringify(noteobj));
+  showNotes();
+}
+function edit(index) {
+  // edits the value to the value in text area
+  console.log("edit of " + index + " success");
+  let notes = localStorage.getItem("notes");
+  if (notes == null) {
+    noteobj = [];
+  } else {
+    noteobj = JSON.parse(localStorage.getItem("notes"));
+  }
+  noteobj[index]=document.getElementById("note").value;
   localStorage.setItem("notes", JSON.stringify(noteobj));
   showNotes();
 }
