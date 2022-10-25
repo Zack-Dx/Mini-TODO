@@ -12,7 +12,19 @@ body {
   height: 100%;
   width: 100%;
 }
-
+::-webkit-scrollbar {
+  width: 16px;
+}
+::-webkit-scrollbar-track {
+  background-color: rgb(138, 127, 255);
+}
+::-webkit-scrollbar-thumb{
+  background: #4001a5;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover{
+  background: #210057;
+}
 #navbar {
   display: flex;
   justify-content: space-between;
@@ -42,6 +54,10 @@ body {
   outline: none;
   text-align: center;
   margin: 10px;
+}
+
+#note:hover{
+  border: 5px solid rgb(96, 86, 203);
 }
 
 #add,
