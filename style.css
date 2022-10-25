@@ -12,7 +12,9 @@ body {
   height: 100%;
   width: 100%;
 }
-
+#add{
+  width: 100px;
+}
 #navbar {
   display: flex;
   justify-content: space-between;
@@ -20,6 +22,20 @@ body {
   padding: 20px;
   background-color: rgb(138, 127, 255);
   color: whitesmoke;
+  align-self: start;
+}
+#toggleDarkModeBtn {
+  margin-left: 30px;
+  padding: 7px;
+
+  width: 120px;
+  font-size: 1.1rem;
+  font-family: "Varela Round", sans-serif;
+  color: rgb(23, 26, 57);
+  background-color: rgb(168, 160, 242);
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
 }
 
 #logo {
@@ -53,7 +69,14 @@ body {
   cursor: pointer;
   border: none;
 }
-
+#edit {
+  margin: 10px 5px;
+  padding: 5px 10px;
+  border-radius: 25px;
+  outline: none;
+  cursor: pointer;
+  border: none;
+}
 #add:hover,
 #delete:hover {
   background: rgb(1, 0, 6);
@@ -104,3 +127,17 @@ h5 {
     margin: 10px;
   }
 }
+.light-mode {
+  background-color: #E0FFFF;
+}
+.light-mode span.boxtext {
+  color: black;
+}
+
+.dark-mode {
+  background-color: rgb(0, 37, 63);
+}
+.dark-mode span.boxtext {
+  color: white;
+}
+

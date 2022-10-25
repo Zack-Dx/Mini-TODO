@@ -14,12 +14,17 @@
     />
     <title>Todo List using Javascript</title>
   </head>
-  <body onload="showNotes()">
+  <body onload="showNotes()" class="light-mode">
     <header>
       <nav id="navbar">
-        <div id="logo">
-          <h1>Blueberry KEEP📝</h1>
-        </div>
+          <div id="logo">
+            <h1>Blueberry KEEP📝</h1>
+          </div>
+          <button id="toggleDarkModeBtn" onclick="toggleDarkMode()">Dark mode</button>
+          
+      </ul>
+        
+        <!-- <div><button id="toggleDarkModeBtn" onclick="toggleDarkMode()">Dark mode</button></div> -->
       </nav>
     </header>
     <div id="container">
