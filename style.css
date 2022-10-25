@@ -14,12 +14,21 @@ body {
 }
 
 #navbar {
+  position: sticky;
+  top: 0;
+  margin-top: 0;
   display: flex;
   justify-content: space-between;
-  text-align: center;
-  padding: 20px;
-  background-color: rgb(138, 127, 255);
-  color: whitesmoke;
+  align-items:flex-start;
+  padding: 1rem 1.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  border-right: 1px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(5px);
+  z-index: 15;
 }
 
 #logo {
@@ -30,6 +39,7 @@ body {
   padding: 50px;
 }
 #notebox {
+  position: sticky;
   border-radius: 6px;
   padding: 10px;
   text-align: center;
@@ -56,9 +66,11 @@ body {
 
 #add:hover,
 #delete:hover {
-  background: rgb(1, 0, 6);
+  background: #2196f3;
   color: white;
+  box-shadow: 0 0 4px #2196f3, 0 0 8px #2196f3, 0 0 12px #2196f3;
   transition: 0.5s;
+  transform: scale(1.05);
 }
 .buttons {
   text-align: center;
@@ -71,12 +83,13 @@ body {
   width: auto;
   text-align: center;
   margin: 5px;
-
+  box-shadow: 0 0 4px #7e6ce4, 0 0 8px #7e6ce4, 0 0 12px #7e6ce4;
   border-radius: 15px;
 }
 #box p,
 h5 {
   margin: 10px;
+
 }
 
 #mainbox {
@@ -93,7 +106,7 @@ h5 {
   }
 
   #delete {
-    background-color: rgb(62, 39, 193);
+    background-color: #2195f3ea;
     color: rgb(255, 249, 249);
   }
 
