@@ -12,7 +12,19 @@ body {
   height: 100%;
   width: 100%;
 }
-
+::-webkit-scrollbar {
+  width: 16px;
+}
+::-webkit-scrollbar-track {
+  background-color: rgb(138, 127, 255);
+}
+::-webkit-scrollbar-thumb{
+  background: #4001a5;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover{
+  background: #210057;
+}
 #navbar {
   position: sticky;
   top: 0;
@@ -52,6 +64,10 @@ body {
   outline: none;
   text-align: center;
   margin: 10px;
+}
+
+#note:hover{
+  border: 5px solid rgb(96, 86, 203);
 }
 
 #add,
@@ -116,4 +132,30 @@ h5 {
   #box {
     margin: 10px;
   }
+}
+
+.noInputText {
+  visibility: hidden;
+  color: #ea4b8b;
+  text-align: center;
+  border-radius: 6px;
+  padding: 7px 5px;
+  margin: auto ;
+  font-size: large;
+}
+
+.show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s
+}
+
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 2;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:2 ;}
 }
