@@ -123,7 +123,7 @@ h5 {
 
 .noInputText {
   visibility: hidden;
-  color: rgb(255, 0,0);
+  color: #ea4b8b;
   text-align: center;
   border-radius: 6px;
   padding: 7px 5px;
@@ -139,10 +139,10 @@ h5 {
 
 @-webkit-keyframes fadeIn {
   from {opacity: 0;}
-  to {opacity: 1;}
+  to {opacity: 2;}
 }
 
 @keyframes fadeIn {
   from {opacity: 0;}
-  to {opacity:1 ;}
+  to {opacity:2 ;}
 }
