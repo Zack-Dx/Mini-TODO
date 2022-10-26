@@ -169,3 +169,64 @@ h5 {
   from {opacity: 0;}
   to {opacity:2 ;}
 }
+
+
+#text{
+    color: black;
+}
+
+
+
+:root{
+    --bs-dark: black;
+  }
+
+  .theme-container {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+  }
+  
+  .theme-container:hover {
+    opacity: 0.8;
+  }
+  
+  .shadow-dark {
+    background: linear-gradient(145deg, #23282c, #1e2125);
+    box-shadow: 17px 17px 23px #1a1d20,
+    -17px -17px 23px #282d32, inset 5px 5px 4px #1e2226,
+    inset -5px -5px 4px #24282c;
+}
+
+.shadow-light {
+      background: linear-gradient(145deg, #f0f4f6, #b8bdc7);
+      box-shadow: 7px 7px 33px #ffffff8f,       
+      -7px -7px 33px #f0f4f6, inset 5px 5px 4px #b8bdc7,
+      inset -5px -5px 4px rgba(255, 255, 255, 0.3);
+  
+  }
+  
+  @keyframes change {
+    0% {
+      transform: scale(1);
+    }
+  
+    100% {
+      transform: scale(1.4);
+    }
+  }
+  
+  .change {
+    animation-name: change;
+    animation-duration: 1s;
+    animation-direction: alternate;
+  }
+
