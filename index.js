@@ -59,7 +59,7 @@ function showNotes() {
     <h5>NOTE :${index + 1}</h5>
     <p>${element.toUpperCase()}</p>
     <button id=delete onclick=deleted(${index})>Delete note</button>
-    <button id=edit onclick=edit(${index})>edit</button>
+    <button id=edit onclick=edit(${index})>Edit</button>
         </div>`;
   });
   let box = document.getElementById("mainbox");
