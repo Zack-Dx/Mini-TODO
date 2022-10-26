@@ -82,7 +82,7 @@ body {
 #notebox input {
   width: 50%;
   padding: 10px;
-  border: 5px solid lavender;
+  border: 2px solid lavender;
   border-radius: 15px;
   outline: none;
   text-align: center;
@@ -90,7 +90,8 @@ body {
 }
 
 #note:hover{
-  border: 5px solid rgb(96, 86, 203);
+  border: 2px solid rgb(96, 86, 203);
+  transition: all 0.25s ease;
 }
 
 #add,
