@@ -187,6 +187,10 @@ h5 {
 .light-mode {
   background-color: #E0FFFF;
 }
+.light-mode header nav div h1{
+  color: #3a016f;
+  font-weight:900;
+}
 .light-mode span.boxtext {
   color: black;
 }
