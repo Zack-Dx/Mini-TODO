@@ -7,24 +7,30 @@
   box-sizing: border-box;
   font-family: "Open Sans", sans-serif;
 }
+
 html,
 body {
   height: 100%;
   width: 100%;
 }
+
 ::-webkit-scrollbar {
   width: 16px;
 }
+
 ::-webkit-scrollbar-track {
   background-color: rgb(138, 127, 255);
 }
+
 ::-webkit-scrollbar-thumb{
   background: #4001a5;
   border-radius: 5px;
 }
+
 ::-webkit-scrollbar-thumb:hover{
   background: #210057;
 }
+
 #navbar {
   position: sticky;
   top: 0;
@@ -50,12 +56,14 @@ body {
 #container {
   padding: 50px;
 }
+
 #notebox {
   position: sticky;
   border-radius: 6px;
   padding: 10px;
   text-align: center;
 }
+
 #notebox input {
   width: 50%;
   padding: 10px;
@@ -88,6 +96,7 @@ body {
   transition: 0.5s;
   transform: scale(1.05);
 }
+
 .buttons {
   text-align: center;
 }
@@ -102,6 +111,7 @@ body {
   box-shadow: 0 0 4px #7e6ce4, 0 0 8px #7e6ce4, 0 0 12px #7e6ce4;
   border-radius: 15px;
 }
+
 #box p,
 h5 {
   margin: 10px;
