@@ -23,7 +23,6 @@ Features of the application includes :
 ## <a name='how-to-contribute'>💥 How to Contribute?</a>
 
 - Take a look at the Existing [Issues](https://github.com/Zack-Dx/Mini-TODO/issues) or create your own Issues!
-- Read the [Code of Conduct](https://github.com/nightsailor/online-school/blob/master/CODE_OF_CONDUCT.md)
 - Create a Pull Request which will be promptly reviewed and suggestions would be added to improve it.
 - Add Screenshots to help us know what your contribution is all about.
 - Having difficulty in contributing? Read the [Contribution Guide](https://github.com/Zack-Dx/Mini-TODO/blob/master/CONTRIBUTING.md) for a detailed explanation.
