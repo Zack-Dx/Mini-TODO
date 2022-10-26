@@ -48,7 +48,22 @@ body {
   backdrop-filter: blur(5px);
   z-index: 15;
 }
+#toggleDarkModeBtn {
+  margin-left: 30px;
+  padding: 7px;
 
+  width: 120px;
+  font-size: 1.1rem;
+  font-family: "Varela Round", sans-serif;
+  color: rgb(23, 26, 57);
+  background-color: rgb(168, 160, 242);
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+}
+#add{
+  width: 100px;
+}
 #logo {
   letter-spacing: 2px;
 }
@@ -87,8 +102,17 @@ body {
   cursor: pointer;
   border: none;
 }
+#edit {
+  margin: 10px 5px;
+  padding: 5px 10px;
+  border-radius: 25px;
+  outline: none;
+  cursor: pointer;
+  border: none;
+}
 
 #add:hover,
+#edit:hover,
 #delete:hover {
   background: #2196f3;
   color: white;
@@ -168,4 +192,22 @@ h5 {
 @keyframes fadeIn {
   from {opacity: 0;}
   to {opacity:2 ;}
+}
+
+.light-mode {
+  background-color: #E6E6FA;
+}
+.light-mode header nav div h1{
+  color: #3a016f;
+  font-weight:900;
+}
+.light-mode span.boxtext {
+  color: black;
+}
+
+.dark-mode {
+  background-color: rgb(0, 37, 63);
+}
+.dark-mode span.boxtext {
+  color: white;
 }
