@@ -56,6 +56,7 @@ function showNotes() {
   console.log(notesobj);
 
   if (notesobj == null) {
+    notesobj = []
   } 
   else {
     notesobj = JSON.parse(localStorage.getItem("notes"));
@@ -97,6 +98,7 @@ function edit(index) {
   let notes = localStorage.getItem("notes");
   let inputs = document.getElementById(`boxInput${index}`)
   if (notes == null) {
+    notesobj = []
   } else {
     noteobj = JSON.parse(localStorage.getItem("notes"));
   }
