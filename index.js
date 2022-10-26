@@ -56,7 +56,6 @@ function showNotes() {
   console.log(notesobj);
 
   if (notesobj == null) {
-    notesobj = [];
   } 
   else {
     notesobj = JSON.parse(localStorage.getItem("notes"));
@@ -66,7 +65,9 @@ function showNotes() {
   notesobj.forEach(function (element, index) {
     html += `<div id="box" >
     <h5>NOTE :${index + 1}</h5>
-    <p>${element.toUpperCase()}</p>
+    <p class="p${index}">${element.toUpperCase()}</p>
+    <input type="text" class="hidden" placeholder="Edit note:" id="boxInput${index}" value="${element}">
+    <button 
     <button id=delete onclick=deleted(${index})>Delete note</button>
     <button id=edit onclick=edit(${index})>Edit</button>
         </div>`;
@@ -81,7 +82,7 @@ function deleted(index) {
   let notes = localStorage.getItem("notes");
 
   if (notes == null) {
-    noteobj = [];
+    // noteobj = [];
   } 
   else {
     noteobj = JSON.parse(localStorage.getItem("notes"));
@@ -94,12 +95,16 @@ function deleted(index) {
 function edit(index) {
   // edits the value to the value in text area
   let notes = localStorage.getItem("notes");
+  let inputs = document.getElementById(`boxInput${index}`)
   if (notes == null) {
-    noteobj = [];
   } else {
     noteobj = JSON.parse(localStorage.getItem("notes"));
   }
-  noteobj[index]=document.getElementById("note").value;
+  inputs.classList.toggle('hidden')
   localStorage.setItem("notes", JSON.stringify(noteobj));
-  showNotes();
+  if(inputs.classList !== 'hidden'){
+    document.querySelector(`.p${index}`).innerText = inputs.value.toUpperCase()
+  }else{
+    inputs.classList.toggle('hidden')
+  }
 }
