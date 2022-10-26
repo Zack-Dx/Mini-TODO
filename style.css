@@ -108,6 +108,7 @@ body {
   width: auto;
   text-align: center;
   margin: 5px;
+  box-shadow: 0 0 4px #8f84c9, 0 0 8px #7e6ce4, 0 0 12px #7e6ce4;
   box-shadow: 0 0 4px #7e6ce4, 0 0 8px #7e6ce4, 0 0 12px #7e6ce4;
   border-radius: 15px;
 }
@@ -172,13 +173,14 @@ h5 {
 
 
 #text{
-    color: white;
+    color: #DDA0DD;
+    font-size: 2rem;
 }
 
 
 
 :root{
-    --bs-dark: black;
+    --bs-dark: rgb(216,191,216, 0.5);
   }
 
   .theme-container {
@@ -201,7 +203,7 @@ h5 {
   
   .shadow-dark {
     background: linear-gradient(145deg, #23282c, #1e2125);
-    box-shadow: 17px 17px 23px #1a1d20,
+    box-shadow: 7px 7px 33px #1a1d20,
     -17px -17px 23px #282d32, inset 5px 5px 4px #1e2226,
     inset -5px -5px 4px #24282c;
 }
