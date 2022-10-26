@@ -91,6 +91,15 @@ function deleted(index) {
     localStorage.setItem("notes", JSON.stringify(noteobj));
     showNotes();
 
+    if (notes == null) {
+        noteobj = [];
+      } 
+      else {
+        noteobj = JSON.parse(localStorage.getItem("notes"));
+      }
+      noteobj.splice(index, 1);
+      localStorage.setItem("notes", JSON.stringify(noteobj));
+      showNotes();
 }
 
 
