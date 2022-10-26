@@ -14,12 +14,20 @@
     />
     <title>Todo List using Javascript</title>
   </head>
-  <body onload="showNotes()">
+  <body onload="showNotes()" class="light-mode">
     <header>
       <nav id="navbar">
         <div id="logo">
-          <h1>Blueberry KEEP📝</h1>
+          <h1 class="main-head">Blueberry KEEP📝</h1>
         </div>
+        <!-- <button id="toggleDarkModeBtn" onclick="toggleDarkMode()">Dark mode</button> -->
+        <button 
+    	class="light-mode-button" 
+    	aria-label="Toggle Light Mode" 
+    	onclick="toggle_light_mode()">
+	    <span></span>
+	    <span></span>
+	</button>
       </nav>
     </header>
     <form id="container">
@@ -43,4 +51,16 @@
   </div>
   </body>
   <script src="index.js"></script>
+  <script>
+    function toggle_light_mode() {
+        var app = document.getElementsByTagName("BODY")[0];
+        if (localStorage.lightMode == "dark") {
+      localStorage.lightMode = "light";
+      app.setAttribute("light-mode", "light");
+        } else {
+      localStorage.lightMode = "dark";
+      app.setAttribute("light-mode", "dark");
+        }		
+    }
+    </script>
 </html>
