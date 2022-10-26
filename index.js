@@ -78,7 +78,6 @@ function showNotes() {
 }
 
 function deleted(index) {
-  console.log("Deletion of " + index + " success");
   let notes = localStorage.getItem("notes");
 
   if (notes == null) {
@@ -94,7 +93,6 @@ function deleted(index) {
 }
 function edit(index) {
   // edits the value to the value in text area
-  console.log("edit of " + index + " success");
   let notes = localStorage.getItem("notes");
   if (notes == null) {
     noteobj = [];
