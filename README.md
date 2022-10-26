@@ -2,7 +2,7 @@
     <img style="background-color: black" src="https://hotemoji.com/images/dl/7/memo-emoji-by-google.png" width="10%">
 </p>
 <h2 align="center" style="margin-top: -12px"> 
-    Online School
+    Mini-TODO
 </h2>
 
 ### Table of Contents
