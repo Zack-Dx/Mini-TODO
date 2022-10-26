@@ -131,3 +131,17 @@ var theme = "dark";
     themeIcon.classList.add("change");
     themeIcon.src = moon;
   }
+
+  function edit(index) {
+    // edits the value to the value in text area
+    console.log("edit of " + index + " success");
+    let notes = localStorage.getItem("notes");
+    if (notes == null) {
+      noteobj = [];
+    } else {
+      noteobj = JSON.parse(localStorage.getItem("notes"));
+    }
+    noteobj[index]=document.getElementById("note").value;
+    localStorage.setItem("notes", JSON.stringify(noteobj));
+    showNotes();
+  }

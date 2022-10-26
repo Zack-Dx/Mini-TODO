@@ -172,7 +172,7 @@ h5 {
 
 
 #text{
-    color: black;
+    color: white;
 }
 
 
@@ -230,3 +230,22 @@ h5 {
     animation-direction: alternate;
   }
 
+
+
+.light-mode {
+    background-color: #E6E6FA;
+  }
+  .light-mode header nav div h1{
+    color: #3a016f;
+    font-weight:900;
+  }
+  .light-mode span.boxtext {
+    color: black;
+  }
+  
+  .dark-mode {
+    background-color: rgb(0, 37, 63);
+  }
+  .dark-mode span.boxtext {
+    color: white;
+  }
