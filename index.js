@@ -1,6 +1,6 @@
 //Add note
 
-let add = document.querySelector("#add");
+let formContainer = document.querySelector("#container");
 let noInput = document.querySelector("#noInputText");
 let noteInput = document.getElementById("note");
 
@@ -8,7 +8,8 @@ noteInput.addEventListener("click", function () {
   noInput.classList.remove("show");
 });
 
-add.addEventListener("click", () => {
+formContainer.addEventListener("submit", event => {
+  event.preventDefault()
   let noteobj = [];
   let addtxt = document.getElementById("note");
   let notes = localStorage.getItem("notes");
@@ -25,6 +26,7 @@ add.addEventListener("click", () => {
   }
 
   localStorage.setItem("notes", JSON.stringify(noteobj));
+  noteInput.value = ""
 
   showNotes();
 });
