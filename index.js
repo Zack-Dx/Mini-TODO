@@ -13,15 +13,18 @@ formContainer.addEventListener("submit", event => {
   let noteobj = [];
   let addtxt = document.getElementById("note");
   let notes = localStorage.getItem("notes");
+
   if (notes == null) {
     noteobj = []
-  } else {
-    noteobj = JSON.parse(localStorage.getItem("notes"));
-
   }
+   else {
+    noteobj = JSON.parse(localStorage.getItem("notes"));
+  }
+
   if (addtxt.value != "") {
     noteobj.push(addtxt.value);
-  } else {
+  } 
+  else {
     noInput.classList.add("show");
   }
 
@@ -29,16 +32,20 @@ formContainer.addEventListener("submit", event => {
   noteInput.value = ""
 
   showNotes();
+
 });
 
 function showNotes() {
   let notesobj = JSON.parse(localStorage.getItem("notes"));
   console.log(notesobj);
+
   if (notesobj == null) {
     notesobj = [];
-  } else {
+  } 
+  else {
     notesobj = JSON.parse(localStorage.getItem("notes"));
   }
+
   let html = "";
   notesobj.forEach(function (element, index) {
     html += `<div id="box" >
@@ -47,19 +54,24 @@ function showNotes() {
     <button id=delete onclick=deleted(${index})>Delete note</button>
         </div>`;
   });
+
   let box = document.getElementById("mainbox");
   box.innerHTML = html;
+
 }
 
 function deleted(index) {
   console.log("Deletion of " + index + " success");
   let notes = localStorage.getItem("notes");
+
   if (notes == null) {
     noteobj = [];
-  } else {
+  } 
+  else {
     noteobj = JSON.parse(localStorage.getItem("notes"));
   }
   noteobj.splice(index, 1);
   localStorage.setItem("notes", JSON.stringify(noteobj));
   showNotes();
+  
 }
