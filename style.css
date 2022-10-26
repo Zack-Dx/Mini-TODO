@@ -127,7 +127,9 @@ body {
 .buttons {
   text-align: center;
 }
-
+#note:focus{
+  box-shadow: 0 0 4px #7e6ce4, 0 0 8px #7e6ce4, 0 0 12px #7e6ce4;
+}
 #box {
   display: inline-block;
   /* background: lavender; */
