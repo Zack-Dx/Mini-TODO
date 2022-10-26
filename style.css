@@ -211,3 +211,15 @@ h5 {
 .dark-mode span.boxtext {
   color: white;
 }
+
+.welcome-message{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+
+}
+.welcome-message h2{
+  font-size: x-large;
+  font-weight: 600;
+}
