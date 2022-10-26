@@ -98,15 +98,17 @@ function edit(index) {
   let notes = localStorage.getItem("notes");
   let inputs = document.getElementById(`boxInput${index}`)
   if (notes == null) {
-    notesobj = []
+    noteobj = []
   } else {
     noteobj = JSON.parse(localStorage.getItem("notes"));
   }
   inputs.classList.toggle('hidden')
+  noteobj[index]=document.querySelector(`.p${index}`).innerText;
+  
   localStorage.setItem("notes", JSON.stringify(noteobj));
   if(inputs.classList !== 'hidden'){
     document.querySelector(`.p${index}`).innerText = inputs.value.toUpperCase()
-  }else{
-    inputs.classList.toggle('hidden')
+    noteobj[index]=document.querySelector(`.p${index}`).innerText;
+    localStorage.setItem("notes", JSON.stringify(noteobj));
   }
 }
