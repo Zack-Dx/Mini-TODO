@@ -104,7 +104,7 @@ body {
   /* border: none; */
   border: 1px solid rgb(255, 249, 249);
 }
-#edit {
+.edit {
   margin: 10px 5px;
   padding: 5px 10px;
   border-radius: 25px;
@@ -115,7 +115,7 @@ body {
 }
 
 #add:hover,
-#edit:hover,
+.edit:hover,
 #delete:hover {
   background: #2196f3;
   color: white;
@@ -130,7 +130,7 @@ body {
 #note:focus{
   box-shadow: 0 0 4px #7e6ce4, 0 0 8px #7e6ce4, 0 0 12px #7e6ce4;
 }
-#box {
+.box {
   display: inline-block;
   /* background: lavender; */
   height: auto;
@@ -141,7 +141,7 @@ body {
   border-radius: 15px;
 }
 
-#box p,
+.box p,
 h5 {
   margin: 10px;
 
@@ -168,7 +168,7 @@ h5 {
   #container {
     padding: 20px;
   }
-  #box {
+  .box {
     margin: 10px;
   }
 }
