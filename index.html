@@ -14,22 +14,15 @@
     />
     <title>Todo List using Javascript</title>
   </head>
-  <body onload="showNotes()">
+  <body onload="showNotes()" class="light-mode">
     <header>
       <nav id="navbar">
         <div id="logo">
-          <h1 id="text">Blueberry KEEP📝</h1>
+          <h1>Blueberry KEEP📝</h1>
         </div>
+        <button id="toggleDarkModeBtn" onclick="toggleDarkMode()">Dark mode</button>
       </nav>
     </header>
-    <div class="theme-container shadow-dark">
-      <img
-        id="theme-icon"
-        src="https://www.uplooder.net/img/image/2/addf703a24a12d030968858e0879b11e/moon.svg"
-        alt="ERR"
-      />
-    </div>
-
     <form id="container">
       <div id="notebox">
         <!-- <input
@@ -41,14 +34,14 @@
         /> -->
         <input type="text" id="note" placeholder="Enter your note" value="" />
       </div>
-      <div class="noInputText" id="noInputText">
-        Please write something for your note before adding it ...
-      </div>
+      <div class="noInputText" id="noInputText">Please write something for your note before adding it ...</div>
       <div class="buttons">
-        <button id="add">Add note</button>
+        <button id="add" >Add note</button>
       </div>
     </form>
-    <div id="mainbox"></div>
+<div id="mainbox">
+
+  </div>
   </body>
   <script src="index.js"></script>
 </html>
