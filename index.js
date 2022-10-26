@@ -78,6 +78,10 @@ function showNotes() {
 }
 
 function deleted(index) {
+  var result = confirm("Are you sure you want to delete this note?");
+  if (!result){
+    return;
+  }
   let notes = localStorage.getItem("notes");
 
   if (notes == null) {
