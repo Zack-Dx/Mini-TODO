@@ -100,7 +100,8 @@ body {
   border-radius: 25px;
   outline: none;
   cursor: pointer;
-  border: none;
+  /* border: none; */
+  border: 1px solid rgb(255, 249, 249);
 }
 #edit {
   margin: 10px 5px;
@@ -108,7 +109,8 @@ body {
   border-radius: 25px;
   outline: none;
   cursor: pointer;
-  border: none;
+  /* border: none; */
+  border: 1px solid rgb(255, 249, 249);
 }
 
 #add:hover,
@@ -127,7 +129,7 @@ body {
 
 #box {
   display: inline-block;
-  background: lavender;
+  /* background: lavender; */
   height: auto;
   width: auto;
   text-align: center;
@@ -198,11 +200,11 @@ h5 {
   background-color: #E6E6FA;
 }
 .light-mode header nav div h1{
-  color: #3a016f;
+  color: #a35ae8;
   font-weight:900;
 }
 .light-mode .welcome-message  h2{
-  color: #3a016f;
+  color: #a35ae8;
   font-weight:900;
 }
 
@@ -232,4 +234,61 @@ h5 {
 .welcome-message h2{
   font-size: x-large;
   font-weight: 600;
+}
+
+/* Light Mode Button Styles
+        --------------------------- */ 
+        .light-mode-button {
+          background:0;
+          border: 0;
+          box-sizing: border-box;
+          cursor: pointer;
+          height: 40px;
+          width: 100px;
+          position: relative;
+          border: 1px solid rgba(255,255,255,0);
+      }
+      .light-mode-button:focus {
+          outline:none; /* Not ideal for accessibility */
+      }
+      .light-mode-button span:nth-child(1) {
+          position: absolute;
+          top:0;
+          left:0;
+          width: 100px;
+          height:40px;
+          border-radius: 20px;
+          background-color: #d6d7db;
+          box-shadow: inset 1px 1px 3px 0 rgb(0 0 0 / 40%);
+          transition: .3s;
+      }
+      .light-mode-button span:nth-child(2) {
+          position: absolute;
+          top:5px;
+          left:5px;
+          width: 30px;
+          height: 30px;
+          background-color: #fff;
+          border-radius: 50%;
+          box-shadow: 1px 1px 2px 0 rgb(0 0 0 / 40%);
+          transition: .3s;
+      }
+  
+/* Light & Dark Mode Styles
+--------------------------- */ 
+/* body {
+background-color: #f6f6f6;
+transition: background-color .3s;
+} */
+body[light-mode=dark] {
+background-color: #141516;
+color: #ced4e2;
+}
+body[light-mode="dark"] .light-mode-button span:nth-child(1){
+background-color: #ced4e2;
+color: #141516;
+}
+body[light-mode=dark] .light-mode-button span:nth-child(2) {
+left: 65px;
+background-color: #141516;
 }
