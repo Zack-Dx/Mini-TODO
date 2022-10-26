@@ -201,8 +201,18 @@ h5 {
   color: #3a016f;
   font-weight:900;
 }
+.light-mode .welcome-message  h2{
+  color: #3a016f;
+  font-weight:900;
+}
+
+
 .light-mode span.boxtext {
   color: black;
+}
+.dark-mode .welcome-message  h2{
+  color: #eedcff;
+  font-weight:900;
 }
 
 .dark-mode {
@@ -210,4 +220,16 @@ h5 {
 }
 .dark-mode span.boxtext {
   color: white;
+}
+
+.welcome-message{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+
+}
+.welcome-message h2{
+  font-size: x-large;
+  font-weight: 600;
 }
