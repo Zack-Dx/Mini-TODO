@@ -40,9 +40,11 @@ formContainer.addEventListener("submit", event => {
 
   if (addtxt.value != "") {
     noteobj.push(addtxt.value);
+    showmsg('Your Note Added successfully.')
   } 
   else {
-    noInput.classList.add("show");
+    // noInput.classList.add("show");
+    showmsg('Please write something for your note before adding it ...')
   }
 
   localStorage.setItem("notes", JSON.stringify(noteobj));
@@ -94,6 +96,7 @@ function deleted(index) {
   noteobj.splice(index, 1);
   localStorage.setItem("notes", JSON.stringify(noteobj));
   showNotes();
+  showmsg('Note Deleted successfully.')
   
 }
 function edit(index) {
@@ -110,6 +113,7 @@ function edit(index) {
       </div>
     `
     editButton.innerHTML = 'Save';
+    showmsg('Note in Edit Mode.')
   } else {
     if (notes == null) {
       noteobj = [];
@@ -119,5 +123,6 @@ function edit(index) {
     noteobj[index]=noteElement.getElementsByTagName("input")[0].value;
     localStorage.setItem("notes", JSON.stringify(noteobj));
     showNotes();
+    showmsg('Note Saved successfully.')
   }
 }
