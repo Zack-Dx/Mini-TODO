@@ -1,62 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Todo List using Javascript</title>
+  </head>
+  <body onload="showNotes()" class="light-mode">
+    <div id="msgbox" class="msg">message</div>
+    <header>
+      <nav id="navbar">
+        <div id="logo">
+          <h1>Blueberry KEEP📝</h1>
+        </div>
+        <!-- <button id="toggleDarkModeBtn" onclick="toggleDarkMode()">Dark mode</button> -->
+        <button	class="light-mode-button"	aria-label="Toggle Light Mode"	onclick="toggle_light_mode()"><span></span><span></span></button>
+      </nav>
+    </header>
+   
+    <!-- Welcome Section -->
+    <section class="welcome-message">
+      <h2>Welcome Folks!</h2>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
-    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <title>Todo List using Javascript</title>
-</head>
 
-<body onload="showNotes()" class="light-mode">
-
-  <header>
-    <nav id="navbar">
-      <div id="logo">
-        <h1>Blueberry KEEP📝</h1>
+    </section>
+    <form id="container">
+      <div id="notebox">
+        <input type="text" id="note" placeholder="Enter your Note" value="" />
       </div>
-      <!-- <button id="toggleDarkModeBtn" onclick="toggleDarkMode()">Dark mode</button> -->
-      <button class="light-mode-button" aria-label="Toggle Light Mode"
-        onclick="toggle_light_mode()"><span></span><span></span></button>
-    </nav>
-  </header>
-
-  <!-- Welcome Section -->
-  <section class="welcome-message">
-    <h2>Welcome Folks!</h2>
-
-
-  </section>
-  <form id="container">
-    <div id="notebox">
-      <input type="text" id="note" placeholder="Enter your Note" value="" />
-    </div>
-    <div class="noInputText" id="noInputText">Please write something for your note before adding it ...</div>
-    <div class="buttons">
-      <button id="add">Add note</button>
-    </div>
-    <br><br>
-  </form>
-  <div id="mainbox">
+      <div class="noInputText" id="noInputText">Please write something for your note before adding it ...</div>
+      <div class="buttons">
+        <button id="add" >Add note</button>
+      </div>
+      <br><br>
+      <div>
+        <h2 class="note-edit-heading">Note Editing Guideline</h2>
+        <br>
+        <h3>-To edit a note firstly write the text you want to replace in the "Enter your note" section </h3>
+        <h3>-Then press the edit button of the respective note that you want to edit</h3>
+      </div>
+    </form>
+<div id="mainbox">
 
   </div>
-</body>
-<script src="index.js"></script>
-<script>
-  function toggle_light_mode() {
-    var app = document.getElementsByTagName("BODY")[0];
-    if (localStorage.lightMode == "dark") {
+  </body>
+  <script src="index.js"></script>
+  <script>
+    function toggle_light_mode() {
+        var app = document.getElementsByTagName("BODY")[0];
+        if (localStorage.lightMode == "dark") {
       localStorage.lightMode = "light";
       app.setAttribute("light-mode", "light");
+      showmsg('Light Mode Enabled.')
     } else {
       localStorage.lightMode = "dark";
       app.setAttribute("light-mode", "dark");
+      showmsg('Dark Mode Enabled.')
+        }		
     }
-  }
-</script>
 
+    var maggio = document.querySelector("#msgbox");
+    function showmsg(txt){
+      document.getElementById('msgbox').innerText='✉ ' + txt;
+        maggio.classList.add('show');
+        setTimeout(function(){maggio.classList.remove('show')},3000);
+    };
+    </script>
 </html>
