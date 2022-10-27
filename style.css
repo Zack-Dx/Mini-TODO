@@ -15,7 +15,8 @@ body {
 }
 
 ::-webkit-scrollbar {
-  width: 16px;
+  width: 12px;
+  height: 12px;
 }
 
 ::-webkit-scrollbar-track {
@@ -209,6 +210,7 @@ h5 {
 .light-mode .welcome-message  h2{
   color: #a35ae8;
   font-weight:900;
+  display: sticky;
 }
 .note-edit-heading{
   color: #a35ae8;
