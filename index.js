@@ -85,6 +85,8 @@ function showNotes() {
 }
 
 function deleted(index) {
+  val = confirm("You are about to delete a note")
+  if (!val) return;
   let notes = localStorage.getItem("notes");
 
   if (notes == null) {
