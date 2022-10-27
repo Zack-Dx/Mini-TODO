@@ -288,7 +288,7 @@ background-color: #f6f6f6;
 transition: background-color .3s;
 } */
 body[light-mode=dark] {
-background-color: #141516;
+background-color: #140026;
 color: #ced4e2;
 }
 body[light-mode="dark"] .light-mode-button span:nth-child(1){
