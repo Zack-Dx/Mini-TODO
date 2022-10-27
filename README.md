@@ -13,16 +13,17 @@
 
 ## <a name="introduction">📌 Introduction</a>
 
-Mini-TODO is a Web Application made using HTML, CSS, and Javascript. It is east to use application where the user the can make notes on the go and Delete them whenever required.
+Mini-TODO is a Web Application made using HTML, CSS, and Javascript. It is easy to use application where the user can make notes on the go and Delete them whenever required.
 
-Features of the application includes :
+Features of the application include:
+
 - Create Notes
 - Delete Notes
 - Edit Notes
 
 ## <a name='how-to-contribute'>💥 How to Contribute?</a>
 
-- Take a look at the Existing [Issues](https://github.com/Zack-Dx/Mini-TODO/issues) or create your own Issues!
+- Take a look at the Existing [Issues](https://github.com/Zack-Dx/Mini-TODO/issues) or create your Issues!
 - Create a Pull Request which will be promptly reviewed and suggestions would be added to improve it.
 - Add Screenshots to help us know what your contribution is all about.
 - Having difficulty in contributing? Read the [Contribution Guide](https://github.com/Zack-Dx/Mini-TODO/blob/master/CONTRIBUTING.md) for a detailed explanation.
