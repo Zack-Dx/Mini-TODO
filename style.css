@@ -24,7 +24,7 @@ body {
 
 ::-webkit-scrollbar-thumb{
   background: #4001a5;
-  border-radius: 5px;
+  border-radius: none;
 }
 
 ::-webkit-scrollbar-thumb:hover{
@@ -57,7 +57,7 @@ body {
   font-family: "Varela Round", sans-serif;
   color: rgb(23, 26, 57);
   background-color: rgb(168, 160, 242);
-  border-radius: 10px;
+  border-radius: none;
   cursor: pointer;
   font-weight: bold;
 }
@@ -74,16 +74,17 @@ body {
 
 #notebox {
   position: sticky;
-  border-radius: 6px;
+  border-radius: none;
   padding: 10px;
   text-align: center;
 }
 
 #notebox input {
-  width: 50%;
+  width: 80%;
+  height: 10%;
   padding: 10px;
-  border: 2px solid lavender;
-  border-radius: 15px;
+  border: 3px solid lavender;
+  border-radius: none;
   outline: none;
   text-align: center;
   margin: 10px;
@@ -98,7 +99,7 @@ body {
 #delete {
   margin: 10px 5px;
   padding: 5px 10px;
-  border-radius: 25px;
+  border-radius: none;
   outline: none;
   cursor: pointer;
   /* border: none; */
@@ -107,7 +108,7 @@ body {
 .edit {
   margin: 10px 5px;
   padding: 5px 10px;
-  border-radius: 25px;
+  border-radius: none;
   outline: none;
   cursor: pointer;
   /* border: none; */
@@ -138,7 +139,7 @@ body {
   text-align: center;
   margin: 5px;
   box-shadow: 0 0 4px #7e6ce4, 0 0 8px #7e6ce4, 0 0 12px #7e6ce4;
-  border-radius: 15px;
+  border-radius: none;
 }
 
 .box p,
@@ -177,7 +178,7 @@ h5 {
   visibility: hidden;
   color: #ea4b8b;
   text-align: center;
-  border-radius: 6px;
+  border-radius: none;
   padding: 7px 5px;
   margin: auto ;
   font-size: large;
@@ -264,7 +265,7 @@ h5 {
           left:0;
           width: 100px;
           height:40px;
-          border-radius: 20px;
+          border-radius: none;
           background-color: #d6d7db;
           box-shadow: inset 1px 1px 3px 0 rgb(0 0 0 / 40%);
           transition: .3s;
@@ -276,7 +277,7 @@ h5 {
           width: 30px;
           height: 30px;
           background-color: #fff;
-          border-radius: 50%;
+          border-radius: none;
           box-shadow: 1px 1px 2px 0 rgb(0 0 0 / 40%);
           transition: .3s;
       }
@@ -309,7 +310,7 @@ background-color: #141516;
   right: 2%;
   padding: 10px 20px;
   display: none;
-  border-radius: 5px;
+  border-radius: none;
   font-size: 18px;
   background: #ec4811;
   color: white;
