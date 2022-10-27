@@ -15,7 +15,7 @@
     <title>Todo List using Javascript</title>
   </head>
   <body onload="showNotes()" class="light-mode">
-
+    <div id="msgbox" class="msg">message</div>
     <header>
       <nav id="navbar">
         <div id="logo">
@@ -34,12 +34,12 @@
     </section>
     <form id="container">
       <div id="notebox">
-        <input type="text" id="note" placeholder="Enter your note" value="" />
+        <input type="text" id="note" placeholder="Enter your Note" value="" />
       </div>
-      <div class="noInputText" id="noInputText">Please write something for your note before adding it ...</div>
       <div class="buttons">
         <button id="add" >Add note</button>
       </div>
+      <br><br>
     </form>
 <div id="mainbox">
 
@@ -52,10 +52,19 @@
         if (localStorage.lightMode == "dark") {
       localStorage.lightMode = "light";
       app.setAttribute("light-mode", "light");
-        } else {
+      showmsg('Light Mode Enabled.')
+    } else {
       localStorage.lightMode = "dark";
       app.setAttribute("light-mode", "dark");
+      showmsg('Dark Mode Enabled.')
         }		
     }
+
+    var maggio = document.querySelector("#msgbox");
+    function showmsg(txt){
+      document.getElementById('msgbox').innerText='✉ ' + txt;
+        maggio.classList.add('show');
+        setTimeout(function(){maggio.classList.remove('show')},3000);
+    };
     </script>
 </html>
