@@ -35,6 +35,7 @@ formContainer.addEventListener("submit", event => {
   }
    else {
     noteobj = JSON.parse(localStorage.getItem("notes"));
+    console.log('noteobj', noteobj);
   }
 
   if (addtxt.value != "") {
@@ -64,12 +65,16 @@ function showNotes() {
 
   let html = "";
   notesobj.forEach(function (element, index) {
-    html += `<div id="box" >
-    <h5>NOTE :${index + 1}</h5>
-    <p>${element.toUpperCase()}</p>
-    <button id=delete onclick=deleted(${index})>Delete note</button>
-    <button id=edit onclick=edit(${index})>Edit</button>
-        </div>`;
+    html += `
+      <div class="box" id="box-${index}" >
+        <h5>NOTE :${index + 1}</h5>
+        <div class="swappable">
+          <p>${element.toUpperCase()}</p>
+        </div>
+        <button id=delete onclick=deleted(${index})>Delete note</button>
+        <button class=edit onclick=edit(${index})>Edit</button>
+      </div>
+    `;
   });
 
   let box = document.getElementById("mainbox");
@@ -94,12 +99,25 @@ function deleted(index) {
 function edit(index) {
   // edits the value to the value in text area
   let notes = localStorage.getItem("notes");
-  if (notes == null) {
-    noteobj = [];
+  const noteElement = document.getElementById(`box-${index}`);
+  const swappableElement = noteElement.getElementsByClassName('swappable')[0];
+  const editButton = noteElement.getElementsByClassName('edit')[0];
+
+  if (editButton.innerHTML == 'Edit') {
+    swappableElement.innerHTML = `
+      <div id="notebox">
+        <input type="text" id="note" value="${noteElement.getElementsByTagName('p')[0].innerHTML}" />
+      </div>
+    `
+    editButton.innerHTML = 'Save';
   } else {
-    noteobj = JSON.parse(localStorage.getItem("notes"));
+    if (notes == null) {
+      noteobj = [];
+    } else {
+      noteobj = JSON.parse(localStorage.getItem("notes"));
+    }
+    noteobj[index]=noteElement.getElementsByTagName("input")[0].value;
+    localStorage.setItem("notes", JSON.stringify(noteobj));
+    showNotes();
   }
-  noteobj[index]=document.getElementById("note").value;
-  localStorage.setItem("notes", JSON.stringify(noteobj));
-  showNotes();
 }
