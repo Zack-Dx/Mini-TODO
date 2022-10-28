@@ -5,7 +5,7 @@ let noInput = document.querySelector('#noInputText');
 let noteInput = document.getElementById('note');
 
 noteInput.addEventListener('click', function () {
-  noInput.classList.remove('show');
+  noteInput.classList.remove('show');
 });
 // (function () {
 //   isDarkMode = !(localStorage.getItem("isDarkMode") === "true");
@@ -34,12 +34,11 @@ formContainer.addEventListener('submit', (event) => {
     noteobj = [];
   } else {
     noteobj = JSON.parse(localStorage.getItem('notes'));
-    console.log('noteobj', noteobj);
   }
 
   if (addtxt.value != '') {
     noteobj.push(addtxt.value);
-    showmsg('Your Note Added successfully.');
+    showmsg('Your Note has been added successfully.');
   } else {
     // noInput.classList.add("show");
     showmsg('Please write something for your note before adding it ...');
@@ -53,7 +52,6 @@ formContainer.addEventListener('submit', (event) => {
 
 function showNotes() {
   let notesobj = JSON.parse(localStorage.getItem('notes'));
-  console.log(notesobj);
 
   if (notesobj == null) {
     notesobj = [];
@@ -90,7 +88,7 @@ function deleted(index) {
   noteobj.splice(index, 1);
   localStorage.setItem('notes', JSON.stringify(noteobj));
   showNotes();
-  showmsg('Note Deleted successfully.');
+  showmsg('Note deleted successfully.');
 }
 function edit(index) {
   // edits the value to the value in text area
@@ -118,6 +116,6 @@ function edit(index) {
     noteobj[index] = noteElement.getElementsByTagName('input')[0].value;
     localStorage.setItem('notes', JSON.stringify(noteobj));
     showNotes();
-    showmsg('Note Saved successfully.');
+    showmsg('Note updated successfully.');
   }
 }
