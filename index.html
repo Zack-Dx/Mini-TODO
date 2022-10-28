@@ -47,16 +47,17 @@
   </body>
   <script src="index.js"></script>
   <script>
-    function toggle_light_mode() {
+    function toggle_light_mode(firstLoad) {
         var app = document.getElementsByTagName("BODY")[0];
-        if (localStorage.lightMode == "dark") {
-      localStorage.lightMode = "light";
-      app.setAttribute("light-mode", "light");
-      showmsg('Light Mode Enabled.')
-    } else {
-      localStorage.lightMode = "dark";
-      app.setAttribute("light-mode", "dark");
-      showmsg('Dark Mode Enabled.')
+        const check = firstLoad ? localStorage.lightMode != "dark" : localStorage.lightMode == "dark";
+        if (check) {
+          localStorage.lightMode = "light";
+          app.setAttribute("light-mode", "light");
+          if (!firstLoad) showmsg('Light Mode Enabled.')
+        } else {
+          localStorage.lightMode = "dark";
+          app.setAttribute("light-mode", "dark");
+          if (!firstLoad) showmsg('Dark Mode Enabled.')
         }		
     }
 
@@ -66,5 +67,11 @@
         maggio.classList.add('show');
         setTimeout(function(){maggio.classList.remove('show')},3000);
     };
+    document.onreadystatechange = () => {
+      if (document.readyState === 'complete') {
+        console.log('Flipped!');
+        toggle_light_mode({});
+      }
+    }
     </script>
 </html>
