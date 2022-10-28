@@ -69,6 +69,28 @@ body {
   letter-spacing: 2px;
 }
 
+
+#searchnote{
+    margin: -15px;
+    padding: 20px;
+    outline: none;
+    margin-left: 600px;
+    
+  }
+  #searching{
+    border: 2px solid lavender;
+    outline: none;
+    border-radius: 12px;
+    padding: 6px;
+  }
+  #searching:focus{
+    box-shadow: 0 0 4px #7e6ce4, 0 0 8px #7e6ce4, 0 0 12px #7e6ce4;
+  }
+  #searching:hover{
+    border: 2px solid rgb(96, 86, 203);
+    transition: all 0.25s ease;
+  }
+
 #a-link {
   text-decoration: none;
 }
