@@ -1,11 +1,11 @@
 /*Fonts*/
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 html,
@@ -22,12 +22,12 @@ body {
   background-color: rgb(138, 127, 255);
 }
 
-::-webkit-scrollbar-thumb{
+::-webkit-scrollbar-thumb {
   background: #4001a5;
   border-radius: 5px;
 }
 
-::-webkit-scrollbar-thumb:hover{
+::-webkit-scrollbar-thumb:hover {
   background: #210057;
 }
 
@@ -37,7 +37,7 @@ body {
   margin-top: 0;
   display: flex;
   justify-content: space-between;
-  align-items:flex-start;
+  align-items: flex-start;
   padding: 1rem 1.5rem;
   background: rgba(255, 255, 255, 0.1);
   color: white;
@@ -54,14 +54,14 @@ body {
 
   width: 120px;
   font-size: 1.1rem;
-  font-family: "Varela Round", sans-serif;
+  font-family: 'Varela Round', sans-serif;
   color: rgb(23, 26, 57);
   background-color: rgb(168, 160, 242);
   border-radius: 10px;
   cursor: pointer;
   font-weight: bold;
 }
-#add{
+#add {
   width: 100px;
 }
 #logo {
@@ -89,7 +89,7 @@ body {
   margin: 10px;
 }
 
-#note:hover{
+#note:hover {
   border: 2px solid rgb(96, 86, 203);
   transition: all 0.25s ease;
 }
@@ -127,7 +127,7 @@ body {
 .buttons {
   text-align: center;
 }
-#note:focus{
+#note:focus {
   box-shadow: 0 0 4px #7e6ce4, 0 0 8px #7e6ce4, 0 0 12px #7e6ce4;
 }
 .box {
@@ -144,7 +144,6 @@ body {
 .box p,
 h5 {
   margin: 10px;
-
 }
 
 #mainbox {
@@ -179,49 +178,56 @@ h5 {
   text-align: center;
   border-radius: 6px;
   padding: 7px 5px;
-  margin: auto ;
+  margin: auto;
   font-size: large;
 }
 
 .show {
   visibility: visible;
   -webkit-animation: fadeIn 1s;
-  animation: fadeIn 1s
+  animation: fadeIn 1s;
 }
 
 @-webkit-keyframes fadeIn {
-  from {opacity: 0;}
-  to {opacity: 2;}
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 2;
+  }
 }
 
 @keyframes fadeIn {
-  from {opacity: 0;}
-  to {opacity:2 ;}
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 2;
+  }
 }
 
 .light-mode {
-  background-color: #E6E6FA;
+  background-color: #e6e6fa;
 }
-.light-mode header nav div h1{
+.light-mode header nav div h1 {
   color: #a35ae8;
-  font-weight:900;
+  font-weight: 900;
 }
-.light-mode .welcome-message  h2{
+.light-mode .welcome-message h2 {
   color: #a35ae8;
-  font-weight:900;
+  font-weight: 900;
 }
-.note-edit-heading{
+.note-edit-heading {
   color: #a35ae8;
-  font-weight:900;
+  font-weight: 900;
 }
-
 
 .light-mode span.boxtext {
   color: black;
 }
-.dark-mode .welcome-message  h2{
+.dark-mode .welcome-message h2 {
   color: #eedcff;
-  font-weight:900;
+  font-weight: 900;
 }
 
 .dark-mode {
@@ -231,73 +237,72 @@ h5 {
   color: white;
 }
 
-.welcome-message{
+.welcome-message {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 2rem;
-
 }
-.welcome-message h2{
+.welcome-message h2 {
   font-size: x-large;
   font-weight: 600;
 }
 
 /* Light Mode Button Styles
-        --------------------------- */ 
-        .light-mode-button {
-          background:0;
-          border: 0;
-          box-sizing: border-box;
-          cursor: pointer;
-          height: 40px;
-          width: 100px;
-          position: relative;
-          border: 1px solid rgba(255,255,255,0);
-      }
-      .light-mode-button:focus {
-          outline:none; /* Not ideal for accessibility */
-      }
-      .light-mode-button span:nth-child(1) {
-          position: absolute;
-          top:0;
-          left:0;
-          width: 100px;
-          height:40px;
-          border-radius: 20px;
-          background-color: #d6d7db;
-          box-shadow: inset 1px 1px 3px 0 rgb(0 0 0 / 40%);
-          transition: .3s;
-      }
-      .light-mode-button span:nth-child(2) {
-          position: absolute;
-          top:5px;
-          left:5px;
-          width: 30px;
-          height: 30px;
-          background-color: #fff;
-          border-radius: 50%;
-          box-shadow: 1px 1px 2px 0 rgb(0 0 0 / 40%);
-          transition: .3s;
-      }
-  
+        --------------------------- */
+.light-mode-button {
+  background: 0;
+  border: 0;
+  box-sizing: border-box;
+  cursor: pointer;
+  height: 40px;
+  width: 100px;
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0);
+}
+.light-mode-button:focus {
+  outline: none; /* Not ideal for accessibility */
+}
+.light-mode-button span:nth-child(1) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: #d6d7db;
+  box-shadow: inset 1px 1px 3px 0 rgb(0 0 0 / 40%);
+  transition: 0.3s;
+}
+.light-mode-button span:nth-child(2) {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 30px;
+  height: 30px;
+  background-color: #fff;
+  border-radius: 50%;
+  box-shadow: 1px 1px 2px 0 rgb(0 0 0 / 40%);
+  transition: 0.3s;
+}
+
 /* Light & Dark Mode Styles
---------------------------- */ 
+--------------------------- */
 /* body {
 background-color: #f6f6f6;
 transition: background-color .3s;
 } */
-body[light-mode=dark] {
-background-color: #140026;
-color: #ced4e2;
+body[light-mode='dark'] {
+  background-color: #140026;
+  color: #ced4e2;
 }
-body[light-mode="dark"] .light-mode-button span:nth-child(1){
-background-color: #ced4e2;
-color: #141516;
+body[light-mode='dark'] .light-mode-button span:nth-child(1) {
+  background-color: #ced4e2;
+  color: #141516;
 }
-body[light-mode=dark] .light-mode-button span:nth-child(2) {
-left: 65px;
-background-color: #141516;
+body[light-mode='dark'] .light-mode-button span:nth-child(2) {
+  left: 65px;
+  background-color: #141516;
 }
 
 .msg {
@@ -314,20 +319,20 @@ background-color: #141516;
   background: #ec4811;
   color: white;
   box-shadow: 0 10px 15px -3px rgb(149 149 162), 0 4px 6px -2px rgb(0 0 0 / 5%);
-  transition: transform ease-in-out .2s;
+  transition: transform ease-in-out 0.2s;
 }
 .show.msg {
-display: block;
-animation: fadeInAnimation ease 0.2s;
-animation-iteration-count: 1;
-animation-fill-mode: forwards;
+  display: block;
+  animation: fadeInAnimation ease 0.2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
 
 @keyframes fadeInAnimation {
-0% {
-  margin-top: -10%;
-}
-100% {
-margin-top: 3%;
-}
+  0% {
+    margin-top: -10%;
+  }
+  100% {
+    margin-top: 3%;
+  }
 }
