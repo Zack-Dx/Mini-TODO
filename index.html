@@ -12,6 +12,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+
     <title>Todo List using Javascript</title>
   </head>
   <body onload="showNotes()" class="light-mode">
@@ -22,49 +23,76 @@
           <h1>Blueberry KEEP📝</h1>
         </div>
         <!-- <button id="toggleDarkModeBtn" onclick="toggleDarkMode()">Dark mode</button> -->
-        <button	class="light-mode-button"	aria-label="Toggle Light Mode"	onclick="toggle_light_mode()"><span></span><span></span></button>
+        <button
+          class="light-mode-button"
+          aria-label="Toggle Light Mode"
+          onclick="toggle_light_mode()"
+        >
+          <span></span><span></span>
+        </button>
       </nav>
     </header>
-   
-    <!-- Welcome Section -->
-    <section class="welcome-message">
-      <h2>Welcome Folks!</h2>
-
-
-    </section>
-    <form id="container">
-      <div id="notebox">
-        <input type="text" id="note" placeholder="Enter your Note" value="" class="" />
-      </div>
-      <div class="buttons">
-        <button id="add" >Add note</button>
-      </div>
-      <br><br>
-    </form>
-<div id="mainbox">
-
-  </div>
+    <div class="area" id="area">
+      <!-- Welcome Section -->
+      <section class="welcome-message">
+        <h2>Welcome Folks!</h2>
+      </section>
+      <form id="container">
+        <div id="notebox">
+          <input
+            type="text"
+            id="note"
+            placeholder="Enter your Note"
+            value=""
+            class=""
+          />
+        </div>
+        <div class="buttons">
+          <button id="add">Add note</button>
+        </div>
+        <br /><br />
+      </form>
+      <div id="mainbox"></div>
+      <ul class="circles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
   </body>
   <script src="index.js"></script>
   <script>
     function toggle_light_mode() {
-        var app = document.getElementsByTagName("BODY")[0];
-        if (localStorage.lightMode == "dark") {
-      localStorage.lightMode = "light";
-      app.setAttribute("light-mode", "light");
-      showmsg('Light Mode Enabled.')
-    } else {
-      localStorage.lightMode = "dark";
-      app.setAttribute("light-mode", "dark");
-      showmsg('Dark Mode Enabled.')
-        }		
+      var app = document.getElementsByTagName("BODY")[0];
+      var area = document.getElementById("area");
+      if (localStorage.lightMode == "dark") {
+        localStorage.lightMode = "light";
+        area.style.background = "#ffffff";
+
+        app.setAttribute("light-mode", "light");
+        showmsg("Light Mode Enabled.");
+      } else {
+        localStorage.lightMode = "dark";
+        app.setAttribute("light-mode", "dark");
+        area.style.background = "#000000";
+        showmsg("Dark Mode Enabled.");
+      }
     }
 
     var maggio = document.querySelector("#msgbox");
-    function showmsg(txt){
-      document.getElementById('msgbox').innerText='✉ ' + txt;
-        maggio.classList.add('show');
-        setTimeout(function(){maggio.classList.remove('show')},3000);
-    };
-    </script>
+    function showmsg(txt) {
+      document.getElementById("msgbox").innerText = "✉ " + txt;
+      maggio.classList.add("show");
+      setTimeout(function () {
+        maggio.classList.remove("show");
+      }, 3000);
+    }
+  </script>
 </html>
