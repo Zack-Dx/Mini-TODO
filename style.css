@@ -69,6 +69,10 @@ body {
   letter-spacing: 2px;
 }
 
+#a-link {
+  text-decoration: none;
+}
+
 #container {
   padding: 50px;
 }
