@@ -7,6 +7,7 @@ let noteInput = document.getElementById("note");
 noteInput.addEventListener("click", function () {
   noteInput.classList.remove("show");
 });
+
 // (function () {
 //   isDarkMode = !(localStorage.getItem("isDarkMode") === "true");
 //   toggleDarkMode();
@@ -125,3 +126,9 @@ function edit(index) {
     showmsg('Note updated successfully.')
   }
 }
+
+// Time
+var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+var today = new Date();
+var date = today.toLocaleDateString("en-IN", options);
+document.getElementById('clock').innerText=date;

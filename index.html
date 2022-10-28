@@ -40,6 +40,9 @@
       <div class="buttons">
         <button id="add" >Add note</button>
       </div>
+      <div class="clock">
+        <p id="clock">Time</p>
+      </div>
       <br><br>
     </form>
 <div id="mainbox">
@@ -63,7 +66,7 @@
           if (!firstLoad) showmsg('Dark Mode Enabled.')
         }		
     }
-
+    
     var maggio = document.querySelector("#msgbox");
     function showmsg(txt){
       document.getElementById('msgbox').innerText='✉ ' + txt;
