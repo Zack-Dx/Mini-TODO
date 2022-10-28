@@ -34,8 +34,9 @@ formContainer.addEventListener("submit", event => {
     noteobj = []
   }
    else {
+
     noteobj = JSON.parse(notes);
-  }
+  
 
   if (addtxt.value != "") {
     noteobj.push(addtxt.value);
@@ -44,7 +45,7 @@ formContainer.addEventListener("submit", event => {
   else {
     // noInput.classList.add("show");
     showmsg('Please write something for your note before adding it ...')
-  }
+  }}
 
   localStorage.setItem("notes", JSON.stringify(noteobj));
   noteInput.value = ""
