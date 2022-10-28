@@ -15,7 +15,8 @@ body {
 }
 
 ::-webkit-scrollbar {
-  width: 16px;
+  width: 12px;
+  height: 12px;
 }
 
 ::-webkit-scrollbar-track {
@@ -68,6 +69,26 @@ body {
   letter-spacing: 2px;
 }
 
+#searchnote{
+  margin: -15px;
+  padding: 20px;
+  outline: none;
+  margin-left: 600px;
+  
+}
+#searching{
+  border: 2px solid lavender;
+  outline: none;
+  border-radius: 12px;
+  padding: 6px;
+}
+#searching:focus{
+  box-shadow: 0 0 4px #7e6ce4, 0 0 8px #7e6ce4, 0 0 12px #7e6ce4;
+}
+#searching:hover{
+  border: 2px solid rgb(96, 86, 203);
+  transition: all 0.25s ease;
+}
 #container {
   padding: 50px;
 }
@@ -77,6 +98,28 @@ body {
   border-radius: 6px;
   padding: 10px;
   text-align: center;
+}
+#notetitle {
+  position: sticky;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+}
+#notetit {
+  position: sticky;
+  border: 2px solid lavender;
+  outline: none;
+  border-radius: 20px;
+  padding: 10px;
+  text-align: center;
+}
+#notetit:focus{
+  box-shadow: 0 0 4px #7e6ce4, 0 0 8px #7e6ce4, 0 0 12px #7e6ce4;
+}
+
+#notetit:hover{
+  border: 2px solid rgb(96, 86, 203);
+  transition: all 0.25s ease;
 }
 
 #notebox input {
@@ -209,6 +252,7 @@ h5 {
 .light-mode .welcome-message  h2{
   color: #a35ae8;
   font-weight:900;
+  display: sticky;
 }
 .note-edit-heading{
   color: #a35ae8;
