@@ -13,7 +13,7 @@
 
 ## <a name="introduction">📌 Introduction</a>
 
-Mini-TODO is a Web Application made using HTML, CSS, and Javascript. It is easy to use application where the user can make notes on the go and Delete them whenever required.
+Mini-TODO is a Web Application made using HTML, CSS, and Javascript. It is easy to use application where the user can make notes on the go and delete them whenever required.
 
 Features of the application include:
 
