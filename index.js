@@ -5,7 +5,7 @@ let noInput = document.querySelector("#noInputText");
 let noteInput = document.getElementById("note");
 
 noteInput.addEventListener("click", function () {
-  noInput.classList.remove("show");
+  noteInput.classList.remove("show");
 });
 // (function () {
 //   isDarkMode = !(localStorage.getItem("isDarkMode") === "true");
@@ -34,13 +34,12 @@ formContainer.addEventListener("submit", event => {
     noteobj = []
   }
    else {
-    noteobj = JSON.parse(localStorage.getItem("notes"));
-    console.log('noteobj', noteobj);
+    noteobj = JSON.parse(notes);
   }
 
   if (addtxt.value != "") {
     noteobj.push(addtxt.value);
-    showmsg('Your Note Added successfully.')
+    showmsg('Your Note has been added successfully.')
   } 
   else {
     // noInput.classList.add("show");
@@ -49,6 +48,7 @@ formContainer.addEventListener("submit", event => {
 
   localStorage.setItem("notes", JSON.stringify(noteobj));
   noteInput.value = ""
+  console.log(notes);
 
   showNotes();
 
@@ -56,7 +56,6 @@ formContainer.addEventListener("submit", event => {
 
 function showNotes() {
   let notesobj = JSON.parse(localStorage.getItem("notes"));
-  console.log(notesobj);
 
   if (notesobj == null) {
     notesobj = [];
@@ -69,9 +68,9 @@ function showNotes() {
   notesobj.forEach(function (element, index) {
     html += `
       <div class="box" id="box-${index}" >
-        <h5>NOTE :${index + 1}</h5>
+        <h5>NOTE : ${index + 1} </h5>
         <div class="swappable">
-          <p>${element.toUpperCase()}</p>
+          <p>${element}</p>
         </div>
         <button id=delete onclick=deleted(${index})>Delete note</button>
         <button class=edit onclick=edit(${index})>Edit</button>
@@ -85,6 +84,7 @@ function showNotes() {
 }
 
 function deleted(index) {
+  
   let notes = localStorage.getItem("notes");
 
   if (notes == null) {
@@ -93,10 +93,13 @@ function deleted(index) {
   else {
     noteobj = JSON.parse(localStorage.getItem("notes"));
   }
-  noteobj.splice(index, 1);
+  if(confirm("Are you sure?")){
+    noteobj.splice(index, 1);
+  }
   localStorage.setItem("notes", JSON.stringify(noteobj));
+  console.log(notes);
   showNotes();
-  showmsg('Note Deleted successfully.')
+  showmsg('Note deleted successfully.')
   
 }
 function edit(index) {
@@ -122,7 +125,24 @@ function edit(index) {
     }
     noteobj[index]=noteElement.getElementsByTagName("input")[0].value;
     localStorage.setItem("notes", JSON.stringify(noteobj));
+    console.log(notes);
     showNotes();
-    showmsg('Note Saved successfully.')
+    showmsg('Note updated successfully.')
   }
 }
+
+let searchtext = document.getElementById('searching');
+searchtext.addEventListener("input", function(){
+   let inputvalue = searchtext.value.toLowerCase();
+   console.log(inputvalue);
+   let notecard = document.getElementsByClassName('box');
+   Array.from(notecard).forEach(function(element){
+    let cardtext = element.getElementsByTagName("p")[0].innerText;
+    if (cardtext.includes(inputvalue)) {
+      element.style.display = "block";
+    }  
+    else{
+      element.style.display = "none";
+    }
+   })
+ })
