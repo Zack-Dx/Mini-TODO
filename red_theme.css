@@ -19,7 +19,7 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background-color: rgb(236, 104, 104);
+  background-color: rgb(242, 125, 125);
 }
 
 ::-webkit-scrollbar-thumb{
@@ -157,7 +157,7 @@ h5 {
 
 @media (max-width: 1424px) {
   body {
-    background-color: rgb(199, 137, 137);
+    background-color: rgb(189, 130, 130);
   }
 
   #delete {
@@ -200,10 +200,10 @@ h5 {
 }
 
 .light-mode {
-  background-color: #f9dddd;
+  background-color: #fae8e8;
 }
 .light-mode header nav div h1{
-  color: #e85a5a;
+  color: #f86060;
   font-weight:900;
 }
 .light-mode .welcome-message  h2{
