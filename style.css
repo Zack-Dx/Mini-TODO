@@ -99,6 +99,11 @@ body {
   transition: all 0.25s ease;
 }
 
+#mode{
+  position: fixed;
+  right: 50px;
+}
+
 #add,
 #delete {
   margin: 10px 5px;

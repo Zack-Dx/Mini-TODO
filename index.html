@@ -30,9 +30,9 @@
     <!-- Welcome Section -->
     <section class="welcome-message">
       <h2>TO-DO LIST</h2>
-
-
+      <h3 id="mode">light</h3>
     </section>
+
     <form id="container">
       <div id="notebox">
         <input type="text" id="note" placeholder="Enter your Note" value="" class="" />
@@ -54,10 +54,12 @@
         if (check) {
           localStorage.lightMode = "light";
           app.setAttribute("light-mode", "light");
+          document.getElementById('mode').innerText="Light Mode";
           if (!firstLoad) showmsg('Light Mode Enabled.')
         } else {
           localStorage.lightMode = "dark";
           app.setAttribute("light-mode", "dark");
+          document.getElementById('mode').innerText="Dark Mode";
           if (!firstLoad) showmsg('Dark Mode Enabled.')
         }		
     }
