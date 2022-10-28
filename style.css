@@ -15,7 +15,8 @@ body {
 }
 
 ::-webkit-scrollbar {
-  width: 16px;
+  width: 12px;
+  height: 12px;
 }
 
 ::-webkit-scrollbar-track {
@@ -66,6 +67,10 @@ body {
 }
 #logo {
   letter-spacing: 2px;
+}
+
+#a-link {
+  text-decoration: none;
 }
 
 #container {
@@ -173,6 +178,32 @@ h5 {
   }
 }
 
+@media (max-width: 520px) {
+  #navbar {
+    align-items: center;
+  }
+  .light-mode header nav div h1 {
+    font-size: 21px;
+  }
+  .light-mode-button span:nth-child(1) {
+    width: 60px !important;
+    height: 25px !important;
+    top: 8px !important;
+  }
+  .light-mode-button span:nth-child(2) {
+    width: 16px !important;
+    height: 14px !important;
+    top: 13px !important;
+  }
+  .light-mode-button {
+    width: 50px !important;
+  }
+  body[light-mode="dark"] .light-mode-button span:nth-child(2) {
+    left: 40px !important;
+  }
+}
+
+
 .noInputText {
   visibility: hidden;
   color: #ea4b8b;
@@ -209,6 +240,7 @@ h5 {
 .light-mode .welcome-message  h2{
   color: #a35ae8;
   font-weight:900;
+  display: sticky;
 }
 .note-edit-heading{
   color: #a35ae8;

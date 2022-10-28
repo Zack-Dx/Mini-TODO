@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="https://camo.githubusercontent.com/fbec99eed4273705c07cdebcd31744b97df8ca7a6b8603bb246ba895820627e7/68747470733a2f2f686f74656d6f6a692e636f6d2f696d616765732f646c2f372f6d656d6f2d656d6f6a692d62792d676f6f676c652e706e67" type="image/icon type">
     <link rel="stylesheet" href="style.css" />
     <link
       rel="stylesheet"
@@ -19,7 +20,7 @@
     <header>
       <nav id="navbar">
         <div id="logo">
-          <h1>Blueberry KEEP📝</h1>
+          <h1><a href="index.html" id="a-link">Blueberry KEEP📝</a></h1>
         </div>
         <!-- <button id="toggleDarkModeBtn" onclick="toggleDarkMode()">Dark mode</button> -->
         <button	class="light-mode-button"	aria-label="Toggle Light Mode"	onclick="toggle_light_mode()"><span></span><span></span></button>
@@ -28,13 +29,13 @@
    
     <!-- Welcome Section -->
     <section class="welcome-message">
-      <h2>Welcome Folks!</h2>
+      <h2>TO-DO LIST</h2>
 
 
     </section>
     <form id="container">
       <div id="notebox">
-        <input type="text" id="note" placeholder="Enter your Note" value="" />
+        <input type="text" id="note" placeholder="Enter your Note" value="" class="" />
       </div>
       <div class="buttons">
         <button id="add" >Add note</button>
@@ -47,16 +48,17 @@
   </body>
   <script src="index.js"></script>
   <script>
-    function toggle_light_mode() {
+    function toggle_light_mode(firstLoad) {
         var app = document.getElementsByTagName("BODY")[0];
-        if (localStorage.lightMode == "dark") {
-      localStorage.lightMode = "light";
-      app.setAttribute("light-mode", "light");
-      showmsg('Light Mode Enabled.')
-    } else {
-      localStorage.lightMode = "dark";
-      app.setAttribute("light-mode", "dark");
-      showmsg('Dark Mode Enabled.')
+        const check = firstLoad ? localStorage.lightMode != "dark" : localStorage.lightMode == "dark";
+        if (check) {
+          localStorage.lightMode = "light";
+          app.setAttribute("light-mode", "light");
+          if (!firstLoad) showmsg('Light Mode Enabled.')
+        } else {
+          localStorage.lightMode = "dark";
+          app.setAttribute("light-mode", "dark");
+          if (!firstLoad) showmsg('Dark Mode Enabled.')
         }		
     }
 
@@ -66,5 +68,11 @@
         maggio.classList.add('show');
         setTimeout(function(){maggio.classList.remove('show')},3000);
     };
+    document.onreadystatechange = () => {
+      if (document.readyState === 'complete') {
+        console.log('Flipped!');
+        toggle_light_mode({});
+      }
+    }
     </script>
 </html>
