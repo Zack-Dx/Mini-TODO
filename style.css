@@ -8,6 +8,149 @@
   font-family: "Open Sans", sans-serif;
 }
 
+.context {
+  width: 100%;
+  position: absolute;
+  top: 50vh;
+
+}
+
+.context h1 {
+  text-align: center;
+  color: #fff;
+  font-size: 50px;
+}
+
+
+.area {
+  background: #ffffff;
+  background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);
+  width: 100%;
+  height: 100vh;
+
+
+}
+
+.circles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0.4;
+
+  height: 100%;
+  overflow: hidden;
+  color: #2196f3;
+}
+
+.circles li {
+  position: absolute;
+  display: block;
+
+  list-style: none;
+  width: 20px;
+  height: 20px;
+
+  background: #2196f3;
+  animation: animate 25s linear infinite;
+  bottom: -150px;
+
+}
+
+.circles li:nth-child(1) {
+  left: 25%;
+  width: 80px;
+  height: 80px;
+  animation-delay: 0s;
+}
+
+
+.circles li:nth-child(2) {
+  left: 10%;
+  width: 20px;
+  height: 20px;
+  animation-delay: 2s;
+  animation-duration: 12s;
+}
+
+.circles li:nth-child(3) {
+  left: 70%;
+  width: 20px;
+  height: 20px;
+  animation-delay: 4s;
+}
+
+.circles li:nth-child(4) {
+  left: 40%;
+  width: 60px;
+  height: 60px;
+  animation-delay: 0s;
+  animation-duration: 18s;
+}
+
+.circles li:nth-child(5) {
+  left: 65%;
+  width: 20px;
+  height: 20px;
+  animation-delay: 0s;
+}
+
+.circles li:nth-child(6) {
+  left: 75%;
+  width: 110px;
+  height: 110px;
+  animation-delay: 3s;
+}
+
+.circles li:nth-child(7) {
+  left: 35%;
+  width: 150px;
+  height: 150px;
+  animation-delay: 7s;
+}
+
+.circles li:nth-child(8) {
+  left: 50%;
+  width: 25px;
+  height: 25px;
+  animation-delay: 15s;
+  animation-duration: 45s;
+}
+
+.circles li:nth-child(9) {
+  left: 20%;
+  width: 15px;
+  height: 15px;
+  animation-delay: 2s;
+  animation-duration: 35s;
+}
+
+.circles li:nth-child(10) {
+  left: 85%;
+  width: 150px;
+  height: 150px;
+  animation-delay: 0s;
+  animation-duration: 11s;
+}
+
+
+
+@keyframes animate {
+
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+    border-radius: 100%;
+  }
+
+  100% {
+    transform: translateY(-1000px) rotate(720deg);
+    opacity: 0;
+    border-radius: 100%;
+  }
+
+}
+
 html,
 body {
   height: 100%;
@@ -23,12 +166,12 @@ body {
   background-color: rgb(138, 127, 255);
 }
 
-::-webkit-scrollbar-thumb{
+::-webkit-scrollbar-thumb {
   background: #4001a5;
   border-radius: 5px;
 }
 
-::-webkit-scrollbar-thumb:hover{
+::-webkit-scrollbar-thumb:hover {
   background: #210057;
 }
 
@@ -38,7 +181,7 @@ body {
   margin-top: 0;
   display: flex;
   justify-content: space-between;
-  align-items:flex-start;
+  align-items: flex-start;
   padding: 1rem 1.5rem;
   background: rgba(255, 255, 255, 0.1);
   color: white;
@@ -49,6 +192,7 @@ body {
   backdrop-filter: blur(5px);
   z-index: 15;
 }
+
 #toggleDarkModeBtn {
   margin-left: 30px;
   padding: 7px;
@@ -62,9 +206,11 @@ body {
   cursor: pointer;
   font-weight: bold;
 }
-#add{
+
+#add {
   width: 100px;
 }
+
 #logo {
   letter-spacing: 2px;
 }
@@ -90,7 +236,7 @@ body {
   margin: 10px;
 }
 
-#note:hover{
+#note:hover {
   border: 2px solid rgb(96, 86, 203);
   transition: all 0.25s ease;
 }
@@ -105,6 +251,7 @@ body {
   /* border: none; */
   border: 1px solid rgb(255, 249, 249);
 }
+
 .edit {
   margin: 10px 5px;
   padding: 5px 10px;
@@ -128,9 +275,11 @@ body {
 .buttons {
   text-align: center;
 }
-#note:focus{
+
+#note:focus {
   box-shadow: 0 0 4px #7e6ce4, 0 0 8px #7e6ce4, 0 0 12px #7e6ce4;
 }
+
 .box {
   display: inline-block;
   /* background: lavender; */
@@ -169,6 +318,7 @@ h5 {
   #container {
     padding: 20px;
   }
+
   .box {
     margin: 10px;
   }
@@ -180,7 +330,7 @@ h5 {
   text-align: center;
   border-radius: 6px;
   padding: 7px 5px;
-  margin: auto ;
+  margin: auto;
   font-size: large;
 }
 
@@ -191,115 +341,137 @@ h5 {
 }
 
 @-webkit-keyframes fadeIn {
-  from {opacity: 0;}
-  to {opacity: 2;}
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 2;
+  }
 }
 
 @keyframes fadeIn {
-  from {opacity: 0;}
-  to {opacity:2 ;}
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 2;
+  }
 }
 
 .light-mode {
   background-color: #E6E6FA;
 }
-.light-mode header nav div h1{
+
+.light-mode header nav div h1 {
   color: #a35ae8;
-  font-weight:900;
+  font-weight: 900;
 }
-.light-mode .welcome-message  h2{
+
+.light-mode .welcome-message h2 {
   color: #a35ae8;
-  font-weight:900;
+  font-weight: 900;
   display: sticky;
 }
-.note-edit-heading{
+
+.note-edit-heading {
   color: #a35ae8;
-  font-weight:900;
+  font-weight: 900;
 }
 
 
 .light-mode span.boxtext {
   color: black;
 }
-.dark-mode .welcome-message  h2{
+
+.dark-mode .welcome-message h2 {
   color: #eedcff;
-  font-weight:900;
+  font-weight: 900;
 }
 
 .dark-mode {
   background-color: rgb(0, 37, 63);
 }
+
 .dark-mode span.boxtext {
   color: white;
 }
 
-.welcome-message{
+.welcome-message {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 2rem;
 
 }
-.welcome-message h2{
+
+.welcome-message h2 {
   font-size: x-large;
   font-weight: 600;
 }
 
 /* Light Mode Button Styles
-        --------------------------- */ 
-        .light-mode-button {
-          background:0;
-          border: 0;
-          box-sizing: border-box;
-          cursor: pointer;
-          height: 40px;
-          width: 100px;
-          position: relative;
-          border: 1px solid rgba(255,255,255,0);
-      }
-      .light-mode-button:focus {
-          outline:none; /* Not ideal for accessibility */
-      }
-      .light-mode-button span:nth-child(1) {
-          position: absolute;
-          top:0;
-          left:0;
-          width: 100px;
-          height:40px;
-          border-radius: 20px;
-          background-color: #d6d7db;
-          box-shadow: inset 1px 1px 3px 0 rgb(0 0 0 / 40%);
-          transition: .3s;
-      }
-      .light-mode-button span:nth-child(2) {
-          position: absolute;
-          top:5px;
-          left:5px;
-          width: 30px;
-          height: 30px;
-          background-color: #fff;
-          border-radius: 50%;
-          box-shadow: 1px 1px 2px 0 rgb(0 0 0 / 40%);
-          transition: .3s;
-      }
-  
+        --------------------------- */
+.light-mode-button {
+  background: 0;
+  border: 0;
+  box-sizing: border-box;
+  cursor: pointer;
+  height: 40px;
+  width: 100px;
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0);
+}
+
+.light-mode-button:focus {
+  outline: none;
+  /* Not ideal for accessibility */
+}
+
+.light-mode-button span:nth-child(1) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: #d6d7db;
+  box-shadow: inset 1px 1px 3px 0 rgb(0 0 0 / 40%);
+  transition: .3s;
+}
+
+.light-mode-button span:nth-child(2) {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 30px;
+  height: 30px;
+  background-color: #fff;
+  border-radius: 50%;
+  box-shadow: 1px 1px 2px 0 rgb(0 0 0 / 40%);
+  transition: .3s;
+}
+
 /* Light & Dark Mode Styles
---------------------------- */ 
+--------------------------- */
 /* body {
 background-color: #f6f6f6;
 transition: background-color .3s;
 } */
 body[light-mode=dark] {
-background-color: #140026;
-color: #ced4e2;
+  background-color: #140026;
+  color: #ced4e2;
 }
-body[light-mode="dark"] .light-mode-button span:nth-child(1){
-background-color: #ced4e2;
-color: #141516;
+
+body[light-mode="dark"] .light-mode-button span:nth-child(1) {
+  background-color: #ced4e2;
+  color: #141516;
 }
+
 body[light-mode=dark] .light-mode-button span:nth-child(2) {
-left: 65px;
-background-color: #141516;
+  left: 65px;
+  background-color: #141516;
 }
 
 .msg {
@@ -318,18 +490,20 @@ background-color: #141516;
   box-shadow: 0 10px 15px -3px rgb(149 149 162), 0 4px 6px -2px rgb(0 0 0 / 5%);
   transition: transform ease-in-out .2s;
 }
+
 .show.msg {
-display: block;
-animation: fadeInAnimation ease 0.2s;
-animation-iteration-count: 1;
-animation-fill-mode: forwards;
+  display: block;
+  animation: fadeInAnimation ease 0.2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
 
 @keyframes fadeInAnimation {
-0% {
-  margin-top: -10%;
-}
-100% {
-margin-top: 3%;
-}
+  0% {
+    margin-top: -10%;
+  }
+
+  100% {
+    margin-top: 3%;
+  }
 }
