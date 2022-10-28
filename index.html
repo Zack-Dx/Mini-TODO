@@ -22,6 +22,9 @@
           <h1>Blueberry KEEP📝</h1>
         </div>
         <!-- <button id="toggleDarkModeBtn" onclick="toggleDarkMode()">Dark mode</button> -->
+        <div id="searchnote">
+          <input type="text" id="searching" placeholder="Search Note" value="" class="" />
+        </div>
         <button	class="light-mode-button"	aria-label="Toggle Light Mode"	onclick="toggle_light_mode()"><span></span><span></span></button>
       </nav>
     </header>
@@ -33,8 +36,11 @@
 
     </section>
     <form id="container">
+      <!-- <div id="notetitle" >
+        <input type="text" id="notetit" placeholder="Title" value="" class="" />
+      </div> -->
       <div id="notebox">
-        <input type="text" id="note" placeholder="Enter your Note" value="" />
+        <input type="text" id="note" name =placeholder="Enter your Note" value="" class="" />
       </div>
       <div class="buttons">
         <button id="add" >Add note</button>
