@@ -55,7 +55,6 @@ formContainer.addEventListener("submit", event => {
 
 function showNotes() {
   let notesobj = JSON.parse(localStorage.getItem("notes"));
-  
 
   if (notesobj == null) {
     notesobj = [];
