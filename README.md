@@ -35,9 +35,8 @@ Features of the application include:
 - Having difficulty in contributing? Read the [Contribution Guide](https://github.com/Zack-Dx/Mini-TODO/blob/master/CONTRIBUTING.md) for a detailed explanation.
 
 ## <a name='usage'>💻 Usage</a>
+
 ![image](https://user-images.githubusercontent.com/67597538/198573875-d16c8268-9f7b-4cd3-9187-32995461d0c2.png)
-
-
 
 ## <a name='contributors'>👥 Contributors</a>
 
