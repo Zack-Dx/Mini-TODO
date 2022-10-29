@@ -5,12 +5,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Open Sans', sans-serif;
-}
+  font-family:'Kalam', cursive,'Fuzzy Bubbles', cursive, 'Open Sans', sans-serif;
+  height: auto;
+  }
 
 html,
 body {
-  height: 100%;
+  height: 90%;
   width: 100%;
 }
 
@@ -90,9 +91,10 @@ body {
     transition: all 0.25s ease;
   }
 
-
 #a-link {
   text-decoration: none;
+  font-family:'Fuzzy Bubbles',cursive,'Indie Flower', cursive,'Island Moments', cursive,Georgia, 'Times New Roman', Times, serif;
+  font-size: 50px;
 }
 
 #container {
@@ -131,7 +133,7 @@ body {
   /* border: none; */
   border: 1px solid rgb(255, 249, 249);
 }
-.edit {
+.copy{
   margin: 10px 5px;
   padding: 5px 10px;
   border-radius: 25px;
@@ -140,17 +142,33 @@ body {
   /* border: none; */
   border: 1px solid rgb(255, 249, 249);
 }
+.edit {
+  margin: 10px 5px;
+  padding: 5px 10px;
+  border-radius: 25px;
+  outline: none;
+  cursor: pointer;
+  /* border: none; */
+  border: 1px solid rgb(255, 249, 249);
+  background-color: #c9ffda;
+}
 
 #add:hover,
 .edit:hover,
-#delete:hover {
+.copy:hover{
   background: #2196f3;
   color: white;
   box-shadow: 0 0 4px #2196f3, 0 0 8px #2196f3, 0 0 12px #2196f3;
   transition: 0.5s;
   transform: scale(1.05);
 }
-
+#delete:hover {
+  background: #ec4811;
+  color: white;
+  box-shadow: 0 0 4px #ec4811, 0 0 8px #ec4811, 0 0 12px #ec4811;
+  transition: 0.5s;
+  transform: scale(1.05);
+}
 .buttons {
   text-align: center;
 }
@@ -189,8 +207,8 @@ h5 {
   }
 
   #delete {
-    background-color: #2195f3ea;
-    color: rgb(255, 249, 249);
+    background-color: #ffb1b1ea;
+    color: rgb(0, 0, 0);
   }
 
   #container {
@@ -277,6 +295,9 @@ h5 {
 
 .light-mode {
   background-color: #e6e6fa;
+}
+#button_color{
+  background-color: #000;
 }
 .light-mode header nav div h1 {
   color: #a35ae8;
@@ -386,16 +407,16 @@ body[light-mode='dark'] .light-mode-button span:nth-child(2) {
   display: none;
   border-radius: 5px;
   font-size: 18px;
-  background: #ec4811;
+  background: #00a186;
   color: white;
   box-shadow: 0 10px 15px -3px rgb(149 149 162), 0 4px 6px -2px rgb(0 0 0 / 5%);
   transition: transform ease-in-out 0.2s;
 }
 .show.msg {
   display: block;
-  animation: fadeInAnimation ease 0.2s;
+  animation: fadeInAnimation ease 0.5s;
   animation-iteration-count: 1;
-  animation-fill-mode: forwards;
+  animation-fill-mode:forwards;
 }
 
 @keyframes fadeInAnimation {
