@@ -69,6 +69,7 @@ function showNotes() {
         </div>
         <button id=delete onclick=deleted(${index})>Delete note</button>
         <button class=edit onclick=edit(${index})>Edit</button>
+        <button class=edit onclick=copyText(${index})>Copy</button>
       </div>
     `;
   });
@@ -119,6 +120,14 @@ function edit(index) {
     showmsg('Note updated successfully.');
   }
 }
+
+function copyText(index) {
+  let noteobj = JSON.parse(localStorage.getItem('notes'));
+  let noteToCopy = noteobj[index];
+  navigator.clipboard.writeText(noteToCopy);
+  showmsg("Copied the note: " + noteToCopy);
+}
+
 
 let searchtext = document.getElementById('searching');
 searchtext.addEventListener("input", function(){
