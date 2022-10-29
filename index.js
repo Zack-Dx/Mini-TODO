@@ -66,13 +66,10 @@ function showNotes() {
         <h5>NOTE :${index + 1}</h5>
         <div class="swappable">
           <p id=myInput-${index}>${element}</p> 
-
         </div>
         <button class=copy  onclick=copy(${index})>Copy</button>
         <button class=edit onclick=edit(${index})>Edit</button>
-        <button id=delete onclick=deleted(${index})>Delete note</button>
-        
-        
+        <button id=delete onclick=deleted(${index})>Delete note</button> 
       </div>
     `;
   });
