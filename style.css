@@ -158,7 +158,7 @@ h5 {
   text-align: center;
 }
 footer{
-  position: absolute;
+  position: fixed;
   bottom: 0;
   width: 100%;
   min-height: 30px;
