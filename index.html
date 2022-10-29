@@ -24,7 +24,9 @@
       </div>
       <!-- <button id="toggleDarkModeBtn" onclick="toggleDarkMode()">Dark mode</button> -->
       <button class="light-mode-button" aria-label="Toggle Light Mode" onclick="toggle_light_mode()">
-        <span></span><span></span>
+
+        <span></span><span></i>
+          <i class="fas fa-moon"></i></span>
       </button>
     </nav>
   </header>
@@ -46,7 +48,6 @@
   </div>
   <br /><br />
   <div id="mainbox">
-
   </div>
   <footer>
     <section id="footer">
@@ -84,6 +85,7 @@
     if (check) {
       localStorage.lightMode = 'light';
       app.setAttribute('light-mode', 'light');
+
       if (!firstLoad) showmsg('Light Mode Enabled.');
     } else {
       localStorage.lightMode = 'dark';
