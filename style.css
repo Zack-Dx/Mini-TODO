@@ -68,13 +68,12 @@ body {
 #logo {
   letter-spacing: 2px;
 }
-
-
 #searchnote{
-    margin: -15px;
-    padding: 20px;
+    
     outline: none;
-    margin-left: 600px;
+    margin-left: auto;
+    margin-right: 10px;
+    margin-top: 4px;
     
   }
   #searching{
@@ -90,6 +89,7 @@ body {
     border: 2px solid rgb(96, 86, 203);
     transition: all 0.25s ease;
   }
+
 
 #a-link {
   text-decoration: none;
@@ -221,8 +221,23 @@ h5 {
   }
   body[light-mode='dark'] .light-mode-button span:nth-child(2) {
     left: 40px !important;
+    
+  }
+  #searching{
+    
+    height: 25px ;
+    width: 100px;
+    
   }
 }
+@media(max-width: 350px){
+    #searching{
+      
+      height: 20px ;
+      width: 60px;
+      
+    } 
+  }
 
 .noInputText {
   visibility: hidden;
@@ -388,4 +403,45 @@ body[light-mode='dark'] .light-mode-button span:nth-child(2) {
   100% {
     margin-top: 3%;
   }
+}
+#footer{
+  /* position: sticky; */
+  margin-top: 9rem;
+  bottom: 0;
+  margin-bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items:flex-start;
+  padding: 1.1rem 1.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  color: grey;
+  font-family: 'Montserrat', sans-serif;
+  box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  border-right: 1px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(5px);
+  z-index: 15;
+}
+.social-icons{
+  display: flex;
+  color: #a35ae8;
+  letter-spacing: 20px;
+  font-size: 24.5px;
+  
+}
+
+ 
+#linkedin:hover{
+
+color: #04669A;
+}
+#github:hover{
+  color: #000;
+}
+#twitter:hover{
+  color: #00acee;
+}
+#insta:hover{
+  color: 
+    #bc1888;
 }
