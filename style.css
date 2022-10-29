@@ -62,7 +62,7 @@ body {
   cursor: pointer;
   font-weight: bold;
 }
-#add {
+#add, #delete {
   width: 100px;
 }
 #logo {
@@ -75,6 +75,7 @@ body {
 
 #container {
   padding: 50px;
+  padding-bottom: 0px !important;
 }
 
 #notebox {
@@ -193,13 +194,23 @@ h5 {
     width: 16px !important;
     height: 14px !important;
     top: 13px !important;
+    display: grid;
   }
   .light-mode-button {
     width: 50px !important;
   }
+    i{
+  font-size: 10px !important;
+}
+/* .fa-moon {
+  color: #fff !important;
+  transition: 0.8s !important;
+  
+} */
   body[light-mode='dark'] .light-mode-button span:nth-child(2) {
     left: 40px !important;
   }
+
 }
 
 .noInputText {
@@ -290,6 +301,7 @@ h5 {
   width: 100px;
   position: relative;
   border: 1px solid rgba(255, 255, 255, 0);
+  
 }
 .light-mode-button:focus {
   outline: none; /* Not ideal for accessibility */
@@ -315,6 +327,14 @@ h5 {
   border-radius: 50%;
   box-shadow: 1px 1px 2px 0 rgb(0 0 0 / 40%);
   transition: 0.3s;
+}
+i{
+  font-size: 20px;
+}
+.fa-moon {
+  color: #fff;
+  transition: 0.8s;
+  padding-top:10%
 }
 
 /* Light & Dark Mode Styles

@@ -3,6 +3,7 @@
 let formContainer = document.querySelector('#container');
 let noInput = document.querySelector('#noInputText');
 let noteInput = document.getElementById('note');
+const deleteBtn = document.getElementsByClassName('delete-all')[0]
 
 noteInput.addEventListener('click', function () {
   noteInput.classList.remove('show');
@@ -49,6 +50,29 @@ formContainer.addEventListener('submit', (event) => {
 
   showNotes();
 });
+
+deleteBtn.addEventListener('click', () => {
+  const notes = localStorage.getItem("notes");
+  if (notes === null) {
+    showmsg("No notes to delete");
+    return;
+  }
+  Swal.fire({
+    title: 'Are you sure?',
+    text: "You won't be able to revert this!",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Yes, delete all notes!'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      localStorage.removeItem("notes");
+      showmsg('All notes deleted successfully.');
+      document.getElementById('mainbox').innerHTML = "";
+    }
+  })
+})
 
 function showNotes() {
   let notesobj = JSON.parse(localStorage.getItem('notes'));
@@ -100,9 +124,8 @@ function edit(index) {
   if (editButton.innerHTML == 'Edit') {
     swappableElement.innerHTML = `
       <div id="notebox">
-        <input type="text" id="note" value="${
-          noteElement.getElementsByTagName('p')[0].innerHTML
-        }" style="width:${noteElement.getElementsByTagName('p')[0].clientWidth + "px"}"/>
+        <input type="text" id="note" value="${noteElement.getElementsByTagName('p')[0].innerHTML
+      }" style="width:${noteElement.getElementsByTagName('p')[0].clientWidth + "px"}"/>
       </div>
     `;
     editButton.innerHTML = 'Save';
