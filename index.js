@@ -133,17 +133,14 @@ function edit(index) {
 let searchtext = document.getElementById('searching');
 searchtext.addEventListener("input", function(){
    let inputvalue = searchtext.value.toLowerCase();
-   console.log(inputvalue);
    let notecard = document.getElementsByClassName('box');
    Array.from(notecard).forEach(function(element){
-    let cardtext = element.getElementsByTagName("p")[0].innerText;
+    let cardtext = element.getElementsByTagName('div')[0].getElementsByTagName("p")[0].innerText.toLowerCase();
     if (cardtext.includes(inputvalue)) {
-      element.style.display = "block";
-      
+      element.style.display = "inline-block";
     }  
     else{
       element.style.display = "none";
     }
-    
    })
  })
