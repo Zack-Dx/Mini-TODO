@@ -1,7 +1,7 @@
 <div align="center">
     <img style="background-color: black" src="https://hotemoji.com/images/dl/7/memo-emoji-by-google.png" width="10%">
     <h2 align="center" style="margin-top: -12px">Mini-TODO</h2>
-    <h3>An opensource todo app made with html,css and javascript</h3>
+    <h3>An Opensource TODO Website made using HTML, CSS and JavaScript.</h3>
 </div>
 
 <p align="center">
@@ -11,10 +11,10 @@
 </p>
 
 <p align="center">
-  <a href="#introduction">Introduction</a> •
-  <a href="https://github.com/Zack-Dx/Mini-TODO/blob/master/CONTRIBUTING.md">Contributing Guide</a> •
-  <a href="#contributors">Contributors</a> •
-  <a href="#usage">Usage</a>
+  <a href="#introduction"><b>Introduction</b></a> •
+  <a href="https://github.com/Zack-Dx/Mini-TODO/blob/master/CONTRIBUTING.md"><b>Contributing Guide</b></a> •
+  <a href="#contributors"><b>Contributors</b></a> •
+  <a href="#usage"><b>Usage</b></a>
 </p>
 
 ## <a name="introduction">📌 Introduction</a>
