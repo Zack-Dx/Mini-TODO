@@ -85,13 +85,10 @@ function deleted(index) {
   } else {
     noteobj = JSON.parse(localStorage.getItem('notes'));
   }
-  if(confirm("Are you sure?")){
-    noteobj.splice(index, 1);
-    showmsg('Note deleted successfully.');
-  }
+  noteobj.splice(index, 1);
   localStorage.setItem('notes', JSON.stringify(noteobj));
   showNotes();
-  
+  showmsg('Note deleted successfully.');
 }
 function edit(index) {
   // edits the value to the value in text area
@@ -105,7 +102,7 @@ function edit(index) {
       <div id="notebox">
         <input type="text" id="note" value="${
           noteElement.getElementsByTagName('p')[0].innerHTML
-        }" />
+        }" style="width:${noteElement.getElementsByTagName('p')[0].clientWidth + "px"}"/>
       </div>
     `;
     editButton.innerHTML = 'Save';
@@ -132,9 +129,11 @@ searchtext.addEventListener("input", function(){
     let cardtext = element.getElementsByTagName("p")[0].innerText;
     if (cardtext.includes(inputvalue)) {
       element.style.display = "block";
+      
     }  
     else{
       element.style.display = "none";
     }
+    
    })
  })
