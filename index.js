@@ -1,11 +1,11 @@
 //Add note
 
-let formContainer = document.querySelector("#container");
-let noInput = document.querySelector("#noInputText");
-let noteInput = document.getElementById("note");
+let formContainer = document.querySelector('#container');
+let noInput = document.querySelector('#noInputText');
+let noteInput = document.getElementById('note');
 
-noteInput.addEventListener("click", function () {
-  noteInput.classList.remove("show");
+noteInput.addEventListener('click', function () {
+  noteInput.classList.remove('show');
 });
 
 /* 
@@ -28,46 +28,42 @@ noteInput.addEventListener("click", function () {
   }
 */
 
-formContainer.addEventListener("submit", event => {
-  event.preventDefault()
+formContainer.addEventListener('submit', (event) => {
+  event.preventDefault();
   let noteobj = [];
-  let addtxt = document.getElementById("note");
-  let notes = localStorage.getItem("notes");
+  let addtxt = document.getElementById('note');
+  let notes = localStorage.getItem('notes');
 
   if (notes == null) {
-    noteobj = []
-  }
-   else {
-    noteobj = JSON.parse(localStorage.getItem("notes"));
+    noteobj = [];
+  } else {
+    noteobj = JSON.parse(localStorage.getItem('notes'));
   }
 
-  if (addtxt.value != "") {
+  if (addtxt.value != '') {
     noteobj.push(addtxt.value);
-    showmsg('Your Note has been added successfully.')
-  } 
-  else {
+    showmsg('Your Note has been added successfully.');
+  } else {
     // noInput.classList.add("show");
-    showmsg('Please write something for your note before adding it ...')
+    showmsg('Please write something for your note before adding it ...');
   }
 
-  localStorage.setItem("notes", JSON.stringify(noteobj));
-  noteInput.value = ""
+  localStorage.setItem('notes', JSON.stringify(noteobj));
+  noteInput.value = '';
 
   showNotes();
-
 });
 
 function showNotes() {
-  let notesobj = JSON.parse(localStorage.getItem("notes"));
+  let notesobj = JSON.parse(localStorage.getItem('notes'));
 
   if (notesobj == null) {
     notesobj = [];
-  } 
-  else {
-    notesobj = JSON.parse(localStorage.getItem("notes"));
+  } else {
+    notesobj = JSON.parse(localStorage.getItem('notes'));
   }
 
-  let html = "";
+  let html = '';
   notesobj.forEach(function (element, index) {
     html += `
       <div class="box" id="box-${index}" >
@@ -81,30 +77,26 @@ function showNotes() {
     `;
   });
 
-  let box = document.getElementById("mainbox");
+  let box = document.getElementById('mainbox');
   box.innerHTML = html;
-
 }
 
 function deleted(index) {
-  
-  let notes = localStorage.getItem("notes");
+  let notes = localStorage.getItem('notes');
 
   if (notes == null) {
     noteobj = [];
-  } 
-  else {
-    noteobj = JSON.parse(localStorage.getItem("notes"));
+  } else {
+    noteobj = JSON.parse(localStorage.getItem('notes'));
   }
   noteobj.splice(index, 1);
-  localStorage.setItem("notes", JSON.stringify(noteobj));
+  localStorage.setItem('notes', JSON.stringify(noteobj));
   showNotes();
-  showmsg('Note deleted successfully.')
-  
+  showmsg('Note deleted successfully.');
 }
 function edit(index) {
   // edits the value to the value in text area
-  let notes = localStorage.getItem("notes");
+  let notes = localStorage.getItem('notes');
   const noteElement = document.getElementById(`box-${index}`);
   const swappableElement = noteElement.getElementsByClassName('swappable')[0];
   const editButton = noteElement.getElementsByClassName('edit')[0];
@@ -112,20 +104,22 @@ function edit(index) {
   if (editButton.innerHTML == 'Edit') {
     swappableElement.innerHTML = `
       <div id="notebox">
-        <input type="text" id="note" value="${noteElement.getElementsByTagName('p')[0].innerHTML}" />
+        <input type="text" id="note" value="${
+          noteElement.getElementsByTagName('p')[0].innerHTML
+        }" style="width:${noteElement.getElementsByTagName('p')[0].clientWidth + "px"}"/>
       </div>
-    `
+    `;
     editButton.innerHTML = 'Save';
-    showmsg('Note in Edit Mode.')
+    showmsg('Note in Edit Mode.');
   } else {
     if (notes == null) {
       noteobj = [];
     } else {
-      noteobj = JSON.parse(localStorage.getItem("notes"));
+      noteobj = JSON.parse(localStorage.getItem('notes'));
     }
-    noteobj[index]=noteElement.getElementsByTagName("input")[0].value;
-    localStorage.setItem("notes", JSON.stringify(noteobj));
+    noteobj[index] = noteElement.getElementsByTagName('input')[0].value;
+    localStorage.setItem('notes', JSON.stringify(noteobj));
     showNotes();
-    showmsg('Note updated successfully.')
+    showmsg('Note updated successfully.');
   }
 }
