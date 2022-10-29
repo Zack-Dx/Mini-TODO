@@ -116,7 +116,7 @@ h2{
   /* border: none; */
   border: 1px solid rgb(255, 249, 249);
 }
-.edit {
+.copy{
   margin: 10px 5px;
   padding: 5px 10px;
   border-radius: 25px;
@@ -125,17 +125,33 @@ h2{
   /* border: none; */
   border: 1px solid rgb(255, 249, 249);
 }
+.edit {
+  margin: 10px 5px;
+  padding: 5px 10px;
+  border-radius: 25px;
+  outline: none;
+  cursor: pointer;
+  /* border: none; */
+  border: 1px solid rgb(255, 249, 249);
+  background-color: #c9ffda;
+}
 
 #add:hover,
 .edit:hover,
-#delete:hover {
+.copy:hover{
   background: #2196f3;
   color: white;
   box-shadow: 0 0 4px #2196f3, 0 0 8px #2196f3, 0 0 12px #2196f3;
   transition: 0.5s;
   transform: scale(1.05);
 }
-
+#delete:hover {
+  background: #f32121;
+  color: white;
+  box-shadow: 0 0 4px #f32121, 0 0 8px #f32121, 0 0 12px #f32121;
+  transition: 0.5s;
+  transform: scale(1.05);
+}
 .buttons {
   text-align: center;
 }
@@ -172,8 +188,8 @@ h5 {
   }
 
   #delete {
-    background-color: #2195f3ea;
-    color: rgb(255, 249, 249);
+    background-color: #ffb1b1ea;
+    color: rgb(0, 0, 0);
   }
 
   #container {

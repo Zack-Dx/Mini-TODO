@@ -65,11 +65,13 @@ function showNotes() {
       <div class="box" id="box-${index}" >
         <h5>NOTE :${index + 1}</h5>
         <div class="swappable">
-          <p id=myInput>${element}</p> 
+          <p id=myInput-${index}>${element}</p> 
         </div>
-        <button id=delete onclick=deleted(${index})>Delete note</button>
-        <button class=edit onclick=edit(${index})>Edit</button>
         <button class=copy  onclick=copy(${index})>Copy</button>
+        <button class=edit onclick=edit(${index})>Edit</button>
+        <button id=delete onclick=deleted(${index})>Delete note</button>
+        
+        
       </div>
     `;
   });
@@ -77,21 +79,15 @@ function showNotes() {
   let box = document.getElementById('mainbox');
   box.innerHTML = html;
 }
-function copy(index) {
-  if (notes == null) {
-    noteobj = [];
-  } else {
-    noteobj = JSON.parse(localStorage.getItem('notes'));
-  }
-  var copyText = document.getElementsByClassName("copy");
-  showmsg('Note coppied successfully.');
-  /* Select the text field */
-  copyText.select();
-  copyText.setSelectionRange(0, 99999); /* For mobile devices */
 
-   /* Copy the text inside the text field */
-  navigator.clipboard.writeText(noteobj);
-  
+function copy(index) {
+  var range = document.createRange();
+  range.selectNode(document.getElementById(`myInput-${index}`));
+  window.getSelection().removeAllRanges(); // clear current selection
+  window.getSelection().addRange(range); // to select text
+  document.execCommand("copy");
+  window.getSelection().removeAllRanges();// to deselect
+  showmsg(`Coppied Note : ${index+1}`);
 }
 function deleted(index) {
   let notes = localStorage.getItem('notes');
