@@ -386,25 +386,25 @@ footer .wave{
   z-index: -15;
 }
 footer .wave#wave1{
-  z-index: 1;
+  z-index: -1;
   opacity: 1;
   bottom: 0;
   animation: animateWave 6s linear infinite;
 }
 footer .wave#wave2{
-  z-index: 2;
+  z-index: -2;
   opacity: 0.4;
   bottom: 10px;
   animation: animateWave 3s linear infinite;
 }
 footer .wave#wave3{
-  z-index: 3;
+  z-index: -3;
   opacity: 0.2;
   bottom: 15px;
   animation: animateWave 4s linear infinite;
 }
 footer .wave#wave4{
-  z-index: 3;
+  z-index: -3;
   opacity: 0.8;
   bottom: 20px;
   animation: animateWave_02 2s linear infinite;
@@ -437,7 +437,7 @@ footer .wave#wave4{
   font-family: 'Montserrat', sans-serif;
   border-bottom: 1px solid rgba(255, 255, 255, 0);
   border-right: 1px solid rgba(255, 255, 255, 0);
-  z-index: 15;
+  z-index: 100;
 }
 .social-icons{
   display: flex;
