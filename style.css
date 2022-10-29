@@ -68,6 +68,28 @@ body {
 #logo {
   letter-spacing: 2px;
 }
+#searchnote{
+    
+    outline: none;
+    margin-left: auto;
+    margin-right: 10px;
+    margin-top: 4px;
+    
+  }
+  #searching{
+    border: 2px solid lavender;
+    outline: none;
+    border-radius: 12px;
+    padding: 6px;
+  }
+  #searching:focus{
+    box-shadow: 0 0 4px #7e6ce4, 0 0 8px #7e6ce4, 0 0 12px #7e6ce4;
+  }
+  #searching:hover{
+    border: 2px solid rgb(96, 86, 203);
+    transition: all 0.25s ease;
+  }
+
 
 #a-link {
   text-decoration: none;
@@ -199,8 +221,23 @@ h5 {
   }
   body[light-mode='dark'] .light-mode-button span:nth-child(2) {
     left: 40px !important;
+    
+  }
+  #searching{
+    
+    height: 25px ;
+    width: 100px;
+    
   }
 }
+@media(max-width: 350px){
+    #searching{
+      
+      height: 20px ;
+      width: 60px;
+      
+    } 
+  }
 
 .noInputText {
   visibility: hidden;

@@ -65,7 +65,7 @@ function showNotes() {
       <div class="box" id="box-${index}" >
         <h5>NOTE :${index + 1}</h5>
         <div class="swappable">
-          <p>${element.toUpperCase()}</p>
+          <p>${element}</p>
         </div>
         <button id=delete onclick=deleted(${index})>Delete note</button>
         <button class=edit onclick=edit(${index})>Edit</button>
@@ -119,3 +119,21 @@ function edit(index) {
     showmsg('Note updated successfully.');
   }
 }
+
+let searchtext = document.getElementById('searching');
+searchtext.addEventListener("input", function(){
+   let inputvalue = searchtext.value.toLowerCase();
+   console.log(inputvalue);
+   let notecard = document.getElementsByClassName('box');
+   Array.from(notecard).forEach(function(element){
+    let cardtext = element.getElementsByTagName("p")[0].innerText;
+    if (cardtext.includes(inputvalue)) {
+      element.style.display = "block";
+      
+    }  
+    else{
+      element.style.display = "none";
+    }
+    
+   })
+ })
