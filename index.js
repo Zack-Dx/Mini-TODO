@@ -4,6 +4,14 @@ let formContainer = document.querySelector('#container');
 let noInput = document.querySelector('#noInputText');
 let noteInput = document.getElementById('note');
 
+function putInfoIntoNoteobj(notes){
+  if (notes == null) {
+    return [];
+  } else {
+    return JSON.parse(localStorage.getItem('notes'));
+  }
+}
+
 noteInput.addEventListener('click', function () {
   noteInput.classList.remove('show');
 });
@@ -30,11 +38,7 @@ formContainer.addEventListener('submit', (event) => {
   let addtxt = document.getElementById('note');
   let notes = localStorage.getItem('notes');
 
-  if (notes == null) {
-    noteobj = [];
-  } else {
-    noteobj = JSON.parse(localStorage.getItem('notes'));
-  }
+  noteobj = putInfoIntoNoteobj(notes);
 
   if (addtxt.value != '') {
     noteobj.push(addtxt.value);
@@ -80,11 +84,7 @@ function showNotes() {
 function deleted(index) {
   let notes = localStorage.getItem('notes');
 
-  if (notes == null) {
-    noteobj = [];
-  } else {
-    noteobj = JSON.parse(localStorage.getItem('notes'));
-  }
+  noteobj = putInfoIntoNoteobj(notes);
   noteobj.splice(index, 1);
   localStorage.setItem('notes', JSON.stringify(noteobj));
   showNotes();
@@ -108,11 +108,7 @@ function edit(index) {
     editButton.innerHTML = 'Save';
     showmsg('Note in Edit Mode.');
   } else {
-    if (notes == null) {
-      noteobj = [];
-    } else {
-      noteobj = JSON.parse(localStorage.getItem('notes'));
-    }
+    noteobj = putInfoIntoNoteobj(notes);
     noteobj[index] = noteElement.getElementsByTagName('input')[0].value;
     localStorage.setItem('notes', JSON.stringify(noteobj));
     showNotes();
