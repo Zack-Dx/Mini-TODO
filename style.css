@@ -370,7 +370,7 @@ body[light-mode='dark'] .light-mode-button span:nth-child(2) {
   }
 }
 footer{
-  position: fixed;
+  position: relative;
   bottom: 0;
   width: 100%;
   min-height: 30px;
