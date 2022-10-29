@@ -87,7 +87,7 @@ function copy(index) {
   window.getSelection().addRange(range); // to select text
   document.execCommand("copy");
   window.getSelection().removeAllRanges();// to deselect
-  showmsg(`Coppied Note : ${index+1}`);
+  showmsg(`Note-${index+1} coppied successfully`);
 }
 function deleted(index) {
   let notes = localStorage.getItem('notes');

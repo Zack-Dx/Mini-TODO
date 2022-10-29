@@ -146,9 +146,9 @@ h2{
   transform: scale(1.05);
 }
 #delete:hover {
-  background: #f32121;
+  background: #ec4811;
   color: white;
-  box-shadow: 0 0 4px #f32121, 0 0 8px #f32121, 0 0 12px #f32121;
+  box-shadow: 0 0 4px #ec4811, 0 0 8px #ec4811, 0 0 12px #ec4811;
   transition: 0.5s;
   transform: scale(1.05);
 }
@@ -373,7 +373,7 @@ body[light-mode='dark'] .light-mode-button span:nth-child(2) {
   display: none;
   border-radius: 5px;
   font-size: 18px;
-  background: #ec4811;
+  background: #00a186;
   color: white;
   box-shadow: 0 10px 15px -3px rgb(149 149 162), 0 4px 6px -2px rgb(0 0 0 / 5%);
   transition: transform ease-in-out 0.2s;
