@@ -154,7 +154,9 @@ h5 {
 #mainbox {
   padding: 45px;
   display: block;
+  position: relative;
   text-align: center;
+  z-index: 200;
 }
 
 /* Responsive Code */
@@ -381,27 +383,28 @@ footer .wave{
   background: url('footer/wave.png');
   background-size: 1000px 100px;
   opacity: 0.7;
+  z-index: -15;
 }
 footer .wave#wave1{
-  z-index: -1;
+  z-index: 1;
   opacity: 1;
   bottom: 0;
   animation: animateWave 6s linear infinite;
 }
 footer .wave#wave2{
-  z-index: -2;
+  z-index: 2;
   opacity: 0.4;
   bottom: 10px;
   animation: animateWave 3s linear infinite;
 }
 footer .wave#wave3{
-  z-index: -3;
+  z-index: 3;
   opacity: 0.2;
   bottom: 15px;
   animation: animateWave 4s linear infinite;
 }
 footer .wave#wave4{
-  z-index: -4;
+  z-index: 3;
   opacity: 0.8;
   bottom: 20px;
   animation: animateWave_02 2s linear infinite;
@@ -441,7 +444,7 @@ footer .wave#wave4{
   color: #7b46ac;
   letter-spacing: 20px;
   font-size: 24.5px;
-  z-index: 1;
+  z-index: 20;
   
 }
 
