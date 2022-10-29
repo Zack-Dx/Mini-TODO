@@ -65,11 +65,11 @@ function showNotes() {
       <div class="box" id="box-${index}" >
         <h5>NOTE :${index + 1}</h5>
         <div class="swappable">
-          <p>${element.toUpperCase()}</p>
+          <p id=myInput>${element}</p> 
         </div>
         <button id=delete onclick=deleted(${index})>Delete note</button>
         <button class=edit onclick=edit(${index})>Edit</button>
-        <button class=edit onclick=copy(${index})>Copy</button>
+        <button class=copy  onclick=copy(${index})>Copy</button>
       </div>
     `;
   });
@@ -77,18 +77,21 @@ function showNotes() {
   let box = document.getElementById('mainbox');
   box.innerHTML = html;
 }
-function deleted(index) {
-  let notes = localStorage.getItem('notes');
-
+function copy(index) {
   if (notes == null) {
     noteobj = [];
   } else {
     noteobj = JSON.parse(localStorage.getItem('notes'));
   }
-  noteobj.splice(index, 1);
-  localStorage.setItem('notes', JSON.stringify(noteobj));
-  showNotes();
-  showmsg('Note deleted successfully.');
+  var copyText = document.getElementsByClassName("copy");
+  showmsg('Note coppied successfully.');
+  /* Select the text field */
+  copyText.select();
+  copyText.setSelectionRange(0, 99999); /* For mobile devices */
+
+   /* Copy the text inside the text field */
+  navigator.clipboard.writeText(noteobj);
+  
 }
 function deleted(index) {
   let notes = localStorage.getItem('notes');
