@@ -9,11 +9,14 @@
   height: auto;
   }
 
-html,
 body {
-  height: 90%;
-  width: 100%;
+  height: 100%;
 }
+
+html { 
+  position:relative;
+  min-height:100%;
+ }
 
 ::-webkit-scrollbar {
   width: 12px;
@@ -189,6 +192,7 @@ h5 {
 
 #mainbox {
   padding: 45px;
+  margin-bottom: 16%;
   display: block;
   position: relative;
   text-align: center;
@@ -419,12 +423,13 @@ body[light-mode='dark'] .light-mode-button span:nth-child(2) {
     margin-top: 3%;
   }
 }
-footer{
-  position: relative;
+footer {
+  position: absolute;
   bottom: 0;
   width: 100%;
   min-height: 30px;
 }
+
 footer .wave{
   position: absolute;
   left: 0;
@@ -476,7 +481,6 @@ footer .wave#wave4{
   }
 }
 #footer{
-  /* position: sticky; */
   margin-top: 9rem;
   bottom: 0;
   margin-bottom: 0;
