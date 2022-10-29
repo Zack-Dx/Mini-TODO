@@ -102,7 +102,7 @@ function edit(index) {
       <div id="notebox">
         <input type="text" id="note" value="${
           noteElement.getElementsByTagName('p')[0].innerHTML
-        }" />
+        }" style="width:${noteElement.getElementsByTagName('p')[0].clientWidth + "px"}"/>
       </div>
     `;
     editButton.innerHTML = 'Save';
