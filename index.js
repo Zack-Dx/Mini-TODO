@@ -126,12 +126,9 @@ searchtext.addEventListener("input", function(){
     let cardtext = element.getElementsByTagName("p")[0].innerText;
     if (cardtext.includes(inputvalue)) {
       element.style.display = "block";
-
     }  
     else{
       element.style.display = "none";
     }
-
    })
  })
- 
