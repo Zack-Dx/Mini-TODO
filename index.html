@@ -17,6 +17,16 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles&family=Indie+Flower&family=Kalam:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Island+Moments&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+
     <title>Todo List using Javascript</title>
   </head>
   <body onload="showNotes()" class="light-mode">
@@ -24,12 +34,12 @@
     <header>
       <nav id="navbar">
         <div id="logo">
-          <h1><a href="index.html" id="a-link">Blueberry KEEP📝</a></h1>
+          <h1><a href="index.html" id="a-link">Blueberry Keep📝</a></h1>
         </div>
         <div id="searchnote">
             <input type="text" id="searching" placeholder="Search Note" value="" class="" />
           </div>
-        <button
+        <button>
           class="light-mode-button"
           aria-label="Toggle Light Mode"
           onclick="toggle_light_mode()"
@@ -99,10 +109,12 @@
       if (check) {
         localStorage.lightMode = 'light';
         app.setAttribute('light-mode', 'light');
+        app.setAttribute('button_color', 'dark');
         if (!firstLoad) showmsg('Light Mode Enabled.');
       } else {
         localStorage.lightMode = 'dark';
         app.setAttribute('light-mode', 'dark');
+        app.setAttribute('button_color', 'light');
         if (!firstLoad) showmsg('Dark Mode Enabled.');
       }
     }
