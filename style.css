@@ -1,11 +1,11 @@
 /*Fonts*/
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 html,
@@ -23,12 +23,12 @@ body {
   background-color: rgb(138, 127, 255);
 }
 
-::-webkit-scrollbar-thumb{
+::-webkit-scrollbar-thumb {
   background: #4001a5;
   border-radius: 5px;
 }
 
-::-webkit-scrollbar-thumb:hover{
+::-webkit-scrollbar-thumb:hover {
   background: #210057;
 }
 
@@ -38,7 +38,7 @@ body {
   margin-top: 0;
   display: flex;
   justify-content: space-between;
-  align-items:flex-start;
+  align-items: flex-start;
   padding: 1rem 1.5rem;
   background: rgba(255, 255, 255, 0.1);
   color: white;
@@ -55,14 +55,14 @@ body {
 
   width: 120px;
   font-size: 1.1rem;
-  font-family: "Varela Round", sans-serif;
+  font-family: 'Varela Round', sans-serif;
   color: rgb(23, 26, 57);
   background-color: rgb(168, 160, 242);
   border-radius: 10px;
   cursor: pointer;
   font-weight: bold;
 }
-#add{
+#add {
   width: 100px;
 }
 #logo {
@@ -94,7 +94,7 @@ body {
   margin: 10px;
 }
 
-#note:hover{
+#note:hover {
   border: 2px solid rgb(96, 86, 203);
   transition: all 0.25s ease;
 }
@@ -132,7 +132,7 @@ body {
 .buttons {
   text-align: center;
 }
-#note:focus{
+#note:focus {
   box-shadow: 0 0 4px #7e6ce4, 0 0 8px #7e6ce4, 0 0 12px #7e6ce4;
 }
 .box {
@@ -149,7 +149,6 @@ body {
 .box p,
 h5 {
   margin: 10px;
-
 }
 
 #mainbox {
@@ -157,62 +156,7 @@ h5 {
   display: block;
   text-align: center;
 }
-footer{
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  min-height: 30px;
-}
-footer .wave{
-  position: absolute;
-  top: -50px;
-  left: 0;
-  width: 100%;
-  height: 80px;
-  background: url('footer/wave.png');
-  background-size: 1000px 100px;
-  opacity: 0.7;
-}
-footer .wave#wave1{
-  z-index: 1000;
-  opacity: 1;
-  bottom: 0;
-  animation: animateWave 6s linear infinite;
-}
-footer .wave#wave2{
-  z-index: 999;
-  opacity: 0.5;
-  bottom: 10px;
-  animation: animateWave 3s linear infinite;
-}
-footer .wave#wave3{
-  z-index: 1000;
-  opacity: 0.4;
-  bottom: 15px;
-  animation: animateWave 4s linear infinite;
-}
-footer .wave#wave4{
-  z-index: 1000;
-  opacity: 1;
-  bottom: 20px;
-  animation: animateWave_02 2s linear infinite;
-}
-@keyframes animateWave{
-  0%{
-    background-position-x: 1000px;
-  }
-  100%{
-    background-position-x: 0;
-  }
-}
-@keyframes animateWave_02{
-  0%{
-    background-position-x: 0;
-  }
-  100%{
-    background-position-x: 1000px;
-  }
-}
+
 /* Responsive Code */
 
 @media (max-width: 1424px) {
@@ -253,11 +197,10 @@ footer .wave#wave4{
   .light-mode-button {
     width: 50px !important;
   }
-  body[light-mode="dark"] .light-mode-button span:nth-child(2) {
+  body[light-mode='dark'] .light-mode-button span:nth-child(2) {
     left: 40px !important;
   }
 }
-
 
 .noInputText {
   visibility: hidden;
@@ -265,50 +208,57 @@ footer .wave#wave4{
   text-align: center;
   border-radius: 6px;
   padding: 7px 5px;
-  margin: auto ;
+  margin: auto;
   font-size: large;
 }
 
 .show {
   visibility: visible;
   -webkit-animation: fadeIn 1s;
-  animation: fadeIn 1s
+  animation: fadeIn 1s;
 }
 
 @-webkit-keyframes fadeIn {
-  from {opacity: 0;}
-  to {opacity: 2;}
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 2;
+  }
 }
 
 @keyframes fadeIn {
-  from {opacity: 0;}
-  to {opacity:2 ;}
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 2;
+  }
 }
 
 .light-mode {
-  background-color: #E6E6FA;
+  background-color: #e6e6fa;
 }
-.light-mode header nav div h1{
+.light-mode header nav div h1 {
   color: #a35ae8;
-  font-weight:900;
+  font-weight: 900;
 }
-.light-mode .welcome-message  h2{
+.light-mode .welcome-message h2 {
   color: #a35ae8;
-  font-weight:900;
+  font-weight: 900;
   display: sticky;
 }
-.note-edit-heading{
+.note-edit-heading {
   color: #a35ae8;
-  font-weight:900;
+  font-weight: 900;
 }
-
 
 .light-mode span.boxtext {
   color: black;
 }
-.dark-mode .welcome-message  h2{
+.dark-mode .welcome-message h2 {
   color: #eedcff;
-  font-weight:900;
+  font-weight: 900;
 }
 
 .dark-mode {
@@ -318,73 +268,72 @@ footer .wave#wave4{
   color: white;
 }
 
-.welcome-message{
+.welcome-message {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 2rem;
-
 }
-.welcome-message h2{
+.welcome-message h2 {
   font-size: x-large;
   font-weight: 600;
 }
 
 /* Light Mode Button Styles
-        --------------------------- */ 
-        .light-mode-button {
-          background:0;
-          border: 0;
-          box-sizing: border-box;
-          cursor: pointer;
-          height: 40px;
-          width: 100px;
-          position: relative;
-          border: 1px solid rgba(255,255,255,0);
-      }
-      .light-mode-button:focus {
-          outline:none; /* Not ideal for accessibility */
-      }
-      .light-mode-button span:nth-child(1) {
-          position: absolute;
-          top:0;
-          left:0;
-          width: 100px;
-          height:40px;
-          border-radius: 20px;
-          background-color: #d6d7db;
-          box-shadow: inset 1px 1px 3px 0 rgb(0 0 0 / 40%);
-          transition: .3s;
-      }
-      .light-mode-button span:nth-child(2) {
-          position: absolute;
-          top:5px;
-          left:5px;
-          width: 30px;
-          height: 30px;
-          background-color: #fff;
-          border-radius: 50%;
-          box-shadow: 1px 1px 2px 0 rgb(0 0 0 / 40%);
-          transition: .3s;
-      }
-  
+        --------------------------- */
+.light-mode-button {
+  background: 0;
+  border: 0;
+  box-sizing: border-box;
+  cursor: pointer;
+  height: 40px;
+  width: 100px;
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0);
+}
+.light-mode-button:focus {
+  outline: none; /* Not ideal for accessibility */
+}
+.light-mode-button span:nth-child(1) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: #d6d7db;
+  box-shadow: inset 1px 1px 3px 0 rgb(0 0 0 / 40%);
+  transition: 0.3s;
+}
+.light-mode-button span:nth-child(2) {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 30px;
+  height: 30px;
+  background-color: #fff;
+  border-radius: 50%;
+  box-shadow: 1px 1px 2px 0 rgb(0 0 0 / 40%);
+  transition: 0.3s;
+}
+
 /* Light & Dark Mode Styles
---------------------------- */ 
+--------------------------- */
 /* body {
 background-color: #f6f6f6;
 transition: background-color .3s;
 } */
-body[light-mode=dark] {
-background-color: #140026;
-color: #ced4e2;
+body[light-mode='dark'] {
+  background-color: #140026;
+  color: #ced4e2;
 }
-body[light-mode="dark"] .light-mode-button span:nth-child(1){
-background-color: #ced4e2;
-color: #141516;
+body[light-mode='dark'] .light-mode-button span:nth-child(1) {
+  background-color: #ced4e2;
+  color: #141516;
 }
-body[light-mode=dark] .light-mode-button span:nth-child(2) {
-left: 65px;
-background-color: #141516;
+body[light-mode='dark'] .light-mode-button span:nth-child(2) {
+  left: 65px;
+  background-color: #141516;
 }
 
 .msg {
@@ -401,20 +350,113 @@ background-color: #141516;
   background: #ec4811;
   color: white;
   box-shadow: 0 10px 15px -3px rgb(149 149 162), 0 4px 6px -2px rgb(0 0 0 / 5%);
-  transition: transform ease-in-out .2s;
+  transition: transform ease-in-out 0.2s;
 }
 .show.msg {
-display: block;
-animation: fadeInAnimation ease 0.2s;
-animation-iteration-count: 1;
-animation-fill-mode: forwards;
+  display: block;
+  animation: fadeInAnimation ease 0.2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
 
 @keyframes fadeInAnimation {
-0% {
-  margin-top: -10%;
+  0% {
+    margin-top: -10%;
+  }
+  100% {
+    margin-top: 3%;
+  }
 }
-100% {
-margin-top: 3%;
+footer{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  min-height: 30px;
 }
+footer .wave{
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: url('footer/wave.png');
+  background-size: 1000px 100px;
+  opacity: 0.7;
+}
+footer .wave#wave1{
+  z-index: -1;
+  opacity: 1;
+  bottom: 0;
+  animation: animateWave 6s linear infinite;
+}
+footer .wave#wave2{
+  z-index: -2;
+  opacity: 0.4;
+  bottom: 10px;
+  animation: animateWave 3s linear infinite;
+}
+footer .wave#wave3{
+  z-index: -3;
+  opacity: 0.2;
+  bottom: 15px;
+  animation: animateWave 4s linear infinite;
+}
+footer .wave#wave4{
+  z-index: -4;
+  opacity: 0.8;
+  bottom: 20px;
+  animation: animateWave_02 2s linear infinite;
+}
+@keyframes animateWave{
+  0%{
+    background-position-x: 1000px;
+  }
+  100%{
+    background-position-x: 0;
+  }
+}
+@keyframes animateWave_02{
+  0%{
+    background-position-x: 0;
+  }
+  100%{
+    background-position-x: 1000px;
+  }
+}
+#footer{
+  /* position: sticky; */
+  margin-top: 9rem;
+  bottom: 0;
+  margin-bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items:flex-start;
+  padding: 1.1rem 1.5rem;
+  font-family: 'Montserrat', sans-serif;
+  border-bottom: 1px solid rgba(255, 255, 255, 0);
+  border-right: 1px solid rgba(255, 255, 255, 0);
+  z-index: 15;
+}
+.social-icons{
+  display: flex;
+  color: #7b46ac;
+  letter-spacing: 20px;
+  font-size: 24.5px;
+  z-index: 1;
+  
+}
+
+ 
+#linkedin:hover{
+
+color: #04669A;
+}
+#github:hover{
+  color: #000;
+}
+#twitter:hover{
+  color: #00acee;
+}
+#insta:hover{
+  color: 
+    #bc1888;
 }
