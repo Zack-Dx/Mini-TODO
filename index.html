@@ -1,118 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="icon"
-      href="https://camo.githubusercontent.com/fbec99eed4273705c07cdebcd31744b97df8ca7a6b8603bb246ba895820627e7/68747470733a2f2f686f74656d6f6a692e636f6d2f696d616765732f646c2f372f6d656d6f2d656d6f6a692d62792d676f6f676c652e706e67"
-      type="image/icon type"
-    />
-    <link rel="stylesheet" href="style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
-      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <title>Todo List using Javascript</title>
-  </head>
-  <body onload="showNotes()" class="light-mode">
-    <div id="msgbox" class="msg">message</div>
-    <header>
-      <nav id="navbar">
-        <div id="logo">
-          <h1><a href="index.html" id="a-link">Blueberry KEEP📝</a></h1>
-        </div>
-        <!-- <button id="toggleDarkModeBtn" onclick="toggleDarkMode()">Dark mode</button> -->
-        <button
-          class="light-mode-button"
-          aria-label="Toggle Light Mode"
-          onclick="toggle_light_mode()"
-        >
-          <span></span><span></span>
-        </button>
-      </nav>
-    </header>
 
-    <!-- Welcome Section -->
-    <section class="welcome-message">
-      <h2>TO-DO LIST</h2>
-    </section>
-    <form id="container">
-      <div id="notebox">
-        <input
-          type="text"
-          id="note"
-          placeholder="Enter your Note"
-          value=""
-          class=""
-        />
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon"
+    href="https://camo.githubusercontent.com/fbec99eed4273705c07cdebcd31744b97df8ca7a6b8603bb246ba895820627e7/68747470733a2f2f686f74656d6f6a692e636f6d2f696d616765732f646c2f372f6d656d6f2d656d6f6a692d62792d676f6f676c652e706e67"
+    type="image/icon type" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Todo List using Javascript</title>
+</head>
+
+<body onload="showNotes()" class="light-mode">
+  <div id="msgbox" class="msg">message</div>
+  <header>
+    <nav id="navbar">
+      <div id="logo">
+        <h1><a href="index.html" id="a-link">Blueberry KEEP📝</a></h1>
       </div>
-      <div class="buttons">
-        <button id="add">Add note</button>
-      </div>
-      <br /><br />
-    </form>
-<div id="mainbox">
+      <!-- <button id="toggleDarkModeBtn" onclick="toggleDarkMode()">Dark mode</button> -->
+      <button class="light-mode-button" aria-label="Toggle Light Mode" onclick="toggle_light_mode()">
+        <span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- Welcome Section -->
+  <section class="welcome-message">
+    <h2>TO-DO LIST</h2>
+  </section>
+  <form id="container">
+    <div id="notebox">
+      <input type="text" id="note" placeholder="Enter your Note" value="" class="" />
+    </div>
+    <div class="buttons">
+      <button id="add">Add note</button>
+    </div>
+  </form>
+  <div class="buttons">
+    <button id="add" class="delete-all">Delete All</button>
+  </div>
+  <br /><br />
+  <div id="mainbox">
 
   </div>
   <footer>
     <section id="footer">
       <span class="span">Created By <a href="https://github.com/Zack-Dx" target="_blank"
-        style="color: #a35ae8; text-decoration: none;"> Zack
-      </a>| <span class="far fa-copyright"></span> 2022 All rights reserved.</span>
+          style="color: #a35ae8; text-decoration: none;"> Zack
+        </a>| <span class="far fa-copyright"></span> 2022 All rights reserved.</span>
       <div class="social-icons">
-  <a class="social" id="linkedin" href="#" target="_blank">
-    <span class="icon"><i class="fab fa-linkedin"></i></span>
-  </a>
-  <a class="social" id="insta" href="#" target="_blank">
-    <span class="icon"><i class="fab fa-instagram"></i></span>
-  </a>
-  <a class="social" id="github" href="https://github.com/Zack-Dx" target="_blank">
-    <span class="icon"><i class="fab fa-github-square"></i></span>
-  </a>
-  <a class="social" id="twitter" href="#" target="_blank">
-    <span class="icon"><i class="fab fa-twitter-square"></i></span>
-  </a>
-</div>
+        <a class="social" id="linkedin" href="#" target="_blank">
+          <span class="icon"><i class="fab fa-linkedin"></i></span>
+        </a>
+        <a class="social" id="insta" href="#" target="_blank">
+          <span class="icon"><i class="fab fa-instagram"></i></span>
+        </a>
+        <a class="social" id="github" href="https://github.com/Zack-Dx" target="_blank">
+          <span class="icon"><i class="fab fa-github-square"></i></span>
+        </a>
+        <a class="social" id="twitter" href="#" target="_blank">
+          <span class="icon"><i class="fab fa-twitter-square"></i></span>
+        </a>
+      </div>
     </section>
   </footer>
 
-  </body>
-  <script src="index.js"></script>
-  <script>
-    function toggle_light_mode(firstLoad) {
-      var app = document.getElementsByTagName('BODY')[0];
-      const check = firstLoad
-        ? localStorage.lightMode != 'dark'
-        : localStorage.lightMode == 'dark';
-      if (check) {
-        localStorage.lightMode = 'light';
-        app.setAttribute('light-mode', 'light');
-        if (!firstLoad) showmsg('Light Mode Enabled.');
-      } else {
-        localStorage.lightMode = 'dark';
-        app.setAttribute('light-mode', 'dark');
-        if (!firstLoad) showmsg('Dark Mode Enabled.');
-      }
+</body>
+<script src="index.js"></script>
+<script>
+  function toggle_light_mode(firstLoad) {
+    var app = document.getElementsByTagName('BODY')[0];
+    const check = firstLoad
+      ? localStorage.lightMode != 'dark'
+      : localStorage.lightMode == 'dark';
+    if (check) {
+      localStorage.lightMode = 'light';
+      app.setAttribute('light-mode', 'light');
+      if (!firstLoad) showmsg('Light Mode Enabled.');
+    } else {
+      localStorage.lightMode = 'dark';
+      app.setAttribute('light-mode', 'dark');
+      if (!firstLoad) showmsg('Dark Mode Enabled.');
     }
+  }
 
-    var maggio = document.querySelector('#msgbox');
-    function showmsg(txt) {
-      document.getElementById('msgbox').innerText = '✉ ' + txt;
-      maggio.classList.add('show');
-      setTimeout(function () {
-        maggio.classList.remove('show');
-      }, 3000);
+  var maggio = document.querySelector('#msgbox');
+  function showmsg(txt) {
+    document.getElementById('msgbox').innerText = '✉ ' + txt;
+    maggio.classList.add('show');
+    setTimeout(function () {
+      maggio.classList.remove('show');
+    }, 3000);
+  }
+  document.onreadystatechange = () => {
+    if (document.readyState === 'complete') {
+      console.log('Flipped!');
+      toggle_light_mode({});
     }
-    document.onreadystatechange = () => {
-      if (document.readyState === 'complete') {
-        console.log('Flipped!');
-        toggle_light_mode({});
-      }
-    };
-  </script>
+  };
+</script>
+
 </html>

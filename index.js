@@ -3,6 +3,7 @@
 let formContainer = document.querySelector('#container');
 let noInput = document.querySelector('#noInputText');
 let noteInput = document.getElementById('note');
+const deleteBtn = document.getElementsByClassName('delete-all')[0]
 
 noteInput.addEventListener('click', function () {
   noteInput.classList.remove('show');
@@ -49,6 +50,19 @@ formContainer.addEventListener('submit', (event) => {
 
   showNotes();
 });
+
+deleteBtn.addEventListener('click', () => {
+  if (JSON.parse(localStorage.getItem("notes")).length <= 0) {
+    showmsg("No notes to delete");
+    return;
+  }
+  confirmDelete = confirm("Delete All Notes?")
+  if (confirmDelete) {
+    localStorage.removeItem("notes");
+    showmsg('All notes deleted successfully.');
+    document.getElementById('mainbox').innerHTML = "";
+  }
+})
 
 function showNotes() {
   let notesobj = JSON.parse(localStorage.getItem('notes'));

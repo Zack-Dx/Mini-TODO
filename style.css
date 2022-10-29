@@ -62,7 +62,7 @@ body {
   cursor: pointer;
   font-weight: bold;
 }
-#add {
+#add #delete {
   width: 100px;
 }
 #logo {
