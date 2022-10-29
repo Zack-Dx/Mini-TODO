@@ -69,6 +69,7 @@ function showNotes() {
         </div>
         <button id=delete onclick=deleted(${index})>Delete note</button>
         <button class=edit onclick=edit(${index})>Edit</button>
+        <button class=edit onclick=copy(${index})>Copy</button>
       </div>
     `;
   });
@@ -76,7 +77,19 @@ function showNotes() {
   let box = document.getElementById('mainbox');
   box.innerHTML = html;
 }
+function deleted(index) {
+  let notes = localStorage.getItem('notes');
 
+  if (notes == null) {
+    noteobj = [];
+  } else {
+    noteobj = JSON.parse(localStorage.getItem('notes'));
+  }
+  noteobj.splice(index, 1);
+  localStorage.setItem('notes', JSON.stringify(noteobj));
+  showNotes();
+  showmsg('Note deleted successfully.');
+}
 function deleted(index) {
   let notes = localStorage.getItem('notes');
 

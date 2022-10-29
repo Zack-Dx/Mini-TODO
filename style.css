@@ -5,12 +5,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Open Sans', sans-serif;
-}
+  font-family:'Kalam', cursive,'Fuzzy Bubbles', cursive, 'Open Sans', sans-serif;
+  height: auto;
+  }
 
 html,
 body {
-  height: 100%;
+  height: 90%;
   width: 100%;
 }
 
@@ -68,9 +69,15 @@ body {
 #logo {
   letter-spacing: 2px;
 }
+h2{
+  font-family:'Kalam', cursive,'Indie Flower', cursive,'Island Moments', cursive,Georgia, 'Times New Roman', Times, serif;
+  
+}
 
 #a-link {
   text-decoration: none;
+  font-family:'Fuzzy Bubbles',cursive,'Indie Flower', cursive,'Island Moments', cursive,Georgia, 'Times New Roman', Times, serif;
+  font-size: 50px;
 }
 
 #container {
@@ -239,6 +246,9 @@ h5 {
 .light-mode {
   background-color: #e6e6fa;
 }
+#button_color{
+  background-color: #000;
+}
 .light-mode header nav div h1 {
   color: #a35ae8;
   font-weight: 900;
@@ -354,9 +364,9 @@ body[light-mode='dark'] .light-mode-button span:nth-child(2) {
 }
 .show.msg {
   display: block;
-  animation: fadeInAnimation ease 0.2s;
+  animation: fadeInAnimation ease 0.5s;
   animation-iteration-count: 1;
-  animation-fill-mode: forwards;
+  animation-fill-mode:forwards;
 }
 
 @keyframes fadeInAnimation {
