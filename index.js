@@ -65,11 +65,11 @@ function showNotes() {
       <div class="box" id="box-${index}" >
         <h5>NOTE :${index + 1}</h5>
         <div class="swappable">
-          <p>${element}</p>
+          <p id=myInput-${index}>${element}</p> 
         </div>
-        <button id=delete onclick=deleted(${index})>Delete note</button>
+        <button class=copy  onclick=copyText(${index})>Copy</button>
         <button class=edit onclick=edit(${index})>Edit</button>
-        <button class=edit onclick=copyText(${index})>Copy</button>
+        <button id=delete onclick=deleted(${index})>Delete note</button> 
       </div>
     `;
   });
@@ -77,7 +77,6 @@ function showNotes() {
   let box = document.getElementById('mainbox');
   box.innerHTML = html;
 }
-
 function deleted(index) {
   let notes = localStorage.getItem('notes');
 
