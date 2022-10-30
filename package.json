@@ -1,7 +1,9 @@
 {
   "name": "mini-todo",
   "version": "1.0.0",
-  "description": "",
+  "description": "Mini-TODO is a Web Application made using HTML, CSS, and Javascript. It is easy to use application where the user can make notes on the go and Delete them whenever required.",
+  "keywords": ["Create Notes", "Delete Notes", "Edit Notes", "Web Application"],
+  "homepage": "https://github.com/Zack-Dx/Mini-TODO",
   "main": "index.js",
   "author": "Zack-Dx",
   "devDependencies": {
