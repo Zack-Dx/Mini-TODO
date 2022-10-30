@@ -4,8 +4,11 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link
+      rel="icon"
+      href="https://camo.githubusercontent.com/fbec99eed4273705c07cdebcd31744b97df8ca7a6b8603bb246ba895820627e7/68747470733a2f2f686f74656d6f6a692e636f6d2f696d616765732f646c2f372f6d656d6f2d656d6f6a692d62792d676f6f676c652e706e67"
+      type="image/icon type"
+    />
     <link rel="stylesheet" href="style.css" />
     <link
       rel="stylesheet"
@@ -31,7 +34,7 @@
     <header>
       <nav id="navbar">
         <div id="logo">
-          <h1><a href="index.html" id="a-link">Blueberry Keep <i class="fa-solid fa-pen-to-square"></i></a></h1>
+          <h1><a href="index.html" id="a-link">Blueberry Keep📝</a></h1>
         </div>
         <div id="searchnote">
             <input type="text" id="searching" placeholder="Search Note" value="" class="" />
@@ -41,7 +44,9 @@
           aria-label="Toggle Light Mode"
           onclick="toggle_light_mode()"
         >
-          <span></span><span></span>
+          <span></span><span>
+              <i class="fas fa-moon"></i>
+          </span>
         </button>
       </nav>
     </header>
@@ -63,8 +68,11 @@
       <div class="buttons">
         <button id="add">Add note</button>
       </div>
-      <br /><br />
     </form>
+    <div class="buttons">
+      <button id="add" class="delete-all">Delete All</button>
+    </div>
+    <br /><br />
     <div id="mainbox">
   </div>
   <footer>
@@ -95,6 +103,7 @@
     </div>
   </footer>
   </body>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="index.js"></script>
   <script>
     function toggle_light_mode(firstLoad) {
@@ -137,3 +146,4 @@
   };
   document.getElementById("currentYear").innerHTML = getCurrentYear();
   </script>
+</html>
