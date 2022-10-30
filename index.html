@@ -75,7 +75,7 @@
     
     <section id="footer">
       <span class="span">Created By <a href="https://github.com/Zack-Dx" target="_blank" style="color: #6d3c9b; text-decoration: none;"> Zack </a>| 
-      <span class="far fa-copyright"></span> 2022 All rights reserved.</span>
+      <span class="far fa-copyright" id="currentYear"></span>  All rights reserved.</span>
       <div class="social-icons">
         <a class="social" id="linkedin" href="#" target="_blank">
          <span class="icon"><i class="fab fa-linkedin"></i></span>
@@ -133,5 +133,12 @@
         toggle_light_mode({});
       }
     };
+
+  //Automaticaly update copyright year
+
+  function getCurrentYear() {
+    return new Date().getFullYear(); 
+  };
+  document.getElementById("currentYear").innerHTML = getCurrentYear();
   </script>
 </html>
