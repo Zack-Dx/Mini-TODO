@@ -130,7 +130,6 @@ body {
   border-radius: 25px;
   outline: none;
   cursor: pointer;
-  /* border: none; */
   border: 1px solid rgb(255, 249, 249);
 }
 .copy{
@@ -139,7 +138,6 @@ body {
   border-radius: 25px;
   outline: none;
   cursor: pointer;
-  /* border: none; */
   border: 1px solid rgb(255, 249, 249);
 }
 .edit {
@@ -148,7 +146,6 @@ body {
   border-radius: 25px;
   outline: none;
   cursor: pointer;
-  /* border: none; */
   border: 1px solid rgb(255, 249, 249);
   background-color: #c9ffda;
 }
@@ -177,7 +174,6 @@ body {
 }
 .box {
   display: inline-block;
-  /* background: lavender; */
   height: auto;
   width: auto;
   text-align: center;
@@ -379,10 +375,6 @@ h5 {
 
 /* Light & Dark Mode Styles
 --------------------------- */
-/* body {
-background-color: #f6f6f6;
-transition: background-color .3s;
-} */
 body[light-mode='dark'] {
   background-color: #140026;
   color: #ced4e2;
@@ -506,7 +498,6 @@ footer .wave#wave4{
   
 }
 
- 
 #linkedin:hover{
 
 color: #04669A;
