@@ -43,14 +43,14 @@ html {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  padding:10px 20px;
-  border-bottom-right-radius:15px;
-   border-bottom-left-radius:15px;
-  background:linear-gradient(white,#a167ff);
+  padding: 10px 20px;
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  background: linear-gradient(white, #a167ff);
   color: white;
   font-family: 'Montserrat', sans-serif;
   box-shadow: 20px 20px 50px rgb(101 101 101 / 21%);
- 
+
   border-right: 1px solid rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(5px);
   z-index: 15;
@@ -97,9 +97,10 @@ html {
 
 #a-link {
   text-decoration: none;
-  font-family:'Fuzzy Bubbles',cursive,'Indie Flower', cursive,'Island Moments', cursive,Georgia, 'Times New Roman', Times, serif;
+  font-family: 'Fuzzy Bubbles', cursive, 'Indie Flower', cursive,
+    'Island Moments', cursive, Georgia, 'Times New Roman', Times, serif;
   font-size: 1.5rem;
-  color:black;
+  color: black;
 }
 
 #container {
@@ -131,37 +132,16 @@ html {
   transition: all 0.25s ease;
 }
 
-#add,
-#delete {
+.button {
   margin: 10px 5px;
   padding: 5px 10px;
   border-radius: 25px;
   outline: none;
   cursor: pointer;
   border: 1px solid rgb(255, 249, 249);
-}
-.copy {
-  margin: 10px 5px;
-  padding: 5px 10px;
-  border-radius: 25px;
-  outline: none;
-  cursor: pointer;
-  border: 1px solid rgb(255, 249, 249);
-}
-.edit {
-  margin: 10px 5px;
-  padding: 5px 10px;
-  border-radius: 25px;
-  outline: none;
-  cursor: pointer;
-  border: 1px solid rgb(255, 249, 249);
-  background-color: #c9ffda;
 }
 
-
-#add:hover,
-.edit:hover,
-.copy:hover {
+.button:hover {
   background: #2196f3;
   color: white;
   box-shadow: 0 0 4px #2196f3, 0 0 8px #2196f3, 0 0 12px #2196f3;
@@ -262,16 +242,6 @@ h5 {
     height: 20px;
     width: 60px;
   }
-}
-
-.noInputText {
-  visibility: hidden;
-  color: #ea4b8b;
-  text-align: center;
-  border-radius: 6px;
-  padding: 7px 5px;
-  margin: auto;
-  font-size: large;
 }
 
 .show {
