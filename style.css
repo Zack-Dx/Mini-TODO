@@ -194,6 +194,9 @@ html {
 .box p,
 h5 {
   margin: 10px;
+  font-weight: bold;
+  color: #ce20bc;
+  overflow: hidden;
 }
 
 #mainbox {
@@ -203,6 +206,23 @@ h5 {
   position: relative;
   text-align: center;
   z-index: 200;
+}
+
+.swappable {
+  background-color: rgb(239, 239, 250);
+}
+
+.swappable :hover {
+  background-color: #d883d0;
+}
+
+#mainbox :hover {
+  background-color: #d076c7;
+  transition: all 0.5s ease;
+  color: #000;
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 /* Responsive Code */
