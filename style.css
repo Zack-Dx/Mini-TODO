@@ -183,10 +183,10 @@ html {
 }
 .box {
   display: inline-block;
-  height: auto;
-  width: auto;
+  height: 50%;
+  width: 50%;
   text-align: center;
-  margin: 5px;
+  margin: 10px;
   box-shadow: 0 0 4px #7e6ce4, 0 0 8px #7e6ce4, 0 0 12px #7e6ce4;
   border-radius: 15px;
 }
