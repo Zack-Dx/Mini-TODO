@@ -125,4 +125,3 @@ searchtext.addEventListener("input", function(){
     }
    })
  })
-
