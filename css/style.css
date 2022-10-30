@@ -102,6 +102,7 @@ html {
 
 #container {
   padding: 50px;
+   padding-bottom: 0px !important;
 }
 
 #notebox {
@@ -235,7 +236,11 @@ h5 {
     width: 16px !important;
     height: 14px !important;
     top: 13px !important;
+    display: grid;
   }
+   i{
+  font-size: 10px !important;
+}
   .light-mode-button {
     width: 50px !important;
   }
@@ -515,4 +520,14 @@ color: #04669A;
 #insta:hover{
   color: 
     #bc1888;
+}
+
+/* Styling Moon Icon */
+i{
+  font-size: 20px;
+}
+.fa-moon {
+  color: #fff;
+  transition: 0.8s;
+  padding-top:10%
 }
