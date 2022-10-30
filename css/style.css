@@ -47,9 +47,9 @@ html {
   background: rgba(255, 255, 255, 0.1);
   color: white;
   font-family: 'Montserrat', sans-serif;
-  box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-  border-right: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(5px);
   z-index: 15;
 }
@@ -98,7 +98,8 @@ html {
 #a-link {
   text-decoration: none;
   font-family:'Fuzzy Bubbles',cursive,'Indie Flower', cursive,'Island Moments', cursive,Georgia, 'Times New Roman', Times, serif;
-  font-size: 5vw;
+  font-size: 2.5vw;
+  padding-left: 250px;
 }
 
 #container {
@@ -207,9 +208,15 @@ h5 {
 
 /* Responsive Code */
 
+
 @media (max-width: 1424px) {
+  #a-link {
+    padding-left: 90px;
+  }
   body {
+
     background-color: rgb(142, 137, 199);
+
   }
 
   #delete {
@@ -326,6 +333,9 @@ h5 {
 .light-mode span.boxtext {
   color: black;
 }
+.dark-mode #logo h1{
+  color: white;
+}
 .dark-mode .welcome-message h2 {
   color: #eedcff;
   font-weight: 900;
@@ -351,41 +361,41 @@ h5 {
 
 /* Light Mode Button Styles
         --------------------------- */
-.light-mode-button {
-  background: 0;
-  border: 0;
-  box-sizing: border-box;
-  cursor: pointer;
-  height: 40px;
-  width: 100px;
-  position: relative;
-  border: 1px solid rgba(255, 255, 255, 0);
-}
-.light-mode-button:focus {
-  outline: none; /* Not ideal for accessibility */
-}
-.light-mode-button span:nth-child(1) {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100px;
-  height: 40px;
-  border-radius: 20px;
-  background-color: #d6d7db;
-  box-shadow: inset 1px 1px 3px 0 rgb(0 0 0 / 40%);
-  transition: 0.3s;
-}
-.light-mode-button span:nth-child(2) {
-  position: absolute;
-  top: 5px;
-  left: 5px;
-  width: 30px;
-  height: 30px;
-  background-color: #fff;
-  border-radius: 50%;
-  box-shadow: 1px 1px 2px 0 rgb(0 0 0 / 40%);
-  transition: 0.3s;
-}
+        .light-mode-button {
+          background: 0;
+          border: 0;
+          box-sizing: border-box;
+          cursor: pointer;
+          height: 40px;
+          width: 100px;
+          position: relative;
+          border: 1px solid rgba(255, 255, 255, 0);
+        }
+        .light-mode-button:focus {
+          outline: none; /* Not ideal for accessibility */
+        }
+        .light-mode-button span:nth-child(1) {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100px;
+          height: 40px;
+          border-radius: 20px;
+          background-color: #d6d7db;
+          box-shadow: inset 1px 1px 3px 0 rgb(0 0 0 / 40%);
+          transition: 0.3s;
+        }
+        .light-mode-button span:nth-child(2) {
+          position: absolute;
+          top: 5px;
+          left: 5px;
+          width: 30px;
+          height: 30px;
+          background-color: #fff;
+          border-radius: 50%;
+          box-shadow: 1px 1px 2px 0 rgb(0 0 0 / 40%);
+          transition: 0.3s;
+        }
 
 /* Light & Dark Mode Styles
 --------------------------- */
@@ -503,28 +513,51 @@ footer .wave#wave4{
   border-right: 1px solid rgba(255, 255, 255, 0);
   z-index: 100;
 }
-.social-icons{
+
+
+.flex-center {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  color: #7b46ac;
-  letter-spacing: 20px;
-  font-size: 24.5px;
-  z-index: 20;
-  
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-#linkedin:hover{
+.icon-3d {
+  padding: 10px;
+  -webkit-animation: icon3d 200ms 10;
+  animation: icon3d 200ms 10;
+  color: #fff; }
+  .icon-3d:hover {
+    -webkit-animation: icon3d 200ms infinite;
+          animation: icon3d 200ms infinite;
+  }
 
-color: #04669A;
-}
-#github:hover{
-  color: #000;
-}
-#twitter:hover{
-  color: #00acee;
-}
-#insta:hover{
-  color: 
-    #bc1888;
+
+@keyframes icon3d {
+  0% {
+    text-shadow: 5px 4px  rgba(244,67,54,1), -5px -6px rgba(33,150,243,1);
+  }
+  25% {
+    text-shadow: -5px -6px  rgba(244,67,54,1), 5px 4px rgba(33,150,243,1);
+  }
+  50% {
+    text-shadow: 5px -4px  rgba(244,67,54,1), -8px 4px rgba(33,150,243,1);
+  }
+  75% {
+    text-shadow: -8px -4px  rgba(244,67,54,1), -5px -4px rgba(33,150,243,1);
+  }
+  100% {
+    text-shadow: -5px 0  rgba(244,67,54,1), 5px -4px rgba(33,150,243,1);
+  }
 }
 
 /* Styling Moon Icon */
