@@ -4,11 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="icon"
-      href="https://camo.githubusercontent.com/fbec99eed4273705c07cdebcd31744b97df8ca7a6b8603bb246ba895820627e7/68747470733a2f2f686f74656d6f6a692e636f6d2f696d616765732f646c2f372f6d656d6f2d656d6f6a692d62792d676f6f676c652e706e67"
-      type="image/icon type"
-    />
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css" />
     <link
       rel="stylesheet"
@@ -34,13 +31,12 @@
     <header>
       <nav id="navbar">
         <div id="logo">
-          <h1><a href="index.html" id="a-link">Blueberry Keep📝</a></h1>
+          <h1><a href="index.html" id="a-link">Blueberry Keep <i class="fa-solid fa-pen-to-square"></i></a></h1>
         </div>
         <div id="searchnote">
             <input type="text" id="searching" placeholder="Search Note" value="" class="" />
           </div>
-        <!-- <button id="toggleDarkModeBtn" onclick="toggleDarkMode()">Dark mode</button> -->
-        <button 
+        <button
           class="light-mode-button"
           aria-label="Toggle Light Mode"
           onclick="toggle_light_mode()"
@@ -75,7 +71,7 @@
     
     <section id="footer">
       <span class="span">Created By <a href="https://github.com/Zack-Dx" target="_blank" style="color: #6d3c9b; text-decoration: none;"> Zack </a>| 
-      <span class="far fa-copyright"></span> 2022 All rights reserved.</span>
+      <span class="far fa-copyright" id="currentYear"></span>  All rights reserved.</span>
       <div class="social-icons">
         <a class="social" id="linkedin" href="#" target="_blank">
          <span class="icon"><i class="fab fa-linkedin"></i></span>
@@ -133,5 +129,11 @@
         toggle_light_mode({});
       }
     };
+
+  //Automaticaly update copyright year
+
+  function getCurrentYear() {
+    return new Date().getFullYear(); 
+  };
+  document.getElementById("currentYear").innerHTML = getCurrentYear();
   </script>
-</html>
