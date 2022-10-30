@@ -8,22 +8,6 @@ const deleteBtn = document.getElementsByClassName('delete-all')[0]
 noteInput.addEventListener('click', function () {
   noteInput.classList.remove('show');
 });
-// (function () {
-//   isDarkMode = !(localStorage.getItem("isDarkMode") === "true");
-//   toggleDarkMode();
-// })();
-// function toggleDarkMode() {
-//   isDarkMode = !isDarkMode;
-//   localStorage.setItem("isDarkMode", isDarkMode);
-
-//   if (isDarkMode) {
-//     document.body.className = "dark-mode";
-//     document.getElementById("toggleDarkModeBtn").innerText = "Light mode";
-//   } else {
-//     document.body.className = "light-mode";
-//     document.getElementById("toggleDarkModeBtn").innerText = "Dark mode";
-//   }
-// }
 
 formContainer.addEventListener('submit', (event) => {
   event.preventDefault();
@@ -89,10 +73,11 @@ function showNotes() {
       <div class="box" id="box-${index}" >
         <h5>NOTE :${index + 1}</h5>
         <div class="swappable">
-          <p>${element.toUpperCase()}</p>
+          <p id=myInput-${index}>${element}</p> 
         </div>
-        <button id=delete onclick=deleted(${index})>Delete note</button>
+        <button class=copy  onclick=copyText(${index})>Copy</button>
         <button class=edit onclick=edit(${index})>Edit</button>
+        <button id=delete onclick=deleted(${index})>Delete note</button> 
       </div>
     `;
   });
@@ -100,7 +85,6 @@ function showNotes() {
   let box = document.getElementById('mainbox');
   box.innerHTML = html;
 }
-
 function deleted(index) {
   let notes = localStorage.getItem('notes');
 
@@ -142,3 +126,26 @@ function edit(index) {
     showmsg('Note updated successfully.');
   }
 }
+
+function copyText(index) {
+  let noteobj = JSON.parse(localStorage.getItem('notes'));
+  let noteToCopy = noteobj[index];
+  navigator.clipboard.writeText(noteToCopy);
+  showmsg("Copied the note: " + noteToCopy);
+}
+
+
+let searchtext = document.getElementById('searching');
+searchtext.addEventListener("input", function(){
+   let inputvalue = searchtext.value.toLowerCase();
+   let notecard = document.getElementsByClassName('box');
+   Array.from(notecard).forEach(function(element){
+    let cardtext = element.getElementsByTagName('div')[0].getElementsByTagName("p")[0].innerText.toLowerCase();
+    if (cardtext.includes(inputvalue)) {
+      element.style.display = "inline-block";
+    }  
+    else{
+      element.style.display = "none";
+    }
+   })
+ })
