@@ -67,7 +67,7 @@ function showNotes() {
         <div class="swappable">
           <p id=myInput-${index}>${element}</p> 
         </div>
-        <button class=copy  onclick=copy(${index})>Copy</button>
+        <button class=copy  onclick=copyText(${index})>Copy</button>
         <button class=edit onclick=edit(${index})>Edit</button>
         <button id=delete onclick=deleted(${index})>Delete note</button> 
       </div>
@@ -76,16 +76,6 @@ function showNotes() {
 
   let box = document.getElementById('mainbox');
   box.innerHTML = html;
-}
-
-function copy(index) {
-  var range = document.createRange();
-  range.selectNode(document.getElementById(`myInput-${index}`));
-  window.getSelection().removeAllRanges(); // clear current selection
-  window.getSelection().addRange(range); // to select text
-  document.execCommand("copy");
-  window.getSelection().removeAllRanges();// to deselect
-  showmsg(`Note-${index+1} coppied successfully`);
 }
 function deleted(index) {
   let notes = localStorage.getItem('notes');
@@ -129,6 +119,14 @@ function edit(index) {
     showmsg('Note updated successfully.');
   }
 }
+
+function copyText(index) {
+  let noteobj = JSON.parse(localStorage.getItem('notes'));
+  let noteToCopy = noteobj[index];
+  navigator.clipboard.writeText(noteToCopy);
+  showmsg("Copied the note: " + noteToCopy);
+}
+
 
 let searchtext = document.getElementById('searching');
 searchtext.addEventListener("input", function(){
