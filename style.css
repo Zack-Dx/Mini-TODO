@@ -68,6 +68,7 @@ html {
 }
 #add {
   width: 100px;
+  font-size: 1vw;
 }
 #logo {
   letter-spacing: 2px;
@@ -97,7 +98,7 @@ html {
 #a-link {
   text-decoration: none;
   font-family:'Fuzzy Bubbles',cursive,'Indie Flower', cursive,'Island Moments', cursive,Georgia, 'Times New Roman', Times, serif;
-  font-size: 50px;
+  font-size: 5vw;
 }
 
 #container {
@@ -109,6 +110,7 @@ html {
   border-radius: 6px;
   padding: 10px;
   text-align: center;
+
 }
 
 #notebox input {
@@ -119,6 +121,8 @@ html {
   outline: none;
   text-align: center;
   margin: 10px;
+  height: 3vw;
+  font-size: 2vw;
 }
 
 #note:hover {
@@ -171,6 +175,7 @@ html {
 }
 .buttons {
   text-align: center;
+
 }
 #note:focus {
   box-shadow: 0 0 4px #7e6ce4, 0 0 8px #7e6ce4, 0 0 12px #7e6ce4;
