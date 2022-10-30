@@ -189,9 +189,7 @@ body {
 .box p,
 h5 {
   margin: 10px;
-  font-weight: bold;
-  color: #ce20bc;
-  overflow: hidden;
+  
 }
 
 #mainbox {
