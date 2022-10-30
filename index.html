@@ -12,6 +12,18 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
     integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles&family=Indie+Flower&family=Kalam:wght@300&display=swap"
+    rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Island+Moments&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+
   <title>Todo List using Javascript</title>
 </head>
 
@@ -20,13 +32,13 @@
   <header>
     <nav id="navbar">
       <div id="logo">
-        <h1><a href="index.html" id="a-link">Blueberry KEEP📝</a></h1>
+        <h1><a href="index.html" id="a-link">Blueberry Keep📝</a></h1>
       </div>
-      <!-- <button id="toggleDarkModeBtn" onclick="toggleDarkMode()">Dark mode</button> -->
+      <div id="searchnote">
+        <input type="text" id="searching" placeholder="Search Note" value="" class="" />
+      </div>
       <button class="light-mode-button" aria-label="Toggle Light Mode" onclick="toggle_light_mode()">
-
-        <span></span><span></i>
-          <i class="fas fa-moon"></i></span>
+        <span></span><span></span>
       </button>
     </nav>
   </header>
@@ -42,18 +54,16 @@
     <div class="buttons">
       <button id="add">Add note</button>
     </div>
+    <br /><br />
   </form>
-  <div class="buttons">
-    <button id="add" class="delete-all">Delete All</button>
-  </div>
-  <br /><br />
   <div id="mainbox">
   </div>
   <footer>
+
     <section id="footer">
       <span class="span">Created By <a href="https://github.com/Zack-Dx" target="_blank"
-          style="color: #a35ae8; text-decoration: none;"> Zack
-        </a>| <span class="far fa-copyright"></span> 2022 All rights reserved.</span>
+          style="color: #6d3c9b; text-decoration: none;"> Zack </a>|
+        <span class="far fa-copyright" id="currentYear"></span> All rights reserved.</span>
       <div class="social-icons">
         <a class="social" id="linkedin" href="#" target="_blank">
           <span class="icon"><i class="fab fa-linkedin"></i></span>
@@ -69,12 +79,14 @@
         </a>
       </div>
     </section>
+    <div class="waves">
+      <div class="wave" id="wave1"></div>
+      <div class="wave" id="wave2"></div>
+      <div class="wave" id="wave3"></div>
+      <div class="wave" id="wave4"></div>
+    </div>
   </footer>
-
 </body>
-<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-
 <script src="index.js"></script>
 <script>
   function toggle_light_mode(firstLoad) {
@@ -85,11 +97,12 @@
     if (check) {
       localStorage.lightMode = 'light';
       app.setAttribute('light-mode', 'light');
-
+      app.setAttribute('button_color', 'dark');
       if (!firstLoad) showmsg('Light Mode Enabled.');
     } else {
       localStorage.lightMode = 'dark';
       app.setAttribute('light-mode', 'dark');
+      app.setAttribute('button_color', 'light');
       if (!firstLoad) showmsg('Dark Mode Enabled.');
     }
   }
@@ -108,6 +121,13 @@
       toggle_light_mode({});
     }
   };
+
+  //Automaticaly update copyright year
+
+  function getCurrentYear() {
+    return new Date().getFullYear();
+  };
+  document.getElementById("currentYear").innerHTML = getCurrentYear();
 </script>
 
 </html>
