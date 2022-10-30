@@ -3,26 +3,11 @@
 let formContainer = document.querySelector('#container');
 let noInput = document.querySelector('#noInputText');
 let noteInput = document.getElementById('note');
+const deleteBtn = document.getElementsByClassName('delete-all')[0]
 
 noteInput.addEventListener('click', function () {
   noteInput.classList.remove('show');
 });
-// (function () {
-//   isDarkMode = !(localStorage.getItem("isDarkMode") === "true");
-//   toggleDarkMode();
-// })();
-// function toggleDarkMode() {
-//   isDarkMode = !isDarkMode;
-//   localStorage.setItem("isDarkMode", isDarkMode);
-
-//   if (isDarkMode) {
-//     document.body.className = "dark-mode";
-//     document.getElementById("toggleDarkModeBtn").innerText = "Light mode";
-//   } else {
-//     document.body.className = "light-mode";
-//     document.getElementById("toggleDarkModeBtn").innerText = "Dark mode";
-//   }
-// }
 
 formContainer.addEventListener('submit', (event) => {
   event.preventDefault();
@@ -49,6 +34,29 @@ formContainer.addEventListener('submit', (event) => {
 
   showNotes();
 });
+deleteBtn.addEventListener('click', () => {
+  const notes = localStorage.getItem("notes");
+  if (notes === null) {
+    showmsg("No notes to delete");
+    return;
+  }
+  Swal.fire({
+    title: 'Are you sure?',
+    text: "You won't be able to revert this!",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Yes, delete all notes!'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      localStorage.removeItem("notes");
+      showmsg('All notes deleted successfully.');
+      document.getElementById('mainbox').innerHTML = "";
+    }
+  })
+})
+
 
 function showNotes() {
   let notesobj = JSON.parse(localStorage.getItem('notes'));
@@ -67,7 +75,7 @@ function showNotes() {
         <div class="swappable">
           <p id=myInput-${index}>${element}</p> 
         </div>
-        <button class=copy  onclick=copy(${index})>Copy</button>
+        <button class=copy  onclick=copyText(${index})>Copy</button>
         <button class=edit onclick=edit(${index})>Edit</button>
         <button id=delete onclick=deleted(${index})>Delete note</button> 
       </div>
@@ -76,16 +84,6 @@ function showNotes() {
 
   let box = document.getElementById('mainbox');
   box.innerHTML = html;
-}
-
-function copy(index) {
-  var range = document.createRange();
-  range.selectNode(document.getElementById(`myInput-${index}`));
-  window.getSelection().removeAllRanges(); // clear current selection
-  window.getSelection().addRange(range); // to select text
-  document.execCommand("copy");
-  window.getSelection().removeAllRanges();// to deselect
-  showmsg(`Note-${index+1} coppied successfully`);
 }
 function deleted(index) {
   let notes = localStorage.getItem('notes');
@@ -130,20 +128,25 @@ function edit(index) {
   }
 }
 
+function copyText(index) {
+  let noteobj = JSON.parse(localStorage.getItem('notes'));
+  let noteToCopy = noteobj[index];
+  navigator.clipboard.writeText(noteToCopy);
+  showmsg("Copied the note: " + noteToCopy);
+}
+
+
 let searchtext = document.getElementById('searching');
 searchtext.addEventListener("input", function(){
    let inputvalue = searchtext.value.toLowerCase();
-   console.log(inputvalue);
    let notecard = document.getElementsByClassName('box');
    Array.from(notecard).forEach(function(element){
-    let cardtext = element.getElementsByTagName("p")[0].innerText;
+    let cardtext = element.getElementsByTagName('div')[0].getElementsByTagName("p")[0].innerText.toLowerCase();
     if (cardtext.includes(inputvalue)) {
-      element.style.display = "block";
-      
+      element.style.display = "inline-block";
     }  
     else{
       element.style.display = "none";
     }
-    
    })
  })
