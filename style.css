@@ -68,6 +68,7 @@ html {
 }
 #add {
   width: 100px;
+  font-size: 1vw;
 }
 #logo {
   letter-spacing: 2px;
@@ -97,11 +98,12 @@ html {
 #a-link {
   text-decoration: none;
   font-family:'Fuzzy Bubbles',cursive,'Indie Flower', cursive,'Island Moments', cursive,Georgia, 'Times New Roman', Times, serif;
-  font-size: 50px;
+  font-size: 5vw;
 }
 
 #container {
   padding: 50px;
+   padding-bottom: 0px !important;
 }
 
 #notebox {
@@ -109,6 +111,7 @@ html {
   border-radius: 6px;
   padding: 10px;
   text-align: center;
+
 }
 
 #notebox input {
@@ -119,6 +122,8 @@ html {
   outline: none;
   text-align: center;
   margin: 10px;
+  height: 3vw;
+  font-size: 2vw;
 }
 
 #note:hover {
@@ -171,16 +176,17 @@ html {
 }
 .buttons {
   text-align: center;
+
 }
 #note:focus {
   box-shadow: 0 0 4px #7e6ce4, 0 0 8px #7e6ce4, 0 0 12px #7e6ce4;
 }
 .box {
   display: inline-block;
-  height: auto;
-  width: auto;
+  height: 50%;
+  width: 50%;
   text-align: center;
-  margin: 5px;
+  margin: 10px;
   box-shadow: 0 0 4px #7e6ce4, 0 0 8px #7e6ce4, 0 0 12px #7e6ce4;
   border-radius: 15px;
 }
@@ -235,7 +241,11 @@ h5 {
     width: 16px !important;
     height: 14px !important;
     top: 13px !important;
+    display: grid;
   }
+   i{
+  font-size: 10px !important;
+}
   .light-mode-button {
     width: 50px !important;
   }
@@ -515,4 +525,14 @@ color: #04669A;
 #insta:hover{
   color: 
     #bc1888;
+}
+
+/* Styling Moon Icon */
+i{
+  font-size: 20px;
+}
+.fa-moon {
+  color: #fff;
+  transition: 0.8s;
+  padding-top:10%
 }

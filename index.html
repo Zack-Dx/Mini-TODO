@@ -44,7 +44,9 @@
           aria-label="Toggle Light Mode"
           onclick="toggle_light_mode()"
         >
-          <span></span><span></span>
+          <span></span><span>
+              <i class="fas fa-moon"></i>
+          </span>
         </button>
       </nav>
     </header>
@@ -66,8 +68,11 @@
       <div class="buttons">
         <button id="add">Add note</button>
       </div>
-      <br /><br />
     </form>
+    <div class="buttons">
+      <button id="add" class="delete-all">Delete All</button>
+    </div>
+    <br /><br />
     <div id="mainbox">
   </div>
   <footer>
@@ -98,6 +103,7 @@
     </div>
   </footer>
   </body>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="index.js"></script>
   <script src="messages.js"></script>
 </html>
