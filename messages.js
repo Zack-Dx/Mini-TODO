@@ -15,7 +15,7 @@ function toggle_light_mode(firstLoad) {
       if (!firstLoad) showmsg('Dark Mode Enabled.');
     }
   }
-  
+
   var maggio = document.querySelector('#msgbox');
   function showmsg(txt) {
     document.getElementById('msgbox').innerText = '✉ ' + txt;
@@ -30,3 +30,10 @@ function toggle_light_mode(firstLoad) {
       toggle_light_mode({});
     }
   };
+
+//Automaticaly update copyright year
+
+function getCurrentYear() {
+  return new Date().getFullYear(); 
+};
+document.getElementById("currentYear").innerHTML = getCurrentYear();
