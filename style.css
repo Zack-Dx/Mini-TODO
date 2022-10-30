@@ -66,7 +66,7 @@ html {
   cursor: pointer;
   font-weight: bold;
 }
-#add, #delete {
+#add {
   width: 100px;
 }
 #logo {
@@ -102,7 +102,7 @@ html {
 
 #container {
   padding: 50px;
-  padding-bottom: 0px !important;
+   padding-bottom: 0px !important;
 }
 
 #notebox {
@@ -238,17 +238,12 @@ h5 {
     top: 13px !important;
     display: grid;
   }
+   i{
+  font-size: 10px !important;
+}
   .light-mode-button {
     width: 50px !important;
   }
-    i{
-  font-size: 10px !important;
-}
-/* .fa-moon {
-  color: #fff !important;
-  transition: 0.8s !important;
-  
-} */
   body[light-mode='dark'] .light-mode-button span:nth-child(2) {
     left: 40px !important;
     
@@ -259,7 +254,6 @@ h5 {
     width: 100px;
     
   }
-
 }
 @media(max-width: 350px){
     #searching{
@@ -361,7 +355,6 @@ h5 {
   width: 100px;
   position: relative;
   border: 1px solid rgba(255, 255, 255, 0);
-  
 }
 .light-mode-button:focus {
   outline: none; /* Not ideal for accessibility */
@@ -387,14 +380,6 @@ h5 {
   border-radius: 50%;
   box-shadow: 1px 1px 2px 0 rgb(0 0 0 / 40%);
   transition: 0.3s;
-}
-i{
-  font-size: 20px;
-}
-.fa-moon {
-  color: #fff;
-  transition: 0.8s;
-  padding-top:10%
 }
 
 /* Light & Dark Mode Styles
@@ -535,4 +520,14 @@ color: #04669A;
 #insta:hover{
   color: 
     #bc1888;
+}
+
+/* Styling Moon Icon */
+i{
+  font-size: 20px;
+}
+.fa-moon {
+  color: #fff;
+  transition: 0.8s;
+  padding-top:10%
 }

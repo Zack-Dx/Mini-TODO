@@ -34,7 +34,6 @@ formContainer.addEventListener('submit', (event) => {
 
   showNotes();
 });
-
 deleteBtn.addEventListener('click', () => {
   const notes = localStorage.getItem("notes");
   if (notes === null) {
@@ -57,6 +56,7 @@ deleteBtn.addEventListener('click', () => {
     }
   })
 })
+
 
 function showNotes() {
   let notesobj = JSON.parse(localStorage.getItem('notes'));
@@ -108,8 +108,9 @@ function edit(index) {
   if (editButton.innerHTML == 'Edit') {
     swappableElement.innerHTML = `
       <div id="notebox">
-        <input type="text" id="note" value="${noteElement.getElementsByTagName('p')[0].innerHTML
-      }" style="width:${noteElement.getElementsByTagName('p')[0].clientWidth + "px"}"/>
+        <input type="text" id="note" value="${
+          noteElement.getElementsByTagName('p')[0].innerHTML
+        }" style="width:${noteElement.getElementsByTagName('p')[0].clientWidth + "px"}"/>
       </div>
     `;
     editButton.innerHTML = 'Save';
