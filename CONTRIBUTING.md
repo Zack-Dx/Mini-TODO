@@ -26,8 +26,8 @@ Here are a few things that will help us help resolve your issues:
 4. Run `git checkout -b name-of-your-branch`. Try to make the branch name descriptive (e.g `feature-featureName`, `bugFix-bugName`, etc.).
 5. Run `git status` to verify that only the files you want to change are affected. Resolve the unexpected changes if any.
 6. Stage all of your changes with `git add .`
-7. Rebase your branch with `git rebase main` so that there are no conflicts with other people's contributions.
-8. Push your branch to your fork with `git push origin name-of-your-branch`. You can see your branch's name in step 7.
+7. Commit your changes using `git commit -m"Type a precise description of only the changes made with this commit."`
+8. Push your branch to your fork with `git push origin name-of-your-branch`. You can see your branch name in step 5.
 9. Create a Pull Request for your branch on GitHub.
 
 Here are a few things you can do that will increase the likelihood of your pull request being accepted:
