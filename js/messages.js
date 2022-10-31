@@ -18,42 +18,27 @@ function toggle_light_mode(firstLoad) {
 
 var maggio = document.querySelector('#msgbox');
 function showmsg(txt) {
-  document.getElementById('msgbox').innerText = '☑ ' + txt;
-  maggio.classList.add('show');
-  setTimeout(function () {
-    maggio.classList.remove('show');
-  }, 3000);
+  document.getElementById('msgbox').innerText = '✔ ' + txt;
+  addRemoveClass("show");
 }
 
-function msgFalse(txt) {
-  document.getElementById('msgbox').innerText = '☒ ' + txt;
-  maggio.classList.add('show');
-  setTimeout(function () {
-    maggio.classList.remove('show');
-  }, 3000);
+function showmsgFalse(txt) {
+  document.getElementById('msgbox').innerText = '✖ ' + txt;
+  addRemoveClass("msg--false");
+  addRemoveClass("show");
 }
 
-function msgEdit(txt) {
+
+function showmsgEdit(txt) {
   document.getElementById('msgbox').innerText = '✎ ' + txt;
-  maggio.classList.add('show');
-  setTimeout(function () {
-    maggio.classList.remove('show');
-  }, 3000);
+  addRemoveClass("msg--edit");
+  addRemoveClass("show");
 }
 
-function showmsgFalse (txt) {
-  maggio.classList.add('msg--false');
-  msgFalse(txt)
+function addRemoveClass(value) {
+  maggio.classList.add(value);
   setTimeout(function () {
-    maggio.classList.remove('msg--false');
-  }, 3000);
-}
-
-function showmsgEdit (txt) {
-  maggio.classList.add('msg--edit');
-  msgEdit(txt)
-  setTimeout(function () {
-    maggio.classList.remove('msg--edit');
+    maggio.classList.remove(value);
   }, 3000);
 }
 
