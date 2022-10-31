@@ -5,18 +5,19 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family:'Kalam', cursive,'Fuzzy Bubbles', cursive, 'Open Sans', sans-serif;
+  font-family: 'Kalam', cursive, 'Fuzzy Bubbles', cursive, 'Open Sans',
+    sans-serif;
   height: auto;
-  }
+}
 
 body {
   height: 100%;
 }
 
-html { 
-  position:relative;
-  min-height:100%;
- }
+html {
+  position: relative;
+  min-height: 100%;
+}
 
 ::-webkit-scrollbar {
   width: 12px;
@@ -74,27 +75,25 @@ html {
 #logo {
   letter-spacing: 2px;
 }
-#searchnote{
-    
-    outline: none;
-    margin-left: auto;
-    margin-right: 10px;
-    margin-top: 4px;
-    
-  }
-  #searching{
-    border: 2px solid lavender;
-    outline: none;
-    border-radius: 12px;
-    padding: 6px;
-  }
-  #searching:focus{
-    box-shadow: 0 0 4px #7e6ce4, 0 0 8px #7e6ce4, 0 0 12px #7e6ce4;
-  }
-  #searching:hover{
-    border: 2px solid rgb(96, 86, 203);
-    transition: all 0.25s ease;
-  }
+#searchnote {
+  outline: none;
+  margin-left: auto;
+  margin-right: 10px;
+  margin-top: 4px;
+}
+#searching {
+  border: 2px solid lavender;
+  outline: none;
+  border-radius: 12px;
+  padding: 6px;
+}
+#searching:focus {
+  box-shadow: 0 0 4px #7e6ce4, 0 0 8px #7e6ce4, 0 0 12px #7e6ce4;
+}
+#searching:hover {
+  border: 2px solid rgb(96, 86, 203);
+  transition: all 0.25s ease;
+}
 
 #a-link {
   text-decoration: none;
@@ -105,7 +104,7 @@ html {
 
 #container {
   padding: 50px;
-   padding-bottom: 0px !important;
+  padding-bottom: 0px !important;
 }
 
 #notebox {
@@ -113,7 +112,6 @@ html {
   border-radius: 6px;
   padding: 10px;
   text-align: center;
-
 }
 
 #notebox input {
@@ -142,7 +140,7 @@ html {
   cursor: pointer;
   border: 1px solid rgb(255, 249, 249);
 }
-.copy{
+.copy {
   margin: 10px 5px;
   padding: 5px 10px;
   border-radius: 25px;
@@ -163,7 +161,7 @@ html {
 
 #add:hover,
 .edit:hover,
-.copy:hover{
+.copy:hover {
   background: #2196f3;
   color: white;
   box-shadow: 0 0 4px #2196f3, 0 0 8px #2196f3, 0 0 12px #2196f3;
@@ -179,7 +177,6 @@ html {
 }
 .buttons {
   text-align: center;
-
 }
 #note:focus {
   box-shadow: 0 0 4px #7e6ce4, 0 0 8px #7e6ce4, 0 0 12px #7e6ce4;
@@ -246,31 +243,26 @@ h5 {
     top: 13px !important;
     display: grid;
   }
-   i{
-  font-size: 10px !important;
-}
+  i {
+    font-size: 10px !important;
+  }
   .light-mode-button {
     width: 50px !important;
   }
   body[light-mode='dark'] .light-mode-button span:nth-child(2) {
     left: 40px !important;
-    
   }
-  #searching{
-    
-    height: 25px ;
+  #searching {
+    height: 25px;
     width: 100px;
-    
   }
 }
-@media(max-width: 350px){
-    #searching{
-      
-      height: 20px ;
-      width: 60px;
-      
-    } 
+@media (max-width: 350px) {
+  #searching {
+    height: 20px;
+    width: 60px;
   }
+}
 
 .noInputText {
   visibility: hidden;
@@ -309,7 +301,7 @@ h5 {
 .light-mode {
   background-color: #e6e6fa;
 }
-#button_color{
+#button_color {
   background-color: #000;
 }
 .light-mode header nav div h1 {
@@ -425,7 +417,7 @@ body[light-mode='dark'] .light-mode-button span:nth-child(2) {
   display: block;
   animation: fadeInAnimation ease 0.5s;
   animation-iteration-count: 1;
-  animation-fill-mode:forwards;
+  animation-fill-mode: forwards;
 }
 
 @keyframes fadeInAnimation {
@@ -443,7 +435,7 @@ footer {
   min-height: 30px;
 }
 
-footer .wave{
+footer .wave {
   position: absolute;
   left: 0;
   width: 100%;
@@ -453,89 +445,90 @@ footer .wave{
   opacity: 0.7;
   z-index: -15;
 }
-footer .wave#wave1{
+footer .wave#wave1 {
   z-index: -1;
   opacity: 1;
   bottom: 0;
   animation: animateWave 6s linear infinite;
 }
-footer .wave#wave2{
+footer .wave#wave2 {
   z-index: -2;
   opacity: 0.4;
   bottom: 10px;
   animation: animateWave 3s linear infinite;
 }
-footer .wave#wave3{
+footer .wave#wave3 {
   z-index: -3;
   opacity: 0.2;
   bottom: 15px;
   animation: animateWave 4s linear infinite;
 }
-footer .wave#wave4{
+footer .wave#wave4 {
   z-index: -3;
   opacity: 0.8;
   bottom: 20px;
   animation: animateWave_02 2s linear infinite;
 }
-@keyframes animateWave{
-  0%{
+@keyframes animateWave {
+  0% {
     background-position-x: 1000px;
   }
-  100%{
+  100% {
     background-position-x: 0;
   }
 }
-@keyframes animateWave_02{
-  0%{
+@keyframes animateWave_02 {
+  0% {
     background-position-x: 0;
   }
-  100%{
+  100% {
     background-position-x: 1000px;
   }
 }
-#footer{
+#footer {
   margin-top: 9rem;
   bottom: 0;
   margin-bottom: 0;
   display: flex;
   justify-content: space-between;
-  align-items:flex-start;
+  align-items: flex-start;
   padding: 1.1rem 1.5rem;
   font-family: 'Montserrat', sans-serif;
   border-bottom: 1px solid rgba(255, 255, 255, 0);
   border-right: 1px solid rgba(255, 255, 255, 0);
   z-index: 100;
 }
-.social-icons{
+.social-icons {
   display: flex;
   color: #7b46ac;
   letter-spacing: 20px;
   font-size: 24.5px;
   z-index: 20;
-  
 }
 
-#linkedin:hover{
-
-color: #04669A;
+#linkedin:hover {
+  color: #04669a;
 }
-#github:hover{
+#github:hover {
   color: #000;
 }
-#twitter:hover{
+#twitter:hover {
   color: #00acee;
 }
-#insta:hover{
-  color: 
-    #bc1888;
+#insta:hover {
+  color: #bc1888;
 }
 
 /* Styling Moon Icon */
-i{
+i {
   font-size: 20px;
 }
 .fa-moon {
   color: #fff;
   transition: 0.8s;
-  padding-top:10%
+  padding-top: 10%;
+}
+
+.myInput {
+  overflow: auto;
 }
