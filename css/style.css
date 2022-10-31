@@ -1,5 +1,7 @@
 /*Fonts*/
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Arvo&family=Cookie&family=Courgette&family=Dancing+Script&family=Fasthand&family=Great+Vibes&family=IBM+Plex+Mono:wght@100&family=Lobster&family=Lobster+Two&family=Pacifico&family=Poor+Story&family=Sansita+Swashed:wght@300&family=Shadows+Into+Light&display=swap');
+
 
 * {
   margin: 0;
@@ -70,39 +72,49 @@ html {
 #add {
   width: 100px;
   font-size: 1vw;
+  font-family: 'Shadows Into Light', cursive; 
+  font-size: 16px;
 }
 #logo {
   letter-spacing: 2px;
 }
 #searchnote{
     
-    outline: none;
-    margin-left: auto;
-    margin-right: 10px;
-    margin-top: 4px;
-    
-  }
+  outline: none;
+  margin-left: auto;
+  margin-right: 10px;
+  margin-top: 4px;
+}
+#searchnote > input::placeholder
+{
+  font-family: 'Cookie', cursive; 
+  letter-spacing: 2px;
+  font-size: 23px;
+
+}
+#notebox > input::placeholder {
+  font-family: 'Lobster', cursive;
+}
   #searching{
-    border: 2px solid lavender;
-    outline: none;
-    border-radius: 12px;
-    padding: 6px;
+  border: 2px solid lavender;
+  outline: none;
+  border-radius: 12px;
+  padding: 6px;
   }
   #searching:focus{
-    box-shadow: 0 0 4px #7e6ce4, 0 0 8px #7e6ce4, 0 0 12px #7e6ce4;
+   box-shadow: 0 0 4px #7e6ce4, 0 0 8px #7e6ce4, 0 0 12px #7e6ce4;
   }
   #searching:hover{
-    border: 2px solid rgb(96, 86, 203);
-    transition: all 0.25s ease;
+  border: 2px solid rgb(96, 86, 203);
+   transition: all 0.25s ease;
   }
 
-#a-link {
-  text-decoration: none;
-  font-family:'Fuzzy Bubbles',cursive,'Indie Flower', cursive,'Island Moments', cursive,Georgia, 'Times New Roman', Times, serif;
-  font-size: 1.5rem;
-  color:black;
-}
-
+  #a-link {
+    text-decoration: none;
+    /* font-family:'Fuzzy Bubbles',cursive,'Indie Flower', cursive,'Island Moments', cursive,Georgia, 'Times New Roman', Times, serif; */
+    font-family: 'Sansita Swashed', cursive;
+    font-size: 4vw;
+  }
 #container {
   padding: 50px;
    padding-bottom: 0px !important;
