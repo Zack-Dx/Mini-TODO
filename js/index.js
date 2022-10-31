@@ -69,10 +69,11 @@ function edit(index) {
 
 function copyText(index) {
   const listNotes = getStorageData();
-  let noteToCopy = listNotes[index];
+  const noteToCopy = listNotes[index];
+  const text = noteToCopy?.value ?? noteToCopy;
 
-  navigator.clipboard.writeText(noteToCopy);
-  showmsg('Copied the note: ' + noteToCopy);
+  navigator.clipboard.writeText(text);
+  showmsg('Copied the note: ' + noteToCopy.value);
 }
 
 searched.addEventListener('input', function () {
