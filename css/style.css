@@ -381,6 +381,15 @@ body[light-mode='dark'] .light-mode-button span:nth-child(2) {
   box-shadow: 0 10px 15px -3px rgb(149 149 162), 0 4px 6px -2px rgb(0 0 0 / 5%);
   transition: transform ease-in-out 0.2s;
 }
+
+.msg--false {
+  background: #d82810;
+}
+
+.msg--edit {
+  background: #a35ae8;
+}
+
 .show.msg {
   display: block;
   animation: fadeInAnimation ease 0.5s;
