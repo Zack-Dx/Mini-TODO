@@ -16,14 +16,34 @@ function showNotes() {
   listNotes.forEach(function (element, index) {
     html += `
       <div class="box" id="box-${index}" >
-        <h5>NOTE :${index + 1}</h5>
-        <time>${new Date(1667170744131).toLocaleDateString('en-US')}</time>
-        <div class="swappable">
-          <p id=myInput-${index} class='myInput'>${element.value}</p> 
+        <div class="box__header">
+          <time>${new Date(1667170744131).toLocaleDateString('en-US')}</time>
+          <div class='box__controller'>
+            <button class='button button_mini'  onclick=copyText(${index})>
+              <i class="icofont-ui-copy"></i>
+            </button>
+            <button class='button button_mini edit' onclick=edit(${index})>
+              <i class="icofont-ui-edit"></i>
+            </button>
+            <button class='button button_mini button-danger' id=delete onclick=deleted(${index})>
+              <i class="icofont-ui-delete"></i>
+            </button> 
+          </div>
         </div>
-        <button class=button  onclick=copyText(${index})>Copy</button>
-        <button class='button edit' onclick=edit(${index})>Edit</button>
-        <button class=button id=delete onclick=deleted(${index})>Delete note</button> 
+        <hr />    
+        <div class="box__content" >
+          <div class='checkbox__container'>
+          <input ${
+            element.status ? 'checked' : ''
+          } onclick=changeStatus(${index}) type="checkbox" class="_checkbox" id="_checkbox-${index}">
+          <label for="_checkbox-${index}">
+            <div class="tick_mark"></div>
+          </label>
+          </div>
+          <div class="swappable box__input">
+            <p id=myInput-${index} class='myInput'>${element.value}</p> 
+          </div>
+        </div>
       </div>
     `;
   });
@@ -76,6 +96,18 @@ function copyText(index) {
   showmsg('Copied the note: ' + text);
 }
 
+function changeStatus(index) {
+  const listNotes = getStorageData();
+  const newList = listNotes.map((element, elementIndex) => {
+    if (elementIndex === index) {
+      element.status = !element.status;
+    }
+    return element;
+  });
+
+  localStorage.setItem('notes', JSON.stringify(newList));
+}
+
 searched.addEventListener('input', function () {
   const inputValue = searched.value.toLowerCase();
   const noteCard = document.getElementsByClassName('box');
@@ -106,6 +138,7 @@ formContainer.addEventListener('submit', (event) => {
     listNotes.push({
       id: new Date().getTime(),
       date: new Date().getTime(),
+      status: false,
       value: addNote.value,
     });
     showmsg('Your Note has been added successfully.');

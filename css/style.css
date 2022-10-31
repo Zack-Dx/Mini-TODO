@@ -1,5 +1,6 @@
 /*Fonts*/
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
+@import 'checkbox.css';
 
 * {
   margin: 0;
@@ -157,6 +158,16 @@ html {
 .button-danger:hover {
   background: #ec4811;
 }
+.button_mini {
+  margin: 5px;
+  padding: 5px;
+}
+.button_mini > i {
+  font-size: 18px;
+  height: 20px;
+  width: 20px;
+  display: inline-block;
+}
 .buttons {
   text-align: center;
 }
@@ -172,6 +183,19 @@ html {
   margin: 10px;
   box-shadow: 0 0 4px #7e6ce4, 0 0 8px #7e6ce4, 0 0 12px #7e6ce4;
   border-radius: 15px;
+}
+
+.box__content {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.box__header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
+  align-items: center;
 }
 
 .box p,
