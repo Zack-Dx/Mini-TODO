@@ -1,3 +1,5 @@
+const pastebinDevKey = "put yours here!";
+
 //Add note
 
 let formContainer = document.querySelector("#container");
@@ -135,7 +137,7 @@ function share(index) {
   console.log('shareableText', shareableText);
 
   axios.post('https://pastebin.com/api/api_post.php', {
-    api_dev_key: 'f0296bbb59f75c86846cc8f4399fae18',
+    api_dev_key: pastebinDevKey,
     api_paste_code: shareableText,
     api_option: 'paste',
     api_paste_expire_date: '10M',
