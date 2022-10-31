@@ -201,6 +201,9 @@ html {
   flex: 1;
   text-align: left;
 }
+.box__value[contenteditable] {
+  background-color: #fff;
+}
 
 .box p,
 h5 {

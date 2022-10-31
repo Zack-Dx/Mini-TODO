@@ -41,7 +41,7 @@ function showNotes() {
           </label>
           </div>
           <div class="swappable box__input">
-            <p id=myInput-${index} class='myInput'>${element.value}</p> 
+            <p id=box__value-${index} class='box__value'>${element.value}</p> 
           </div>
         </div>
       </div>
@@ -67,12 +67,15 @@ function edit(index) {
   if (editButton.classList.contains('active')) {
     const listNotes = getStorageData();
 
-    listNotes[index].value = noteText.innerHTML;
+    listNotes[index].value = noteText.innerHTML
+      .replace(/<br\s*\/?>/gi, '\n')
+      .replace(/<[^>]*>/gi, ' ')
+      .trim();
     localStorage.setItem('notes', JSON.stringify(listNotes));
     showNotes();
     showmsg('Note updated successfully.');
   } else {
-    noteText.setAttribute('contenteditable', 'true');
+    noteText.setAttribute('contenteditable', true);
     noteText.focus();
     editButton.classList.add('active');
     editButton.innerHTML = 'Save';
