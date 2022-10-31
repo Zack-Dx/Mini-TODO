@@ -73,7 +73,7 @@ function copyText(index) {
   const text = noteToCopy?.value ?? noteToCopy;
 
   navigator.clipboard.writeText(text);
-  showmsg('Copied the note: ' + noteToCopy.value);
+  showmsg('Copied the note: ' + text);
 }
 
 searched.addEventListener('input', function () {
