@@ -56,7 +56,7 @@ function edit(index) {
       </div>
     `;
     editButton.innerHTML = 'Save';
-    showmsg('Note in Edit Mode.');
+    showmsgEdit('Note in Edit Mode.');
   } else {
     const listNotes = getStorageData();
 
@@ -111,7 +111,7 @@ formContainer.addEventListener('submit', (event) => {
     showmsg('Your Note has been added successfully.');
     localStorage.setItem('notes', JSON.stringify(listNotes));
   } else {
-    showmsg('Please write something for your note before adding it ...');
+    showmsgFalse('Please write something for your note before adding it ...');
   }
 
   noteInput.value = '';
@@ -121,7 +121,7 @@ formContainer.addEventListener('submit', (event) => {
 deleteAllBtn.addEventListener('click', () => {
   const notes = localStorage.getItem('notes');
   if (notes === null) {
-    showmsg('No notes to delete');
+    showmsgFalse('No notes to delete');
     return;
   }
   Swal.fire({
