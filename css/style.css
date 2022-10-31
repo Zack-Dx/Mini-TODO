@@ -197,6 +197,10 @@ html {
   padding: 0 10px;
   align-items: center;
 }
+.box__input {
+  flex: 1;
+  text-align: left;
+}
 
 .box p,
 h5 {

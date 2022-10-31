@@ -61,29 +61,22 @@ function deleted(index) {
   showmsg('Note deleted successfully.');
 }
 function edit(index) {
-  const noteElement = document.getElementById(`box-${index}`);
-  const swappableElement = noteElement.getElementsByClassName('swappable')[0];
-  const editButton = noteElement.getElementsByClassName('edit')[0];
+  const editButton = document.querySelector(`#box-${index} .edit`);
+  const noteText = document.querySelector(`#box-${index} .swappable p`);
 
-  if (editButton.innerHTML == 'Edit') {
-    swappableElement.innerHTML = `
-      <div id="notebox">
-        <input type="text" id="note" value="${
-          noteElement.getElementsByTagName('p')[0].innerHTML
-        }" style="width:${
-      noteElement.getElementsByTagName('p')[0].clientWidth + 'px'
-    }"/>
-      </div>
-    `;
-    editButton.innerHTML = 'Save';
-    showmsgEdit('Note in Edit Mode.');
-  } else {
+  if (editButton.classList.contains('active')) {
     const listNotes = getStorageData();
 
-    listNotes[index].value = noteElement.getElementsByTagName('input')[0].value;
+    listNotes[index].value = noteText.innerHTML;
     localStorage.setItem('notes', JSON.stringify(listNotes));
     showNotes();
     showmsg('Note updated successfully.');
+  } else {
+    noteText.setAttribute('contenteditable', 'true');
+    noteText.focus();
+    editButton.classList.add('active');
+    editButton.innerHTML = 'Save';
+    showmsg('Note in Edit Mode.');
   }
 }
 
