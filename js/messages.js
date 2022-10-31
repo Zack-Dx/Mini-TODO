@@ -18,12 +18,30 @@ function toggle_light_mode(firstLoad) {
 
 var maggio = document.querySelector('#msgbox');
 function showmsg(txt) {
-  document.getElementById('msgbox').innerText = '✉ ' + txt;
-  maggio.classList.add('show');
+  document.getElementById('msgbox').innerText = '✔ ' + txt;
+  addRemoveClass("show");
+}
+
+function showmsgFalse(txt) {
+  document.getElementById('msgbox').innerText = '✖ ' + txt;
+  addRemoveClass("msg--false");
+  addRemoveClass("show");
+}
+
+
+function showmsgEdit(txt) {
+  document.getElementById('msgbox').innerText = '✎ ' + txt;
+  addRemoveClass("msg--edit");
+  addRemoveClass("show");
+}
+
+function addRemoveClass(value) {
+  maggio.classList.add(value);
   setTimeout(function () {
-    maggio.classList.remove('show');
+    maggio.classList.remove(value);
   }, 3000);
 }
+
 document.onreadystatechange = () => {
   if (document.readyState === 'complete') {
     console.log('Flipped!');
