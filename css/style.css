@@ -139,25 +139,28 @@ html {
   outline: none;
   cursor: pointer;
   border: 1px solid rgb(255, 249, 249);
+  transition: 0.25s;
 }
 
-.button:hover {
+.button-danger {
+  background-color: #ffb1b1ea;
+}
+
+.button:hover,
+.button-danger:hover {
   background: #2196f3;
   color: white;
   box-shadow: 0 0 4px #2196f3, 0 0 8px #2196f3, 0 0 12px #2196f3;
-  transition: 0.5s;
+
   transform: scale(1.05);
 }
-#delete:hover {
+.button-danger:hover {
   background: #ec4811;
-  color: white;
-  box-shadow: 0 0 4px #ec4811, 0 0 8px #ec4811, 0 0 12px #ec4811;
-  transition: 0.5s;
-  transform: scale(1.05);
 }
 .buttons {
   text-align: center;
 }
+
 #note:focus {
   box-shadow: 0 0 4px #7e6ce4, 0 0 8px #7e6ce4, 0 0 12px #7e6ce4;
 }
@@ -190,11 +193,6 @@ h5 {
 @media (max-width: 1424px) {
   body {
     background-color: rgb(142, 137, 199);
-  }
-
-  #delete {
-    background-color: #ffb1b1ea;
-    color: rgb(0, 0, 0);
   }
 
   #container {
@@ -497,8 +495,4 @@ i {
   color: #fff;
   transition: 0.8s;
   padding-top: 10%;
-}
-
-.myInput {
-  overflow: auto;
 }
