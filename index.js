@@ -86,19 +86,22 @@ function showNotes() {
 }
 
 function deleted(index) {
-  
-  let notes = localStorage.getItem("notes");
+  const mustDelete = confirm('Are you sure you want to delete this note?');
 
-  if (notes == null) {
-    noteobj = [];
-  } 
-  else {
-    noteobj = JSON.parse(localStorage.getItem("notes"));
+  if (mustDelete) {
+    let notes = localStorage.getItem("notes");
+
+    if (notes == null) {
+      noteobj = [];
+    } 
+    else {
+      noteobj = JSON.parse(localStorage.getItem("notes"));
+    }
+    noteobj.splice(index, 1);
+    localStorage.setItem("notes", JSON.stringify(noteobj));
+    showNotes();
+    showmsg('Note deleted successfully.')
   }
-  noteobj.splice(index, 1);
-  localStorage.setItem("notes", JSON.stringify(noteobj));
-  showNotes();
-  showmsg('Note deleted successfully.')
   
 }
 
