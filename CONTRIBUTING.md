@@ -20,11 +20,15 @@ Here are a few things that will help us help resolve your issues:
 
 ## Submitting a pull request
 
-1. Clone the repository
-2. Configure and install the dependencies: (See the [README](README.md) for more details)
-3. Create a new branch: `git checkout -b my-branch-name`
-4. Make your changes, push to your branch and submit a pull request.
-5. Wait for your pull request to be reviewed and merged!
+1. Clone the repository and `cd` into it.
+2. Configure and install the dependencies (See [Linting setup](#linting-setup) for more details)
+3. Run `git checkout main`. Just to make sure you are on the main branch before creating a new branch.
+4. Run `git checkout -b name-of-your-branch`. Try to make the branch name descriptive (e.g `feature-featureName`, `bugFix-bugName`, etc.).
+5. Run `git status` to verify that only the files you want to change are affected. Resolve the unexpected changes if any.
+6. Stage all of your changes with `git add .`
+7. Commit your changes using `git commit -m"Type a precise description of only the changes made with this commit."`
+8. Push your branch to your fork with `git push origin name-of-your-branch`. You can see your branch name in step 5.
+9. Create a Pull Request for your branch on GitHub.
 
 Here are a few things you can do that will increase the likelihood of your pull request being accepted:
 
