@@ -73,6 +73,7 @@ function showNotes() {
         </div>
         <button id=delete onclick=deleted(${index})>Delete note</button>
         <button class=edit onclick=edit(${index})>Edit</button>
+        <button class="edit" onclick=share(${index})>Share</button>
       </div>
     `;
   });
@@ -98,6 +99,7 @@ function deleted(index) {
   showmsg('Note deleted successfully.')
   
 }
+
 function edit(index) {
   // edits the value to the value in text area
   let notes = localStorage.getItem("notes");
@@ -125,3 +127,35 @@ function edit(index) {
     showmsg('Note updated successfully.')
   }
 }
+
+function share(index) {
+  const noteElement = document.getElementById(`box-${index}`);
+  const shareableText = noteElement.getElementsByTagName('p')[0].innerHTML;
+
+  console.log('shareableText', shareableText);
+
+  axios.post('https://pastebin.com/api/api_post.php', {
+    api_dev_key: 'f0296bbb59f75c86846cc8f4399fae18',
+    api_paste_code: shareableText,
+    api_option: 'paste',
+    api_paste_expire_date: '10M',
+    api_paste_name: 'Mini-TODO by Zack-Dx'
+  }, {
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+      Referer: "http://pastebin.com"
+    }
+  }).then(function (response) {
+    navigator.clipboard.writeText(response.data).then(
+      () => {
+        showmsg('Note URL copied to clipboard!');
+      }, (error) => {
+        showmsg('Aw, that snapped. :( Please try again.');
+        console.log(error);
+      }
+    );    
+  }).catch(function (error) {
+    showmsg('Aw, that snapped. :( Please try again.');
+    console.log(error);
+  });
+};
