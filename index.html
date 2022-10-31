@@ -17,15 +17,24 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles&family=Indie+Flower&family=Kalam:wght@300&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Island+Moments&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles&family=Indie+Flower&family=Kalam:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Island+Moments&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap"
+      rel="stylesheet"
+    />
 
     <title>Todo List using Javascript</title>
   </head>
@@ -37,15 +46,22 @@
           <h1><a href="index.html" id="a-link">Blueberry Keep📝</a></h1>
         </div>
         <div id="searchnote">
-            <input type="text" id="searching" placeholder="Search Note" value="" class="" />
-          </div>
+          <input
+            type="text"
+            id="searching"
+            placeholder="Search Note"
+            value=""
+            class=""
+          />
+        </div>
         <button
           class="light-mode-button"
           aria-label="Toggle Light Mode"
           onclick="toggle_light_mode()"
         >
-          <span></span><span>
-              <i class="fas fa-moon"></i>
+          <span></span
+          ><span>
+            <i class="fas fa-moon"></i>
           </span>
         </button>
       </nav>
@@ -66,44 +82,55 @@
         />
       </div>
       <div class="buttons">
-        <button id="add">Add note</button>
+        <button class="button" id="add">Add note</button>
       </div>
     </form>
     <div class="buttons">
-      <button id="add" class="delete-all">Delete All</button>
+      <button class="delete-all button">Delete All</button>
     </div>
-    <br /><br />
-    <div id="mainbox">
-  </div>
-  <footer>
-    
-    <section id="footer">
-      <span class="span">Created By <a href="https://github.com/Zack-Dx" target="_blank" style="color: #6d3c9b; text-decoration: none;"> Zack </a>| 
-      <span class="far fa-copyright" id="currentYear"></span>  All rights reserved.</span>
-      <div class="social-icons">
-        <a class="social" id="linkedin" href="#" target="_blank">
-         <span class="icon"><i class="fab fa-linkedin"></i></span>
-        </a>
-        <a class="social" id="insta" href="#" target="_blank">
-          <span class="icon"><i class="fab fa-instagram"></i></span>
-        </a>
-        <a class="social" id="github" href="https://github.com/Zack-Dx" target="_blank">
-         <span class="icon"><i class="fab fa-github-square"></i></span>
-        </a>
-        <a class="social" id="twitter" href="#" target="_blank">
-          <span class="icon"><i class="fab fa-twitter-square"></i></span>
-        </a>
+    <div id="mainbox"></div>
+    <footer>
+      <section id="footer">
+        <span class="span"
+          >Created By
+          <a
+            href="https://github.com/Zack-Dx"
+            target="_blank"
+            style="color: #6d3c9b; text-decoration: none"
+          >
+            Zack </a
+          >| <span class="far fa-copyright" id="currentYear"></span> All rights
+          reserved.</span
+        >
+        <div class="social-icons">
+          <a class="social" id="linkedin" href="#" target="_blank">
+            <span class="icon"><i class="fab fa-linkedin"></i></span>
+          </a>
+          <a class="social" id="insta" href="#" target="_blank">
+            <span class="icon"><i class="fab fa-instagram"></i></span>
+          </a>
+          <a
+            class="social"
+            id="github"
+            href="https://github.com/Zack-Dx"
+            target="_blank"
+          >
+            <span class="icon"><i class="fab fa-github-square"></i></span>
+          </a>
+          <a class="social" id="twitter" href="#" target="_blank">
+            <span class="icon"><i class="fab fa-twitter-square"></i></span>
+          </a>
+        </div>
+      </section>
+      <div class="waves">
+        <div class="wave" id="wave1"></div>
+        <div class="wave" id="wave2"></div>
+        <div class="wave" id="wave3"></div>
+        <div class="wave" id="wave4"></div>
       </div>
-    </section>
-    <div class="waves">
-      <div class="wave" id="wave1"></div>
-      <div class="wave" id="wave2"></div>
-      <div class="wave" id="wave3"></div>
-      <div class="wave" id="wave4"></div>
-    </div>
-  </footer>
+    </footer>
   </body>
-  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <script src="index.js"></script>
-  <script src="messages.js"></script>
+  <script src="./js/sweetalert2/sweetalert2.all.min.js"></script>
+  <script src="./js/messages.js"></script>
+  <script src="./js/index.js"></script>
 </html>

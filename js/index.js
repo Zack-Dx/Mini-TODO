@@ -1,9 +1,96 @@
-//Add note
+const formContainer = document.querySelector('#container');
+const noteInput = document.getElementById('note');
+const deleteAllBtn = document.querySelector('.delete-all');
+const searched = document.getElementById('searching');
 
-let formContainer = document.querySelector('#container');
-let noInput = document.querySelector('#noInputText');
-let noteInput = document.getElementById('note');
-const deleteBtn = document.getElementsByClassName('delete-all')[0];
+function getStorageData() {
+  const notes = localStorage.getItem('notes');
+
+  return notes !== null ? JSON.parse(notes) : [];
+}
+
+function showNotes() {
+  const listNotes = getStorageData();
+  let html = '';
+
+  listNotes.forEach(function (element, index) {
+    html += `
+      <div class="box" id="box-${index}" >
+        <h5>NOTE :${index + 1}</h5>
+        <time>${new Date(1667170744131).toLocaleDateString('en-US')}</time>
+        <div class="swappable">
+          <p id=myInput-${index} class='myInput'>${element.value}</p> 
+        </div>
+        <button class=button  onclick=copyText(${index})>Copy</button>
+        <button class='button edit' onclick=edit(${index})>Edit</button>
+        <button class=button id=delete onclick=deleted(${index})>Delete note</button> 
+      </div>
+    `;
+  });
+
+  const box = document.getElementById('mainbox');
+  box.innerHTML = html;
+}
+
+function deleted(index) {
+  const listNotes = getStorageData();
+
+  listNotes.splice(index, 1);
+  localStorage.setItem('notes', JSON.stringify(listNotes));
+  showNotes();
+  showmsg('Note deleted successfully.');
+}
+function edit(index) {
+  const noteElement = document.getElementById(`box-${index}`);
+  const swappableElement = noteElement.getElementsByClassName('swappable')[0];
+  const editButton = noteElement.getElementsByClassName('edit')[0];
+
+  if (editButton.innerHTML == 'Edit') {
+    swappableElement.innerHTML = `
+      <div id="notebox">
+        <input type="text" id="note" value="${
+          noteElement.getElementsByTagName('p')[0].innerHTML
+        }" style="width:${
+      noteElement.getElementsByTagName('p')[0].clientWidth + 'px'
+    }"/>
+      </div>
+    `;
+    editButton.innerHTML = 'Save';
+    showmsg('Note in Edit Mode.');
+  } else {
+    const listNotes = getStorageData();
+
+    listNotes[index].value = noteElement.getElementsByTagName('input')[0].value;
+    localStorage.setItem('notes', JSON.stringify(listNotes));
+    showNotes();
+    showmsg('Note updated successfully.');
+  }
+}
+
+function copyText(index) {
+  const listNotes = getStorageData();
+  let noteToCopy = listNotes[index];
+
+  navigator.clipboard.writeText(noteToCopy);
+  showmsg('Copied the note: ' + noteToCopy);
+}
+
+searched.addEventListener('input', function () {
+  const inputValue = searched.value.toLowerCase();
+  const noteCard = document.getElementsByClassName('box');
+
+  Array.from(noteCard).forEach((element) => {
+    const cardText = element
+      .querySelector('.swappable > p')
+      .innerText.toLowerCase();
+
+    if (cardText.includes(inputValue)) {
+      element.style.display = 'inline-block';
+    } else {
+      element.style.display = 'none';
+    }
+  });
+});
 
 noteInput.addEventListener('click', function () {
   noteInput.classList.remove('show');
@@ -11,30 +98,26 @@ noteInput.addEventListener('click', function () {
 
 formContainer.addEventListener('submit', (event) => {
   event.preventDefault();
-  let noteobj = [];
-  let addtxt = document.getElementById('note');
-  let notes = localStorage.getItem('notes');
+  let addNote = document.getElementById('note');
+  let listNotes = getStorageData();
 
-  if (notes == null) {
-    noteobj = [];
-  } else {
-    noteobj = JSON.parse(localStorage.getItem('notes'));
-  }
-
-  if (addtxt.value != '') {
-    noteobj.push(addtxt.value);
+  if (addNote.value !== '') {
+    listNotes.push({
+      id: new Date().getTime(),
+      date: new Date().getTime(),
+      value: addNote.value,
+    });
     showmsg('Your Note has been added successfully.');
+    localStorage.setItem('notes', JSON.stringify(listNotes));
   } else {
-    // noInput.classList.add("show");
     showmsg('Please write something for your note before adding it ...');
   }
 
-  localStorage.setItem('notes', JSON.stringify(noteobj));
   noteInput.value = '';
-
   showNotes();
 });
-deleteBtn.addEventListener('click', () => {
+
+deleteAllBtn.addEventListener('click', () => {
   const notes = localStorage.getItem('notes');
   if (notes === null) {
     showmsg('No notes to delete');
@@ -53,102 +136,6 @@ deleteBtn.addEventListener('click', () => {
       localStorage.removeItem('notes');
       showmsg('All notes deleted successfully.');
       document.getElementById('mainbox').innerHTML = '';
-    }
-  });
-});
-
-function showNotes() {
-  let notesobj = JSON.parse(localStorage.getItem('notes'));
-
-  if (notesobj == null) {
-    notesobj = [];
-  } else {
-    notesobj = JSON.parse(localStorage.getItem('notes'));
-  }
-
-  let html = '';
-  notesobj.forEach(function (element, index) {
-    html += `
-      <div class="box" id="box-${index}" >
-        <h5>NOTE :${index + 1}</h5>
-        <div class="swappable">
-          <p id=myInput-${index} class='myInput'>${element}</p> 
-        </div>
-        <button class=copy  onclick=copyText(${index})>Copy</button>
-        <button class=edit onclick=edit(${index})>Edit</button>
-        <button id=delete onclick=deleted(${index})>Delete note</button> 
-      </div>
-    `;
-  });
-
-  let box = document.getElementById('mainbox');
-  box.innerHTML = html;
-}
-function deleted(index) {
-  let notes = localStorage.getItem('notes');
-
-  if (notes == null) {
-    noteobj = [];
-  } else {
-    noteobj = JSON.parse(localStorage.getItem('notes'));
-  }
-  noteobj.splice(index, 1);
-  localStorage.setItem('notes', JSON.stringify(noteobj));
-  showNotes();
-  showmsg('Note deleted successfully.');
-}
-function edit(index) {
-  // edits the value to the value in text area
-  let notes = localStorage.getItem('notes');
-  const noteElement = document.getElementById(`box-${index}`);
-  const swappableElement = noteElement.getElementsByClassName('swappable')[0];
-  const editButton = noteElement.getElementsByClassName('edit')[0];
-
-  if (editButton.innerHTML == 'Edit') {
-    swappableElement.innerHTML = `
-      <div id="notebox">
-        <input type="text" id="note" value="${
-          noteElement.getElementsByTagName('p')[0].innerHTML
-        }" style="width:${
-      noteElement.getElementsByTagName('p')[0].clientWidth + 'px'
-    }"/>
-      </div>
-    `;
-    editButton.innerHTML = 'Save';
-    showmsg('Note in Edit Mode.');
-  } else {
-    if (notes == null) {
-      noteobj = [];
-    } else {
-      noteobj = JSON.parse(localStorage.getItem('notes'));
-    }
-    noteobj[index] = noteElement.getElementsByTagName('input')[0].value;
-    localStorage.setItem('notes', JSON.stringify(noteobj));
-    showNotes();
-    showmsg('Note updated successfully.');
-  }
-}
-
-function copyText(index) {
-  let noteobj = JSON.parse(localStorage.getItem('notes'));
-  let noteToCopy = noteobj[index];
-  navigator.clipboard.writeText(noteToCopy);
-  showmsg('Copied the note: ' + noteToCopy);
-}
-
-let searchtext = document.getElementById('searching');
-searchtext.addEventListener('input', function () {
-  let inputvalue = searchtext.value.toLowerCase();
-  let notecard = document.getElementsByClassName('box');
-  Array.from(notecard).forEach(function (element) {
-    let cardtext = element
-      .getElementsByTagName('div')[0]
-      .getElementsByTagName('p')[0]
-      .innerText.toLowerCase();
-    if (cardtext.includes(inputvalue)) {
-      element.style.display = 'inline-block';
-    } else {
-      element.style.display = 'none';
     }
   });
 });
