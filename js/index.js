@@ -2,20 +2,11 @@ const formContainer = document.querySelector('#container');
 const noteInput = document.getElementById('note');
 const deleteAllBtn = document.querySelector('.delete-all');
 const searched = document.getElementById('searching');
-const maggio = document.querySelector('#msgbox');
 
 function getStorageData() {
   const notes = localStorage.getItem('notes');
 
   return notes !== null ? JSON.parse(notes) : [];
-}
-
-function showmsg(txt) {
-  document.getElementById('msgbox').innerText = '✉ ' + txt;
-  maggio.classList.add('show');
-  setTimeout(function () {
-    maggio.classList.remove('show');
-  }, 3000);
 }
 
 function showNotes() {

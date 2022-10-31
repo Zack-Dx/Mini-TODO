@@ -1,8 +1,8 @@
 function toggle_light_mode(firstLoad) {
   var app = document.getElementsByTagName('BODY')[0];
   const check = firstLoad
-    ? localStorage.lightMode != 'dark'
-    : localStorage.lightMode == 'dark';
+    ? localStorage.lightMode !== 'dark'
+    : localStorage.lightMode === 'dark';
   if (check) {
     localStorage.lightMode = 'light';
     app.setAttribute('light-mode', 'light');
