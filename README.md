@@ -1,15 +1,21 @@
-<p align="center">
+<div align="center">
     <img style="background-color: black" src="https://hotemoji.com/images/dl/7/memo-emoji-by-google.png" width="10%">
+    <h2 align="center" style="margin-top: -12px">Mini-TODO</h2>
+    <h3>An opensource todo app made with html,css and javascript</h3>
+</div>
+
+<p align="center">
+    <a href="https://github.com/Zack-Dx/Mini-TODO/issues"><img src="https://img.shields.io/github/issues/Zack-Dx/Mini-TODO?color=0d1117&style=flat-square" alt="GitHub Issues"> 
+    <a href="https://github.com/Zack-Dx/Mini-TODO/stargazers"><img src="https://img.shields.io/github/stars/Zack-Dx/Mini-TODO?style=flat-square&color=0d1117" alt="GitHub Stars"></a>
+    <a href="https://github.com/Zack-Dx/Mini-TODO/pulls"><img src="https://img.shields.io/github/issues-pr/Zack-Dx/Mini-TODO?color=0d1117&style=flat-square" alt="GitHub Pull Requests"></a>
 </p>
-<h2 align="center" style="margin-top: -12px"> 
-    Mini-TODO
-</h2>
 
-### Table of Contents
-
-- [Introduction](#introduction) - What this project is all about
-- [Contributing Guide](https://github.com/Zack-Dx/Mini-TODO/blob/master/CONTRIBUTING.md) - How to contribute to the project
-- [Contributors](#contributors) - People who contributed to the project
+<p align="center">
+  <a href="#introduction">Introduction</a> •
+  <a href="https://github.com/Zack-Dx/Mini-TODO/blob/master/CONTRIBUTING.md">Contributing Guide</a> •
+  <a href="#contributors">Contributors</a> •
+  <a href="#usage">Usage</a>
+</p>
 
 ## <a name="introduction">📌 Introduction</a>
 
@@ -27,6 +33,10 @@ Features of the application include:
 - Create a Pull Request which will be promptly reviewed and suggestions would be added to improve it.
 - Add Screenshots to help us know what your contribution is all about.
 - Having difficulty in contributing? Read the [Contribution Guide](https://github.com/Zack-Dx/Mini-TODO/blob/master/CONTRIBUTING.md) for a detailed explanation.
+
+## <a name='usage'>💻 Usage</a>
+
+![image](https://user-images.githubusercontent.com/67597538/198573875-d16c8268-9f7b-4cd3-9187-32995461d0c2.png)
 
 ## <a name='contributors'>👥 Contributors</a>
 
