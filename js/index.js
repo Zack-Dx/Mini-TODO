@@ -25,7 +25,8 @@ function showNotes() {
         </div>
         <button class=button  onclick=copyText(${index})>Copy</button>
         <button class='button edit' onclick=edit(${index})>Edit</button>
-        <button class=button id=delete onclick=deleted(${index})>Delete note</button> 
+        <button class='button edit' onclick=share(${index})>Share</button>
+        <button class=button id=delete onclick=deleted(${index})>Delete note</button>
       </div>
     `;
   });
@@ -102,6 +103,10 @@ function share(index) {
       }, (error) => {
         showmsg('Aw, that snapped. :( Please try again.');
         console.log(error);
+      }
+    );
+  });
+}
 
 
 searched.addEventListener('input', function () {
