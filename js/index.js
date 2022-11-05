@@ -36,12 +36,16 @@ function showNotes() {
 }
 
 function deleted(index) {
-  const listNotes = getStorageData();
+  const mustDelete = confirm('Are you sure you want to delete this note?');
 
-  listNotes.splice(index, 1);
-  localStorage.setItem('notes', JSON.stringify(listNotes));
-  showNotes();
-  showmsg('Note deleted successfully.');
+  if (mustDelete) {
+    const listNotes = getStorageData();
+
+    listNotes.splice(index, 1);
+    localStorage.setItem('notes', JSON.stringify(listNotes));
+    showNotes();
+    showmsg('Note deleted successfully.');
+  }
 }
 function edit(index) {
   const noteElement = document.getElementById(`box-${index}`);
