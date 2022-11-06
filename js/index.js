@@ -23,7 +23,7 @@ function showNotes() {
         </div>
         <button class=button  onclick=copyText(${index})>Copy</button>
         <button class='button edit' onclick=edit(${index})>Edit</button>
-        <button class=button id=delete onclick=deleted(${index})>Delete note</button> 
+        <button class=button id=delete onclick=deleted(${index})>Delete note</button>
       </div>
     `;
   });
@@ -33,12 +33,16 @@ function showNotes() {
 }
 
 function deleted(index) {
-  const listNotes = getStorageData();
+  const mustDelete = confirm('Are you sure you want to delete this note?');
 
-  listNotes.splice(index, 1);
-  localStorage.setItem('notes', JSON.stringify(listNotes));
-  showNotes();
-  showmsg('Note deleted successfully.');
+  if (mustDelete) {
+    const listNotes = getStorageData();
+
+    listNotes.splice(index, 1);
+    localStorage.setItem('notes', JSON.stringify(listNotes));
+    showNotes();
+    showmsg('Note deleted successfully.');
+  }
 }
 function edit(index) {
   const noteElement = document.getElementById(`box-${index}`);
@@ -75,6 +79,7 @@ function copyText(index) {
   navigator.clipboard.writeText(text);
   showmsg('Copied the note: ' + text);
 }
+
 
 searched.addEventListener('input', function () {
   const inputValue = searched.value.toLowerCase();
