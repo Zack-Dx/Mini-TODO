@@ -1,3 +1,5 @@
+const pastebinDevKey = "put yours here!";
+
 const formContainer = document.querySelector('#container');
 const noteInput = document.getElementById('note');
 const deleteAllBtn = document.querySelector('.delete-all');
@@ -23,6 +25,7 @@ function showNotes() {
         </div>
         <button class=button  onclick=copyText(${index})>Copy</button>
         <button class='button edit' onclick=edit(${index})>Edit</button>
+        <button class='button edit' onclick=share(${index})>Share</button>
         <button class=button id=delete onclick=deleted(${index})>Delete note</button>
       </div>
     `;
@@ -33,16 +36,12 @@ function showNotes() {
 }
 
 function deleted(index) {
-  const mustDelete = confirm('Are you sure you want to delete this note?');
-
-  if (mustDelete) {
     const listNotes = getStorageData();
 
     listNotes.splice(index, 1);
     localStorage.setItem('notes', JSON.stringify(listNotes));
     showNotes();
     showmsg('Note deleted successfully.');
-  }
 }
 function edit(index) {
   const noteElement = document.getElementById(`box-${index}`);
@@ -78,6 +77,35 @@ function copyText(index) {
 
   navigator.clipboard.writeText(text);
   showmsg('Copied the note: ' + text);
+}
+
+function share(index) {
+  const noteElement = document.getElementById(`box-${index}`);
+  const shareableText = noteElement.getElementsByTagName('p')[0].innerHTML;
+
+  console.log('shareableText', shareableText);
+
+  axios.post('https://pastebin.com/api/api_post.php', {
+    api_dev_key: pastebinDevKey,
+    api_paste_code: shareableText,
+    api_option: 'paste',
+    api_paste_expire_date: '10M',
+    api_paste_name: 'Mini-TODO by Zack-Dx'
+  }, {
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+      Referer: "http://pastebin.com"
+    }
+  }).then(function (response) {
+    navigator.clipboard.writeText(response.data).then(
+      () => {
+        showmsg('Note URL copied to clipboard!');
+      }, (error) => {
+        showmsg('Aw, that snapped. :( Please try again.');
+        console.log(error);
+      }
+    );
+  });
 }
 
 
