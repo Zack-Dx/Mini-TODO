@@ -1,13 +1,14 @@
 /*Fonts*/
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Kalam', cursive, 'Fuzzy Bubbles', cursive, 'Open Sans',
-    sans-serif;
+  font-family: 'Nanum Pen Script', cursive;
   height: auto;
+  font-size: 103%;
 }
 
 body {
@@ -125,6 +126,7 @@ html {
   margin: 10px;
   height: 3vw;
   font-size: 2vw;
+  font-family: 'Nanum Pen Script', cursive;
 }
 
 #note:hover {
